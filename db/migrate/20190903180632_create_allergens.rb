@@ -3,7 +3,7 @@ class CreateAllergens < ActiveRecord::Migration[5.2]
     create_table :allergens do |t|
       t.references :user, foreign_key: true
       t.references :ingredient, foreign_key: true
-      t.references :category, foreign_key: true
+      t.references :allergen_family, foreign_key: true
 
       t.timestamps
     end
