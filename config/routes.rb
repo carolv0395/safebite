@@ -4,13 +4,17 @@ Rails.application.routes.draw do
 
   resources :allergens, except: :show do
     collection do
-      get :list
+      get :list_own
     end
   end
 
   resources :products, only: [:index, :show] do
-    resources :ingredients
+    resources :ingredients, only: :index
   end
+
   resources :categories, only: :index
 
+  resources :orders, only: [:index, :show, :new, :create] do
+    resources :payments, only: [:new, :create]
+  end
 end
