@@ -1,4 +1,3 @@
 class Ingredient < ApplicationRecord
-  has_many :products
-  has_one :allergen
+  belongs_to :allergen_family
 end

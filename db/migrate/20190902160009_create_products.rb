@@ -4,10 +4,10 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.string :first_name
       t.string :last_name
       t.string :brand
+      t.string :category
       t.string :volume
       t.integer :discount
       t.integer :stock
-      t.references :category, foreign_key: true
       t.text :description
       t.string :photo
 
