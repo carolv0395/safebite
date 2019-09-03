@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
-  get 'orders/index,'
-  get 'orders/show,'
-  get 'orders/create,'
-  get 'orders/new'
-  get 'ingredients/index'
-  get 'categories/index'
+  get 'products/index,'
+  get 'products/show'
   devise_for :users
   root to: 'products#index'
 
