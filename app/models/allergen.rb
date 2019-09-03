@@ -1,5 +1,5 @@
 class Allergen < ApplicationRecord
   belongs_to :user
-  belongs_to :ingredient
-  belongs_to :category
+  has_one :ingredient
+  has_one :category
 end
