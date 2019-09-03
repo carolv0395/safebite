@@ -3,6 +3,7 @@ ruby '2.6.3'
 
 gem 'money-rails'
 gem 'stripe'
+gem 'pundit'
 gem 'simple_form'
 
 gem 'bootsnap', require: false
