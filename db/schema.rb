@@ -10,18 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_03_180630) do
+ActiveRecord::Schema.define(version: 2019_09_03_180632) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "allergen_families", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "allergens", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "ingredient_id"
-    t.bigint "category_id"
+    t.bigint "allergen_family_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_allergens_on_category_id"
+    t.index ["allergen_family_id"], name: "index_allergens_on_allergen_family_id"
     t.index ["ingredient_id"], name: "index_allergens_on_ingredient_id"
     t.index ["user_id"], name: "index_allergens_on_user_id"
   end
@@ -95,7 +101,7 @@ ActiveRecord::Schema.define(version: 2019_09_03_180630) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "allergens", "categories"
+  add_foreign_key "allergens", "allergen_families"
   add_foreign_key "allergens", "ingredients"
   add_foreign_key "allergens", "users"
   add_foreign_key "ingredients_products", "ingredients"
