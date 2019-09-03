@@ -1,4 +1,4 @@
 class Category < ApplicationRecord
   has_many :products
-  belong_to :allergen
+  has_one :allergen
 end
