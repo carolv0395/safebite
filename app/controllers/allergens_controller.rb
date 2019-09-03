@@ -1,6 +1,6 @@
 class AllergensController < ApplicationController
   skip_before_action :authenticate_user!
-  before_action :fetch_allergen, only: [:edit, :update, :destroy]
+  before_action :fetch_allergen, only: [:destroy]
 
   def index
     if params[:query].present?
@@ -14,9 +14,6 @@ class AllergensController < ApplicationController
   def new
     @allergen = Allergen.new
     authorize @allergen
-  end
-
-  def edit
   end
 
   def destroy

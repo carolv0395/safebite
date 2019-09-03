@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'products#index'
 
-  resources :allergens, except: :show
+  resources :allergens, except: [:show, :edit, :update]
 
   resources :allergen_families, only: [:index, :show]
 
