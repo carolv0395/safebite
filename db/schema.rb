@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_02_180745) do
+ActiveRecord::Schema.define(version: 2019_09_03_180630) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,12 +26,6 @@ ActiveRecord::Schema.define(version: 2019_09_02_180745) do
     t.index ["user_id"], name: "index_allergens_on_user_id"
   end
 
-  create_table "brands", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -44,10 +38,13 @@ ActiveRecord::Schema.define(version: 2019_09_02_180745) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "ingredients_products", id: false, force: :cascade do |t|
-    t.bigint "product_id", null: false
-    t.bigint "ingredient_id", null: false
-    t.index ["product_id", "ingredient_id"], name: "index_ingredients_products_on_product_id_and_ingredient_id"
+  create_table "ingredients_products", force: :cascade do |t|
+    t.bigint "product_id"
+    t.bigint "ingredient_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ingredient_id"], name: "index_ingredients_products_on_ingredient_id"
+    t.index ["product_id"], name: "index_ingredients_products_on_product_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -59,26 +56,30 @@ ActiveRecord::Schema.define(version: 2019_09_02_180745) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
-  create_table "orders_products", id: false, force: :cascade do |t|
-    t.bigint "product_id", null: false
-    t.bigint "order_id", null: false
+  create_table "orders_products", force: :cascade do |t|
     t.integer "quantity"
+    t.bigint "product_id"
+    t.bigint "order_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "price_cents", default: 0, null: false
-    t.index ["product_id", "order_id"], name: "index_orders_products_on_product_id_and_order_id"
+    t.index ["order_id"], name: "index_orders_products_on_order_id"
+    t.index ["product_id"], name: "index_orders_products_on_product_id"
   end
 
   create_table "products", force: :cascade do |t|
-    t.string "name"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "brand"
+    t.string "volume"
     t.integer "discount"
     t.integer "stock"
-    t.bigint "brand_id"
     t.bigint "category_id"
     t.text "description"
     t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "price_cents", default: 0, null: false
-    t.index ["brand_id"], name: "index_products_on_brand_id"
     t.index ["category_id"], name: "index_products_on_category_id"
   end
 
@@ -97,7 +98,10 @@ ActiveRecord::Schema.define(version: 2019_09_02_180745) do
   add_foreign_key "allergens", "categories"
   add_foreign_key "allergens", "ingredients"
   add_foreign_key "allergens", "users"
+  add_foreign_key "ingredients_products", "ingredients"
+  add_foreign_key "ingredients_products", "products"
   add_foreign_key "orders", "users"
-  add_foreign_key "products", "brands"
+  add_foreign_key "orders_products", "orders"
+  add_foreign_key "orders_products", "products"
   add_foreign_key "products", "categories"
 end
