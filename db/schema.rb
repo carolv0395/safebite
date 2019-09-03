@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 2019_09_03_180634) do
     t.string "first_name"
     t.string "last_name"
     t.string "brand"
-    t.string "category"
+    t.integer "category", default: 0
     t.string "volume"
     t.integer "discount"
     t.integer "stock"
