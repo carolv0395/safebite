@@ -16,8 +16,4 @@ class AllergenPolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
-
-  def list_own?
-    true
-  end
 end

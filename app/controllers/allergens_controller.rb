@@ -1,5 +1,4 @@
 class AllergensController < ApplicationController
-  skip_before_action :authenticate_user!
   before_action :fetch_allergen, only: :destroy
 
   def index
@@ -8,16 +7,26 @@ class AllergensController < ApplicationController
   end
 
   def new
-    # @allergen = Allergen.new
-    # authorize @allergen
+    @allergen = Allergen.new
+    authorize @allergen
   end
 
   def create
-    @allergen = Allergen.new(allergen_params)
-    authorize @allergen
-    @allergen.user = current_user
-    @allergen.save
-    redirect_to allergen_path(@allergen)
+    # create several allergens according to the array of user choices
+    ids = params[:allergen][:allergen_families_ids]
+    id_type = params[:allergen][:allergen_type]
+    if ids.any?
+      ids.each do |id|
+        @allergen = Allergen.new(user: current_user,
+                                 allergen_family_id: id_type == 'family' ? id : nil,
+                                 ingredient_id: id_type == 'ingredient' ? id : nil)
+        authorize @allergen
+        @allergen.save
+      end
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -32,6 +41,7 @@ class AllergensController < ApplicationController
     authorize @allergen
   end
 
-  def
+  def allergen_params
+    params.require(:allergen).permit(:allergen_type, allergen_families_ids: [])
   end
 end
