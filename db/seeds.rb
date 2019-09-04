@@ -30,7 +30,7 @@ product_attributes = [
   {
     name: 'Cheez-It Baked Original Cheese Crackers Family',
     brand: 'Cheez-It',
-    category: ,
+    category: :cookies_and_snacks,
     volume: '21 oz',
     discount: 0,
     stock: Faker::Number.between(from: 0, to: 200),
@@ -41,7 +41,7 @@ product_attributes = [
   {
     name: 'Great Value Large White Eggs',
     brand: 'Great Value',
-    category: ,
+    category: :dairy_eggs_and_cheese,
     volume: '36 oz',
     discount: 0,
     stock: Faker::Number.between(from: 0, to: 200),
@@ -52,7 +52,7 @@ product_attributes = [
   {
     name: 'Fresh Strawberries',
     brand: '',
-    category: ,
+    category: :fruits_and_vegetables,
     volume: '1 lb',
     discount: 0,
     stock: Faker::Number.between(from: 0, to: 200),
@@ -63,7 +63,7 @@ product_attributes = [
   {
     name: 'Mission Soft Taco Whole Wheat Tortillas',
     brand: 'Mission',
-    category: ,
+    category: :grains_pasta_and_sides,
     volume: '450g',
     discount: 0,
     stock: Faker::Number.between(from: 0, to: 200),
