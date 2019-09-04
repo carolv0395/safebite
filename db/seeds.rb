@@ -22,7 +22,7 @@ AllergenFamily.create!(name: 'nuts')
 AllergenFamily.create!(name: 'lactose')
 AllergenFamily.create!(name: 'shellfish')
 AllergenFamily.create!(name: 'gluten')
-AllergenFamily.create!(name: 'fish')
+AllergenFamily.create!(name: 'fish & meat')
 AllergenFamily.create!(name: 'soy')
 AllergenFamily.create!(name: 'seeds')
 
@@ -95,22 +95,112 @@ ingredient_attributes =[
     allergen_family_id: 4
   },
   {
-    name: 'wheat',
+    name: 'egg',
+    is_allergen: false,
+  },
+  {
+    name: 'cheese',
     is_allergen: true,
-    allergen_family_id: 4
+    allergen_family_id: 2,
+  },
+  {
+    name: 'orange',
+    is_allergen: false,
   },
   {
     name: 'palm oil',
-    is_allergen: false
-  }
+    is_allergen: false,
+  },
   {
-    name: 'egg',
-    is_allergen: true
+    name: 'tuna',
+    is_allergen: true,
+    allergen_family_id: 5,
+  },
+  {
+    name: 'sugar',
+    is_allergen: false,
+  },
+  {
+    name: 'cayenne',
+    is_allergen: false,
+  },
+  {
+    name: 'peanuts',
+    is_allergen: true,
+    allergen_family_id: 1,
+  },
+  {
+    name: 'pork',
+    is_allergen: true,
+    allergen_family_id: 5,
+  },
+  {
+    name: 'cashew',
+    is_allergen: true,
+    allergen_family_id: 1,
+  },
+  {
+    name: 'walnuts',
+    is_allergen: true,
+    allergen_family_id: 1,
+  },
+  {
+    name: 'coconut milk',
+    is_allergen: false,
+  },
+  {
+    name: 'clams',
+    is_allergen: true,
+    allergen_family_id: 3,
+  },
+  {
+    name: 'mussels',
+    is_allergen: true,
+    allergen_family_id: 3,
+  },
+  {
+    name: 'chicken broth',
+    is_allergen: true,
+    allergen_family_id: 5,
+  },
+  {
+    name: 'pumpkin seeds',
+    is_allergen: true,
+    allergen_family_id: 7,
+  },
+  {
+    name: 'margarine',
+    is_allergen: false,
+  },
+  {
+    name: 'barley',
+    is_allergen: true,
+    allergen_family_id: 4,
+  },
+  {
+    name: 'rye',
+    is_allergen: true,
+    allergen_family_id: 4,
+  },
+  {
+    name: 'apple',
+    is_allergen: false,
+  },
+  {
+    name: 'cream',
+    is_allergen: true,
+    allergen_family_id: 2,
+  },
+  {
+    name: 'poppy seeds',
+    is_allergen: true,
+    allergen_family_id: 7,
+    allergen_family_id: 4
   },
   {
     name: 'strawberry',
     is_allergen: true
-  }
+  },
   {
     name: 'whole wheat flour',
     is_allergen: true,
@@ -120,3 +210,11 @@ ingredient_attributes =[
 
 Ingredient.create!(ingredient_attributes)
 Product.create!(product_attributes)
+
+Product.all.each do |product|
+  Ingredient.order("RANDOM()").limit(rand(5..10)).each do |ingredient|
+    IngredientsProduct.create(product: product, ingredient: ingredient)
+  end
+end
+
+
