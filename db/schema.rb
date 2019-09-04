@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_03_180632) do
+ActiveRecord::Schema.define(version: 2019_09_03_180634) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,16 +32,13 @@ ActiveRecord::Schema.define(version: 2019_09_03_180632) do
     t.index ["user_id"], name: "index_allergens_on_user_id"
   end
 
-  create_table "categories", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "ingredients", force: :cascade do |t|
     t.string "name"
+    t.boolean "is_allergen"
+    t.bigint "allergen_family_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["allergen_family_id"], name: "index_ingredients_on_allergen_family_id"
   end
 
   create_table "ingredients_products", force: :cascade do |t|
@@ -74,19 +71,17 @@ ActiveRecord::Schema.define(version: 2019_09_03_180632) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
+    t.string "name"
     t.string "brand"
+    t.integer "category", default: 0
     t.string "volume"
     t.integer "discount"
     t.integer "stock"
-    t.bigint "category_id"
     t.text "description"
     t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "price_cents", default: 0, null: false
-    t.index ["category_id"], name: "index_products_on_category_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -95,6 +90,8 @@ ActiveRecord::Schema.define(version: 2019_09_03_180632) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "first_name"
+    t.string "last_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
@@ -104,10 +101,8 @@ ActiveRecord::Schema.define(version: 2019_09_03_180632) do
   add_foreign_key "allergens", "allergen_families"
   add_foreign_key "allergens", "ingredients"
   add_foreign_key "allergens", "users"
-  add_foreign_key "ingredients_products", "ingredients"
-  add_foreign_key "ingredients_products", "products"
+  add_foreign_key "ingredients", "allergen_families"
   add_foreign_key "orders", "users"
   add_foreign_key "orders_products", "orders"
   add_foreign_key "orders_products", "products"
-  add_foreign_key "products", "categories"
 end
