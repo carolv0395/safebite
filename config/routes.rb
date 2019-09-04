@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'ingredients/index'
+  get 'allergens_families/index'
+  get 'allergens_families/show'
   devise_for :users
   root to: 'products#index'
 
