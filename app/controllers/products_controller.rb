@@ -3,6 +3,16 @@ class ProductsController < ApplicationController
 
   def index
     @products = policy_scope(Product.all)
+    @categories = []
+    @products.each do |product|
+      @categories << product.category
+    end
+    @categories.uniq!
+  end
+
+  def category
+    @products = Product.where(category: params[:category])
+    authorize @products
   end
 
   def show

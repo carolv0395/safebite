@@ -1,2 +1,6 @@
-<h1>Products#index,</h1>
-<p>Find me in app/views/products/index,.html.erb</p>
+<h1>Hello, Jojo</h1>
+<h3>We know you want to avoid lactose!</h3>
+
+<% @categories.each do |category| %>
+  <p> <%= link_to category.gsub(/_/, ' ').gsub(/and/, '&'), category_products_path(category) %> </p>
+<% end %>
