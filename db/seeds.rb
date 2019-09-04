@@ -18,13 +18,13 @@ User.create!(
     password:'123456'
     )
 
-AllergenFamily.create!(name: 'nuts')
-AllergenFamily.create!(name: 'lactose')
-AllergenFamily.create!(name: 'shellfish')
-AllergenFamily.create!(name: 'gluten')
-AllergenFamily.create!(name: 'fish & meat')
-AllergenFamily.create!(name: 'soy')
-AllergenFamily.create!(name: 'seeds')
+nuts = AllergenFamily.create!(name: 'nuts')
+lactose = AllergenFamily.create!(name: 'lactose')
+shellfish = AllergenFamily.create!(name: 'shellfish')
+gluten = AllergenFamily.create!(name: 'gluten')
+fish_and_meat = AllergenFamily.create!(name: 'fish & meat')
+soy = AllergenFamily.create!(name: 'soy')
+seeds = AllergenFamily.create!(name: 'seeds')
 
 product_attributes = [
   {
@@ -77,124 +77,124 @@ ingredient_attributes =[
   {
     name: 'milk',
     is_allergen: true,
-    allergen_family_id: 2
+    allergen_family_id: lactose.id
   },
   {
     name: 'soybean',
     is_allergen: true,
-    allergen_family_id: 6
+    allergen_family_id: soy
   },
   {
     name: 'wheat',
     is_allergen: true,
-    allergen_family_id: 4
+    allergen_family_id: gluten
   },
   {
     name: 'flour',
     is_allergen: true,
-    allergen_family_id: 4
+    allergen_family_id: gluten
   },
   {
     name: 'egg',
-    is_allergen: false,
+    is_allergen: true
   },
   {
     name: 'cheese',
     is_allergen: true,
-    allergen_family_id: 2,
+    allergen_family_id: lactose
   },
   {
     name: 'orange',
-    is_allergen: false,
+    is_allergen: false
   },
   {
     name: 'palm oil',
-    is_allergen: false,
+    is_allergen: false
   },
   {
     name: 'tuna',
     is_allergen: true,
-    allergen_family_id: 5,
+    allergen_family_id: fish_and_meat
   },
   {
     name: 'sugar',
-    is_allergen: false,
+    is_allergen: false
   },
   {
     name: 'cayenne',
-    is_allergen: false,
+    is_allergen: false
   },
   {
     name: 'peanuts',
     is_allergen: true,
-    allergen_family_id: 1,
+    allergen_family_id: nuts
   },
   {
     name: 'pork',
     is_allergen: true,
-    allergen_family_id: 5,
+    allergen_family_id: fish_and_meat
   },
   {
     name: 'cashew',
     is_allergen: true,
-    allergen_family_id: 1,
+    allergen_family_id: nuts
   },
   {
     name: 'walnuts',
     is_allergen: true,
-    allergen_family_id: 1,
+    allergen_family_id: nuts
   },
   {
     name: 'coconut milk',
-    is_allergen: false,
+    is_allergen: false
   },
   {
     name: 'clams',
     is_allergen: true,
-    allergen_family_id: 3,
+    allergen_family_id: shellfish
   },
   {
     name: 'mussels',
     is_allergen: true,
-    allergen_family_id: 3,
+    allergen_family_id: shellfish
   },
   {
     name: 'chicken broth',
     is_allergen: true,
-    allergen_family_id: 5,
+    allergen_family_id: fish_and_meat
   },
   {
     name: 'pumpkin seeds',
     is_allergen: true,
-    allergen_family_id: 7,
+    allergen_family_id: seeds
   },
   {
     name: 'margarine',
-    is_allergen: false,
+    is_allergen: false
   },
   {
     name: 'barley',
     is_allergen: true,
-    allergen_family_id: 4,
+    allergen_family_id: gluten
   },
   {
     name: 'rye',
     is_allergen: true,
-    allergen_family_id: 4,
+    allergen_family_id: gluten
   },
   {
     name: 'apple',
-    is_allergen: false,
+    is_allergen: false
   },
   {
     name: 'cream',
     is_allergen: true,
-    allergen_family_id: 2,
+    allergen_family_id: lactose
   },
   {
     name: 'poppy seeds',
     is_allergen: true,
-    allergen_family_id: 7,
+    allergen_family_id: seeds
   },
   {
     name: 'strawberry',
@@ -203,7 +203,7 @@ ingredient_attributes =[
   {
     name: 'whole wheat flour',
     is_allergen: true,
-    allergen_family_id: 4
+    allergen_family_id: gluten
   },
 ]
 
@@ -212,7 +212,7 @@ Product.create!(product_attributes)
 
 Product.all.each do |product|
   Ingredient.order("RANDOM()").limit(rand(5..10)).each do |ingredient|
-    IngredientsProduct.create(product: product, ingredient: ingredient)
+    IngredientsProduct.create(product_id: product.id, ingredient_id: ingredient.id)
   end
 end
 
