@@ -36,7 +36,7 @@ product_attributes = [
     stock: Faker::Number.between(from: 0, to: 200),
     description: '',
     photo: ,
-    price: ,
+    price: Faker::Number.between(from: 1, to: 5)
   },
   {
     name: ,
@@ -47,7 +47,7 @@ product_attributes = [
     stock: Faker::Number.between(from: 0, to: 200),
     description: ,
     photo: ,
-    price: ,
+    price: Faker::Number.between(from: 1, to: 5)
   },
   {
     name: ,
@@ -58,7 +58,7 @@ product_attributes = [
     stock: Faker::Number.between(from: 0, to: 200),
     description: ,
     photo: ,
-    price: ,
+    price: Faker::Number.between(from: 1, to: 5)
   }
   {
     name: ,
@@ -69,7 +69,7 @@ product_attributes = [
     stock: Faker::Number.between(from: 0, to: 200),
     description: ,
     photo: ,
-    price: ,
+    price: Faker::Number.between(from: 1, to: 5)
   }
 ]
 
