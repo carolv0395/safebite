@@ -3,11 +3,7 @@ class AllergensController < ApplicationController
   before_action :fetch_allergen, only: :destroy
 
   def index
-    if params[:query].present?
-      @allegerns = policy_scope(Allergen.search_by_name(params[:query]))
-    else
-      @alergens = policy_scope(Allergen)
-    end
+    @allergens = policy_scope(Allergen)
     @user = current_user if user_signed_in?
   end
 
@@ -25,8 +21,7 @@ class AllergensController < ApplicationController
   end
 
   def destroy
-    # flash[:notice] = "You've removed #{@allergen.name}."
-    # @allergen.destroy
+    @allergen.destroy
     # redirect_to root_path
   end
 
@@ -35,5 +30,8 @@ class AllergensController < ApplicationController
   def fetch_allergen
     @allergen = Allergen.find(params[:id])
     authorize @allergen
+  end
+
+  def
   end
 end
