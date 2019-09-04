@@ -1,3 +1,4 @@
+<h1> <%= @products.first.category.gsub(/_/, ' ').gsub(/and/, '&').capitalize %> </h1>
 <% @products.each do |product| %>
   <p> <%= product.name %> </p>
 <% end %>
