@@ -1,2 +1,13 @@
 <h1>Products#show</h1>
 <p>Find me in app/views/products/show.html.erb</p>
+
+<% @product.photo %>
+
+<h2>Name: <%= @product.name %></h2>
+<h3>Brand: <%= @product.brand %></h3>
+<h3>Category: <%= @product.category %></h3>
+
+<p>Qty: <%= @product.volume %></p>
+<p>Description: <%= @product.description %></p>
+<p>Price: <%= humanized_money_with_symbol(@product.price) %></p>
+<p>Discount: <%= @product.discount %></p>
