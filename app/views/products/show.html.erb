@@ -1,13 +1,29 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+<div class="container m-3 p-3">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1><%= @product.name.capitalize %></h1>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-sm-6">
+      <h2><%= @product.brand.capitalize %></h2>
+      <h3><%= @product.category %></h3>
+      <p><%= @product.volume %></p>
+    </div>
+    <div class="col-sm-6">
+      <p><strong><%= humanized_money_with_symbol(@product.price) %></strong></p>
+      <% unless @product.discount == 0 || @product.discount.nil? || @product.discount.empty? %>
+        <p>Discount: <%= @product.discount %></p>
+        <% discount_price = @product.price - (@product.price * @product.discount) %>
+        <p><%= discount_price %></p>
+      <% end %>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-sm-12">
+      <p><strong>Description:</strong> <%= @product.description %></p>
+</div>
 
-<% @product.photo %>
 
-<h2>Name: <%= @product.name %></h2>
-<h3>Brand: <%= @product.brand %></h3>
-<h3>Category: <%= @product.category %></h3>
+<%= link_to "Back to search page", root_path, class: "btn-text" %>
 
-<p>Qty: <%= @product.volume %></p>
-<p>Description: <%= @product.description %></p>
-<p>Price: <%= humanized_money_with_symbol(@product.price) %></p>
-<p>Discount: <%= @product.discount %></p>
