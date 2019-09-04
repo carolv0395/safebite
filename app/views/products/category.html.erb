@@ -1,5 +1,5 @@
 <% @products.each do |product| %>
-  <p> <%= product.name %> </p>
+  <p> <%= link_to product.name, product_path(product) %> </p>
 <% end %>
 
 <%= link_to 'Go back', products_path %>
