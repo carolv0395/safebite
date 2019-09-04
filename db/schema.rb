@@ -42,12 +42,12 @@ ActiveRecord::Schema.define(version: 2019_09_03_180634) do
   end
 
   create_table "ingredients_products", force: :cascade do |t|
-    t.bigint "products_id"
-    t.bigint "ingredients_id"
+    t.bigint "product_id"
+    t.bigint "ingredient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["ingredients_id"], name: "index_ingredients_products_on_ingredients_id"
-    t.index ["products_id"], name: "index_ingredients_products_on_products_id"
+    t.index ["ingredient_id"], name: "index_ingredients_products_on_ingredient_id"
+    t.index ["product_id"], name: "index_ingredients_products_on_product_id"
   end
 
   create_table "orders", force: :cascade do |t|
