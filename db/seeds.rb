@@ -59,7 +59,7 @@ product_attributes = [
     description: "The sweet, juicy flavor of Fresh Strawberries make them a refreshing and delicious treat. Enjoy them for breakfast, lunch, dinner, or dessert. Use them as topping for pancakes, bake them in a mouthwatering bread, mix them with cucumbers for a light and flavorful salad, or puree them for strawberry shortcake.",
     photo: "https://i5.walmartimages.com/asr/4e7dab6a-c54b-48f7-9bd2-57f5d211501d_1.3ba50bfdf1c7f082056c0f5022edf182.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF",
     price: 200
-  }
+  },
   {
     name: 'Mission Soft Taco Whole Wheat Tortillas',
     brand: 'Mission',
@@ -195,7 +195,6 @@ ingredient_attributes =[
     name: 'poppy seeds',
     is_allergen: true,
     allergen_family_id: 7,
-    allergen_family_id: 4
   },
   {
     name: 'strawberry',
