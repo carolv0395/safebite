@@ -1,7 +1,6 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!
-
   def home
+    redirect_to new_allergen_path if current_user.allergens.empty?
   end
 
   def test

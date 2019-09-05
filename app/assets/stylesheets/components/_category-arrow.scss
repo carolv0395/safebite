@@ -16,18 +16,12 @@
       color: #302A26;
       font-size: 25px;
       font-weight: 100;
-      font-family: 'Raleway', sans-serif;
     }
   }
 
 a:hover {
       text-decoration: none !important;
     }
-
-.category-text {
-  width: 200px;
-  padding-left: 20px;
-}
 
 .category-arrow:before {
       content: "";
@@ -40,6 +34,12 @@ a:hover {
       border-top: 50px solid transparent;
       border-bottom: 50px solid transparent;
     }
+
+
+.category-text {
+  width: 200px;
+  padding-left: 20px;
+}
 
 #category-image {
   width: 100px;
