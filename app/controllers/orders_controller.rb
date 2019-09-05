@@ -40,23 +40,17 @@ class OrdersController < ApplicationController
     redirect_to product_path(product)
   end
 
-  def remove_product
-    order_pending = current_user.pending_order_in_cart
-    product = Product.find(params[:product_id])
-    order_product = order_pending.orders_products.where(product: product).first
-    order_product.destroy
-  end
+  
+  # def index
+  #  @orders = policy_scope(Order)
+  #  @user = current_user if user_signed_in?
+  #  authorize @orders
+  # end
 
-  def index
-    @orders = policy_scope(Order)
-    @user = current_user if user_signed_in?
-    authorize @orders
-  end
-
-  def show
-    @order = Order.current_user.pending_order_in_cart
-    authorize @order
-  end
+  # def show
+  #  @order = Order.current_user.pending_order_in_cart
+  #  authorize @order
+  # end
 
   # def create
   #   @order = Order.new(order_params)
@@ -69,9 +63,9 @@ class OrdersController < ApplicationController
   # def new
   # end
 
-  private
+  # private
 
-  def order_params
-    params.require(:order).permit(:order_status, :user_id, :payment, :created_at, :updated_at)
-  end
+  # def order_params
+  #  params.require(:order).permit(:order_status, :user_id, :payment, :created_at, :updated_at)
+  # end
 end
