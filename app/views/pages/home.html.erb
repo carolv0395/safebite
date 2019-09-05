@@ -1,13 +1,61 @@
-<h1>Welcome <%= current_user.first_name.nil? ? 'to Safebite' : current_user.first_name %> </h1>
+<div class="container pages-container">
+  <h1>Welcome <%= current_user.first_name.nil? ? 'to Safebite' : current_user.first_name %> </h1>
 
-<div class="separator"></div>
+  <div class="separator"></div>
 
-<div class="product-sugestion">
-  <p>Products you'll love</p>
+  <div class="product-sugestion">
+    <h4>Products you'll love</h4>
+  </div>
+</div>
+
+<div class="product-list mb-4">
+  <% @products.each do |product| %>
+    <div class="card-trip">
+      <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= product.name %></h2>
+        </div>
+        <h2 class="card-trip-pricing">£99.99</h2>
+      </div>
+    </div>
+  <% end %>
 </div>
 
 <div class="product-sugestion">
-  <p>Products without lactose</p>
+  <h4>Products without lactose</h4>
 </div>
 
-<%= link_to "Go shopping", products_path, class: "btn btn-text" %><i class="fas fa-arrow-right"></i>
+<div class="product-list mb-4">
+  <% @products.each do |product| %>
+    <div class="card-trip">
+      <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= product.name %></h2>
+        </div>
+        <h2 class="card-trip-pricing">£99.99</h2>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="product-sugestion">
+  <h4>Products without lactose</h4>
+</div>
+
+<div class="product-list mb-5">
+  <% @products.each do |product| %>
+    <div class="card-trip">
+      <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= product.name %></h2>
+        </div>
+        <h2 class="card-trip-pricing">£99.99</h2>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+  <%= link_to "Go shopping", products_path, class: "btn btn-bottom" %><i class="fas fa-arrow-right"></i>
