@@ -2,11 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-
   get '/404', to: 'errors#not_found'
   get '/422', to: 'errors#not_acceptable'
   get '/500', to: 'errors#internal_error'
-
 
   resources :allergens, only: :index do
     collection do
@@ -26,5 +24,9 @@ Rails.application.routes.draw do
 
   resources :orders, only: [:index, :show, :new, :create] do
     resources :payments, only: [:new, :create]
+    collection do
+      get 'add_product_quantity'
+      get 'remove_product_quantity'
+    end
   end
 end

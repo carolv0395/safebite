@@ -4,6 +4,8 @@
 
     <div class="separator"></div>
 
+    <h4 class="mb-4">Please fill <br/> the form bellow:</h4>
+
     <div class="sign-in-form">
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
@@ -29,7 +31,7 @@
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Sign up", class: "btn btn-text" %><i class="fas fa-arrow-right"></i>
+          <%= f.button :submit, "Sign up", class: "btn btn-text-white" %><i class="fas fa-arrow-right"></i>
         </div>
       <% end %>
       <div class="sign-up-links">

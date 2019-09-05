@@ -1,8 +1,12 @@
-  .separator {
-    margin-top: 30px;
-    margin-bottom: 30px;
-    padding: 1px;
-    background-color: white;
-    width: 30%;
-    opacity: 0.7;
-  }
+.separator {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 1px;
+  background-color: rgba(0,0,0,0.07);
+  width: 30%;
+  opacity: 0.7;
+}
+
+.separator-white {
+  background-color: white;
+}

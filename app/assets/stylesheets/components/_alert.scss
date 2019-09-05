@@ -1,6 +1,26 @@
 .alert {
   position: fixed;
-  bottom: 16px;
-  right: 16px;
+  top: 0px;
+  left: 0px;
   z-index: 1000;
+  width: 100vw;
+}
+
+.alert-warning {
+    color: white;
+    background-color: $orange;
+    border: none;
+    border-radius: 0px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.alert-info {
+    color: white;
+    background-color: $orange;
+    border-radius: 0px;
+    border: none;
+    padding-top: 20px;
+    padding-bottom: 10px;
 }
