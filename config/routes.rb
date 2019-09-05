@@ -1,15 +1,11 @@
 Rails.application.routes.draw do
-  get 'errors/not_found'
-  get 'errors/internal_server_error'
-  get 'ingredients/index'
-  get 'allergens_families/index'
-  get 'allergens_families/show'
-  
   devise_for :users
   root to: 'pages#home'
   
-  match "/404", :to => "errors#not_found", :via => :all
-  match "/500", :to => "errors#internal_server_error", :via => :all
+
+  get '/404', to: 'errors#not_found'
+  get '/422', to: 'errors#not_acceptable'
+  get '/500', to: 'errors#internal_error'
 
   resources :allergens, except: [:show, :edit, :update]
 
@@ -17,6 +13,9 @@ Rails.application.routes.draw do
 
   resources :products, only: [:index, :show] do
     resources :ingredients, only: :index
+      collection do
+        get 'categories/:category', to: 'products#category', as: 'category'
+      end
   end
 
   resources :orders, only: [:index, :show, :new, :create] do

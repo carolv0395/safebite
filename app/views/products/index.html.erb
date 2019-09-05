@@ -1,2 +1,14 @@
-<h1>Products#index</h1>
-<p>Find me in app/views/products/index.html.erb</p>
+<div class="container py-4 category-message">
+  <h3>We know you want to avoid lactose!</h3>
+</div>
+
+  <% @categories.each do |category| %>
+    <%= link_to category_products_path(category) do %>
+      <div class="category-arrow">
+        <div id="category-image"></div>
+        <div class="category-text">
+          <h3> <%= category.gsub(/_/, ' ').gsub(/and/, '&') %> </h3>
+        </div>
+        </div>
+    <% end %>
+  <% end %>

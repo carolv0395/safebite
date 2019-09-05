@@ -39,6 +39,17 @@ product_attributes = [
     price: 5
   },
   {
+    name: 'Amazing Bolachas Belgas',
+    brand: 'Belgaz',
+    category: :cookies_and_snacks,
+    volume: '19 oz',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description:"Make snack time more fun with Cheez-It Original Baked Snack Crackers, bite-size cheese crackers that are baked to crispy perfection. Cheez-It Baked Snack Crackers are the real deal—made with 100% real cheese that's been carefully aged for a yummy, irresistible taste that’s bursting with real cheese goodness in every crunchy bite. Each perfect square crisp is loaded with bold cheesy flavor that hits your taste buds with every delicious mouthful.",
+    photo: "https://images-na.ssl-images-amazon.com/images/I/81oh50vv%2B6L._SL1500_.jpg",
+    price: 5
+  },
+  {
     name: 'Great Value Large White Eggs',
     brand: 'Great Value',
     category: :dairy_eggs_and_cheese,
