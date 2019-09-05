@@ -40,4 +40,7 @@
 </div>
 
 <%= link_to "Back to search page", root_path, class: "btn-text" %>
+<%= link_to "Add?", add_product_quantity_orders_path(product_id: @product.id), class: "btn-text" %>
+<%= link_to "Remove?", remove_product_quantity_orders_path(product_id: @product.id), class: "btn-text" %>
 
+<p>Qty in cart: <%= @quantity_in_pending_order %></p>
