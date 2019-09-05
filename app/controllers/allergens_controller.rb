@@ -31,7 +31,4 @@ class AllergensController < ApplicationController
     @allergen = Allergen.find(params[:id])
     authorize @allergen
   end
-
-  def
-  end
 end
