@@ -18,5 +18,11 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     authorize @product
+    @quantity_in_pending_order = OrdersProduct.where(product: @product, order: current_user.pending_order_in_cart).first
+      if @quantity_in_pending_order
+        @quantity_in_pending_order = @quantity_in_pending_order.quantity
+      else
+        @quantity_in_pending_order = 0
+      end
   end
 end
