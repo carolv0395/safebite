@@ -31,15 +31,26 @@ class AllergensController < ApplicationController
 
   def edit_families
     # define the data to check the right allergens in the view
-    # build the links to this page to send the params allergen_family
-      # that populates the value of the hidden field allergen_family
     @allergens = current_user.allergens_families
-
   end
 
   def update_families
     # destroy the allergens
     current_user.allergens_families.destroy_all
+    ids = params[:allergen][:allergen_families_ids]
+    if ids && ids.any?
+      ids.each do |id|
+        @allergen = Allergen.new(user: current_user,
+                                 allergen_family_id: id)
+        authorize @allergen
+        @allergen.save
+      end
+      redirect_to root_path
+    else
+      @allergen = Allergen.new
+      authorize @allergen
+      render :new
+    end
     # same code as in what you alreay have in create
     # ....
   end
