@@ -8,4 +8,8 @@ class ProductPolicy < ApplicationPolicy
   def show?
     true
   end
+
+  def category?
+    true
+  end
 end
