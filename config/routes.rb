@@ -27,7 +27,6 @@ Rails.application.routes.draw do
     collection do
       get 'add_product_quantity'
       get 'remove_product_quantity'
-      get 'remove_product'
     end
   end
 end
