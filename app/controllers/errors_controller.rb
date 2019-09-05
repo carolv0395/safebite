@@ -1,6 +1,6 @@
 class ErrorsController < ApplicationController
-  skip_before_action :authenticate_user!
-  skip_after_action :verify_authorized
+ skip_before_action :authenticate_user!, only: [:not_found,:internal_server_error]
+ skip_after_action :verify_authorized, only: [:not_found,:internal_server_error]
   def not_found
     respond_to do |format|
       format.html { render status: 404 }
