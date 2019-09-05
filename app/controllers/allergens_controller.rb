@@ -70,4 +70,5 @@ class AllergensController < ApplicationController
   def allergen_params
     params.require(:allergen).permit(:allergen_type, allergen_families_ids: [])
   end
+
 end

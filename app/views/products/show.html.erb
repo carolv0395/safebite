@@ -14,12 +14,15 @@
     </div>
 
     <div class="row mt-3">
-      <div class="col-lg-6">
+      <div class="col-sm-12">
         <h2><%= @product.brand.capitalize %></h2>
         <h3><%= @product.category %></h3>
         <p><%= @product.volume %></p>
       </div>
-      <div class="col-lg-6">
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
         <p><strong><%= humanized_money_with_symbol(@product.price) %></strong></p>
         <% unless @product.discount == 0 || @product.discount.nil? || @product.discount.empty? %>
           <p>Discount: <%= @product.discount %></p>
@@ -35,7 +38,6 @@
 
   </div>
 </div>
-
 
 <%= link_to "Back to search page", root_path, class: "btn-text" %>
 
