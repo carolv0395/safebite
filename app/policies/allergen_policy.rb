@@ -9,15 +9,11 @@ class AllergenPolicy < ApplicationPolicy
     true
   end
 
-  def update?
-    record.user == user
+  def edit_families?
+    true
   end
 
-  def destroy?
-    record.user == user
-  end
-
-  def list_own?
+  def update_families?
     true
   end
 end

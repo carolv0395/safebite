@@ -8,7 +8,12 @@ Rails.application.routes.draw do
   get '/500', to: 'errors#internal_error'
 
 
-  resources :allergens, except: [:show, :edit, :update]
+  resources :allergens, only: :index do
+    collection do
+      get 'edit-families'
+      post 'update-families'
+    end
+  end
 
   resources :allergen_families, only: [:index, :show]
 
