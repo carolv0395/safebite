@@ -1,0 +1,59 @@
+.fa-shopping-cart {
+  font-size: 30px;
+}
+
+.cart {
+  width: 200px;
+}
+
+a.btn-add {
+  text-decoration: none;
+  color: white;
+}
+
+a.btn-remove {
+  text-decoration: none;
+  color: white;
+}
+
+.btn-add {
+  color: white;
+  background-color: green;
+  border-radius: 5px;
+  font-size: 20px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+
+  &:hover {
+  opacity: 0.8;
+  }
+
+}
+
+.btn-remove {
+  color: white;
+  background-color: orange;
+  border-radius: 5px;
+  font-size: 20px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+
+  &:hover {
+  opacity: 0.8;
+  }
+
+}

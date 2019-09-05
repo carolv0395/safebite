@@ -1,2 +1,17 @@
-<h1>Orders#show,</h1>
-<p>Find me in app/views/orders/show,.html.erb</p>
+<h1>Orders#show</h1>
+<p>Find me in app/views/orders/show.html.erb</p>
+
+<h1>Shopping Basket</h1>
+
+<div class="card-shopping">
+  <div class="card-shopping-info">
+    <p><strong><%= @product.name.capitalize %></strong></p>
+    <p><%= @product.brand.capitalize %></p>
+  </div>
+  <div class="card-shopping-action">
+    <%= link_to "Add?", add_product_quantity_orders_path(product_id: @product.id), class: "btn-add" %><p>
+    <%= link_to "Remove?", remove_product_quantity_orders_path(product_id: @product.id), class: "btn-remove" %>
+    <p><strong><%= @quantity_in_pending_order %></strong></p>
+    <%= link_to "Delete?", remove_product_orders_path, class: "btn-delete" %>
+  </div>
+</div>

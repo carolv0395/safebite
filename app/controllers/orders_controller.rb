@@ -40,31 +40,32 @@ class OrdersController < ApplicationController
     redirect_to product_path(product)
   end
 
-  def index
-    @orders = policy_scope(Order)
-    @user = current_user if user_signed_in?
-    authorize @orders
-  end
+  
+  # def index
+  #  @orders = policy_scope(Order)
+  #  @user = current_user if user_signed_in?
+  #  authorize @orders
+  # end
 
-  def show
-    @order = Order.current_order
-    authorize @order
-  end
+  # def show
+  #  @order = Order.current_user.pending_order_in_cart
+  #  authorize @order
+  # end
 
-  def create
-    @order = Order.new(order_params)
-    authorize @order
-    @product = Product.find(params[:product_id])
-    @order.user_id = current_user
-    @reser
-  end
+  # def create
+  #   @order = Order.new(order_params)
+  #   authorize @order
+  #   @product = Product.find(params[:product_id])
+  #   @order.user_id = current_user
+  #   @reser
+  # end
 
-  def new
-  end
+  # def new
+  # end
 
-  private
+  # private
 
-  def order_params
-    params.require(:order).permit(:order_status, :user_id, :payment, :created_at, :updated_at)
-  end
+  # def order_params
+  #  params.require(:order).permit(:order_status, :user_id, :payment, :created_at, :updated_at)
+  # end
 end
