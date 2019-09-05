@@ -8,8 +8,8 @@ Rails.application.routes.draw do
 
   resources :allergens, only: [:new, :create] do
     collection do
-      get 'edit-all'
-      post 'update-all'
+      get 'edit-families'
+      post 'update-families'
     end
   end
 

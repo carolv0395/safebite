@@ -11,7 +11,7 @@ class User < ApplicationRecord
   def allergens_ingredients
     allergens.where.not(ingredient_id: nil)
   end
-  ​
+
   def allergens_families
     allergens.where.not(allergen_family_id: nil)
   end

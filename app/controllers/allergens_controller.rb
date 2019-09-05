@@ -14,40 +14,33 @@ class AllergensController < ApplicationController
   def create
     # create several allergens according to the array of user choices
     ids = params[:allergen][:allergen_families_ids]
-    id_type = params[:allergen][:allergen_type]
-    if ids.any?
+    if ids && ids.any?
       ids.each do |id|
         @allergen = Allergen.new(user: current_user,
-                                 allergen_family_id: id_type == 'family' ? id : nil,
-                                 ingredient_id: id_type == 'ingredient' ? id : nil)
+                                 allergen_family_id: id)
         authorize @allergen
         @allergen.save
       end
       redirect_to root_path
     else
+      @allergen = Allergen.new
+      authorize @allergen
       render :new
     end
   end
 
-  def edit_all
+  def edit_families
     # define the data to check the right allergens in the view
     # build the links to this page to send the params allergen_family
       # that populates the value of the hidden field allergen_family
-    if params[:allergen_family] == 'family'
-      @allergens = current_user.allergens_families
-    else
-      @allergens = current_user.allergens_ingredients
-    end
+    @allergens = current_user.allergens_families
+
   end
 
-  def update_all
+  def update_families
     # destroy the allergens
-    if params[:allergen_family] == 'family'
-      current_user.allergens_families.destroy_all
-    else
-      current_user.allergens_ingredients.destroy_all
-    end
-     # same code as in what you alreay have in create
+    current_user.allergens_families.destroy_all
+    # same code as in what you alreay have in create
     # ....
   end
 

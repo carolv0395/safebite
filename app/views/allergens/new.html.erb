@@ -4,7 +4,6 @@
 <div class="form-group">
   <label class="control-label check_boxes optional">Select your food restriction: </label>
   <div class="container-families">
-      <input type="hidden" name="allergen[allergen_type]" value="family">
       <% AllergenFamily.all.each do |af| %>
       <div class="family">
         <input type="checkbox" class="hidden" value="<%= af.id %>" name="allergen[allergen_families_ids][]" id="allergen_families_ids_<%= af.id %>">
