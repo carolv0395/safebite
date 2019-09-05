@@ -1,6 +1,6 @@
 <h1>Your allergens</h1>
 
-<%= simple_form_for(@allergens) do |f| %>
+<%= simple_form_for(Allergen.new, url: update_families_allergens_path) do |f| %>
 <div class="form-group">
   <label class="control-label check_boxes optional">Select your food restriction: </label>
   <div class="container-families">
@@ -8,7 +8,7 @@
       <% AllergenFamily.all.each do |af| %>
       <div class="family">
 
-        <%  @checked = af.allergens.include?(@allergen) ? "checked" : "" %>
+        <%  @checked = @allergens.pluck(:allergen_family_id).include?(af.id) ? "checked" : "" %>
 
         <input type="checkbox" class="hidden" value="<%= af.id %>" name="allergen[allergen_families_ids][]" id="allergen_families_ids_<%= af.id %>" <%= @checked %>>
         <label for="allergen_families_ids_<%= af.id %>">
