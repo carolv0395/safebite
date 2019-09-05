@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   match "/500", :to => "errors#internal_server_error", :via => :all
 
 
+  get '/404', to: 'errors#not_found'
+  get '/422', to: 'errors#not_acceptable'
+  get '/500', to: 'errors#internal_erro'
+
+
   resources :allergens, except: [:show, :edit, :update]
 
   resources :allergen_families, only: [:index, :show]
