@@ -28,11 +28,12 @@ class OrdersController < ApplicationController
     order_product = order_pending.orders_products.where(product: product).first
     # if exists, decrease qty by 1
     if order_product
-      order_product.quantity -= 1
-      order_product.save
-    # if not, remove product to the cart w/ qty = 1
-    else
-      OrdersProduct.destroy(quantity: 1, product: product, order: order_pending)
+      if order_product.quantity == 0
+        order_product.destroy
+      else
+        order_product.quantity -= 1
+        order_product.save
+      end
     end
     authorize order_pending
     # redirect to product show
