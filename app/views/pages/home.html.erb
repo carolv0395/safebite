@@ -3,58 +3,58 @@
 
   <div class="separator"></div>
 
-  <div class="product-sugestion">
     <h4>Products you'll love</h4>
-  </div>
-
-
-<div class="product-list mb-4">
-  <% @products.each do |product| %>
-    <div class="card-trip">
-      <img src=<%= product.photo %> />
-      <div class="card-trip-infos">
-        <div>
-          <h2><%= product.name %></h2>
-        </div>
-        <h2 class="card-trip-pricing">£99.99</h2>
-      </div>
-    </div>
-  <% end %>
-</div>
-
-<div class="product-sugestion">
-  <h4>Products without <%= current_user.allergens_families[0].allergen_family.name %></h4>
 </div>
 
 <div class="product-list mb-4">
   <% @products.each do |product| %>
-    <div class="card-trip">
-      <img src=<%= product.photo %> />
-      <div class="card-trip-infos">
-        <div>
-          <h2><%= product.name %></h2>
+    <%= link_to product_path(product) do %>
+      <div class="card-trip">
+        <img src=<%= product.photo %> />
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= product.name %></h2>
+          </div>
+          <h2 class="card-trip-pricing">£99.99</h2>
         </div>
-        <h2 class="card-trip-pricing">£99.99</h2>
       </div>
-    </div>
+    <% end %>
   <% end %>
 </div>
 
-<div class="product-sugestion">
-  <h4>Products without <%= current_user.allergens_families[0].allergen_family.name %></h4>
+<h4>Products without <%= current_user.allergens_families[0].allergen_family.name %></h4>
+
+<div class="product-list mb-4">
+  <% @products.each do |product| %>
+    <%= link_to product_path(product) do %>
+      <div class="card-trip">
+        <img src=<%= product.photo %> />
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= product.name %></h2>
+          </div>
+          <h2 class="card-trip-pricing">£99.99</h2>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
 </div>
+
+<h4>Products without <%= current_user.allergens_families[0].allergen_family.name %></h4>
 
 <div class="product-list mb-5">
   <% @products.each do |product| %>
-    <div class="card-trip">
-      <img src=<%= product.photo %> />
-      <div class="card-trip-infos">
-        <div>
-          <h2><%= product.name %></h2>
+    <%= link_to product_path(product) do %>
+      <div class="card-trip">
+        <img src=<%= product.photo %> />
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= product.name %></h2>
+          </div>
+          <h2 class="card-trip-pricing">£99.99</h2>
         </div>
-        <h2 class="card-trip-pricing">£99.99</h2>
       </div>
-    </div>
+    <% end %>
   <% end %>
 </div>
 
