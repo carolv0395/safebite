@@ -1,5 +1,5 @@
 class AllergensController < ApplicationController
-  before_action :fetch_allergen, only: :destroy
+  before_action :fetch_allergen, only: [:destroy]
 
   def index
     @allergens = policy_scope(Allergen)
@@ -29,6 +29,16 @@ class AllergensController < ApplicationController
     end
   end
 
+  def edit
+    @allergens = policy_scope(Allergen)
+  end
+
+  def update
+    ids = params[:allergen][:allergen_families_ids]
+    id_type = params[:allergen][:allergen_type]
+
+  end
+
   def destroy
     @allergen.destroy
     # redirect_to root_path
@@ -36,8 +46,8 @@ class AllergensController < ApplicationController
 
   private
 
-  def fetch_allergen
-    @allergen = Allergen.find(params[:id])
+  def fetch_allergens
+    @allergens = policy_scope(Allergen)
     authorize @allergen
   end
 

@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
   resources :allergens, except: [:show, :edit, :update]
 
+  get 'allergens/edit', to: 'allergens#edit'
+  patch 'allergens', to: 'allergens#update'
+
   resources :allergen_families, only: [:index, :show]
 
   resources :products, only: [:index, :show] do
