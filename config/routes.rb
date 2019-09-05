@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get '/404', to: 'errors#not_found'
   get '/422', to: 'errors#not_acceptable'
-  get '/500', to: 'errors#internal_erro'
+  get '/500', to: 'errors#internal_error'
 
 
   resources :allergens, except: [:show, :edit, :update]
