@@ -4,7 +4,13 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   min-width: 300px;
   margin-left: 20px;
+  min-height: 220px;
+}
 
+.product-list {
+  a {
+    color: black;
+  }
 }
 
 .card-trip > img {
