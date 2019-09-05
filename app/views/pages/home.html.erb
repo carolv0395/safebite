@@ -6,12 +6,12 @@
   <div class="product-sugestion">
     <h4>Products you'll love</h4>
   </div>
-</div>
+
 
 <div class="product-list mb-4">
   <% @products.each do |product| %>
     <div class="card-trip">
-      <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+      <img src=<%= product.photo %> />
       <div class="card-trip-infos">
         <div>
           <h2><%= product.name %></h2>
@@ -23,13 +23,13 @@
 </div>
 
 <div class="product-sugestion">
-  <h4>Products without lactose</h4>
+  <h4>Products without <%= current_user.allergens_families[0].allergen_family.name %></h4>
 </div>
 
 <div class="product-list mb-4">
   <% @products.each do |product| %>
     <div class="card-trip">
-      <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+      <img src=<%= product.photo %> />
       <div class="card-trip-infos">
         <div>
           <h2><%= product.name %></h2>
@@ -41,13 +41,13 @@
 </div>
 
 <div class="product-sugestion">
-  <h4>Products without lactose</h4>
+  <h4>Products without <%= current_user.allergens_families[0].allergen_family.name %></h4>
 </div>
 
 <div class="product-list mb-5">
   <% @products.each do |product| %>
     <div class="card-trip">
-      <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+      <img src=<%= product.photo %> />
       <div class="card-trip-infos">
         <div>
           <h2><%= product.name %></h2>
@@ -59,3 +59,4 @@
 </div>
 
   <%= link_to "Go shopping", products_path, class: "btn btn-bottom" %><i class="fas fa-arrow-right"></i>
+</div>

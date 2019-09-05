@@ -1,5 +1,5 @@
 <div class="container py-4 category-message">
-  <h3>We know you want to avoid lactose!</h3>
+  <h3>We know you want <br/>to avoid <%= current_user.allergens_families[0].allergen_family.name %>!  </h3>
 </div>
 
   <% @categories.each do |category| %>
