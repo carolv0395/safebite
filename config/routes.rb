@@ -1,19 +1,25 @@
 Rails.application.routes.draw do
-  get 'ingredients/index'
-  get 'allergens_families/index'
-  get 'allergens_families/show'
   devise_for :users
-  root to: 'products#index'
+  root to: 'pages#home'
 
-  resources :allergens, except: [:show, :edit, :update]
+  match "/404", :to => "errors#not_found", :via => :all
+  match "/500", :to => "errors#internal_server_error", :via => :all
 
-  get 'allergens/edit', to: 'allergens#edit'
-  patch 'allergens', to: 'allergens#update'
+
+  resources :allergens, only: [:new, :create] do
+    collection do
+      get 'edit-all'
+      post 'update-all'
+    end
+  end
 
   resources :allergen_families, only: [:index, :show]
 
   resources :products, only: [:index, :show] do
     resources :ingredients, only: :index
+      collection do
+        get 'categories/:category', to: 'products#category', as: 'category'
+      end
   end
 
   resources :orders, only: [:index, :show, :new, :create] do

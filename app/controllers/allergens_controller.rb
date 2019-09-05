@@ -29,14 +29,26 @@ class AllergensController < ApplicationController
     end
   end
 
-  def edit
-    @allergens = policy_scope(Allergen)
+  def edit_all
+    # define the data to check the right allergens in the view
+    # build the links to this page to send the params allergen_family
+      # that populates the value of the hidden field allergen_family
+    if params[:allergen_family] == 'family'
+      @allergens = current_user.allergens_families
+    else
+      @allergens = current_user.allergens_ingredients
+    end
   end
 
-  def update
-    ids = params[:allergen][:allergen_families_ids]
-    id_type = params[:allergen][:allergen_type]
-
+  def update_all
+    # destroy the allergens
+    if params[:allergen_family] == 'family'
+      current_user.allergens_families.destroy_all
+    else
+      current_user.allergens_ingredients.destroy_all
+    end
+     # same code as in what you alreay have in create
+    # ....
   end
 
   def destroy
