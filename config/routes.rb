@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'products#index'
+  root to: 'pages#home'
 
   get '/404', to: 'errors#not_found'
   get '/422', to: 'errors#not_acceptable'
