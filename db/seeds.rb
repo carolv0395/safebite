@@ -39,6 +39,72 @@ product_attributes = [
     price: 5
   },
   {
+    name: 'Nature Valley Granola Bars Variety Pack',
+    brand: 'Nature-Valley',
+    category: :breakfast_and_cereal,
+    volume: '22 oz',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description:"Nature Valley Sweet & Salty Nut Granola Bars Variety Pack contains six Peanut, six Almond and six Dark Chocolate, Peanut & Almond bars. Each bar is packed with delicious crunchy nuts and dipped in a creamy nut butter or chocolate coating. It's a nut-filled snacking sensation you're sure to enjoy!",
+    photo: "https://i5.walmartimages.com/asr/1dd023ce-666a-42b3-9d5e-3c34dd285214_1.737bfefd986f38c0124fc6d564d2c41d.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF",
+    price: 6
+  },
+  {
+    name: "Ben & Jerry's Ice Cream Half Bake",
+    brand: "Ben & Jerry's",
+    category: :frozen_foods,
+    volume: '16 oz',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description:"A delectable dance of Chocolate Chip Cookie Dough and Chocolate Fudge Brownie. Vanilla ice cream and chocolate ice cream with chunks of cookie dough and fudge brownies—it’s hard to imagine a better combination.Ben & Jerry’s Half Baked—which got its name because the cookie dough isn’t baked, but the brownies are—has been a bestselling flavor since we first decided to combine our classic ice cream creations back in 2000.Chocolate Chip Cookie Dough, with big chunks of chocolate chip cookie dough surrounded by vanilla ice cream, was created back in 1984 at our very first Scoop Shop after we received an anonymous fan’s flavor suggestion. It continues as a flavor phenomenon to this very day. Chocolate Fudge Brownie is a fan-favorite chocolate extravaganza, mixing chocolate ice cream with ridiculously delicious Greyston Bakery brownies. It’s been satisfying chocolate lovers since 1991. We know it can be hard to choose between those two legendary flavors. With Half Baked, you don’t have to!We work with Fairtrade certified producers for all the cocoa, sugar, and vanilla in our recipes. Our Caring Dairy farmers produce all the certified kosher milk and cream in a sustainable way. Greyston Bakery, one of the largest social enterprises in the US, provides the scrumptiuous brownies for this and all of our frozen dessert flavors. All our ice cream is made with non-GMO sourced ingredients and cage-free eggs. This ice cream pint, like every pint we make, features responsibly sourced packaging.",
+    photo: "https://i5.walmartimages.com/asr/e8f2a039-5588-417d-9acd-a12222cd37c6_1.fb4b255b3cd34249221c785f1cec0caa.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF",
+    price: 6
+  },
+  {
+    name: "Minute Maid 100'%' Orange Juice",
+    brand: "Minute Maid",
+    category: :beverages,
+    volume: '10 Fl Oz',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description:"About This Item We aim to show you accurate product information. Manufacturers, suppliers and others provide what you see here, and we have not verified it. See our disclaimer.",
+    photo: "https://i5.walmartimages.com/asr/deb5fb3a-15ee-4401-b5d2-bb801d2849a2_1.aff556b955ab998824720f239a882ff0.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF",
+    price: 5
+  },
+  {
+    name: "Apothic Red Wine",
+    brand: "Apothic",
+    category: :beer_wine_and_spirits,
+    volume: '750 ml',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description:"Apothic Red features notes of black cherry and dark fruit. Hints of vanilla and mocha layer together and support the elegant structure of this delicious blend. Apothic Red Wine, 750mL.",
+    photo: "https://i5.walmartimages.com/asr/d6b1863d-d799-4bfe-89e6-50b5f73a38cb_1.dd974b02ed28d67379becac4558707dc.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF",
+    price: 8
+  },
+  {
+    name: "Smithfield Fresh Pork Center Cut Loin, Boneless",
+    brand: "Smithfield",
+    category: :meat_and_seafood,
+    volume: '4 lb',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description:"Smithfield Fresh Pork is made with no added preservatives, hormones or steroids for a clean flavor that you can feel good about serving. Just add your own spin with seasonings, rub or marinade, and you've got a tasty meal that everyone is sure to love.",
+    photo: "https://i5.walmartimages.com/asr/424ca152-bfc3-4c19-acd2-811e95a21f6f_1.6bc8194e2f6615f6cb94c9b4b5c2b22c.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF",
+    price: 9
+  },
+  {
+    name: 'Del Monte Fresh Cut Blue Lake Cut Green Beans',
+    brand: 'Del Monte',
+    category: :canned_goods_and_soups,
+    volume: '14 oz',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description:"Del Monte Fresh Cut Blue Lake Cut Green Beans are picked at the peak of ripeness then packed within hours to lock in the nutrition and the crisp, fresh taste. Our green beans contain just three simple ingredients: green beans, water and sea salt. Serve warmed and dusted with fresh ground pepper as a side, or use in a savory casserole. Del Monte works hard to cultivate the freshest, most nutritious fruits and vegetable to use in every one of our products. When you trust Del Monte, you can be sure what you're buying is the peak of quality and nutrition!",
+    photo: "https://i5.walmartimages.com/asr/9d72a626-5ced-4b37-af75-7d8cc941e4e0_1.44b4d02b0dac28b4d4a4982a30fc7795.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF",
+    price: 5
+  },
+  {
     name: 'Amazing Bolachas Belgas',
     brand: 'Belgaz',
     category: :cookies_and_snacks,
