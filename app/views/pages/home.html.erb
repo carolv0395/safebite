@@ -1,4 +1,4 @@
-<h1>Welcome <%= current_user ? current_user.first_name : 'to Safebite!' %> </h1>
+<h1>Welcome <%= current_user.first_name %> </h1>
 
 <div class="separator"></div>
 
@@ -10,4 +10,4 @@
   <p>Products without lactose</p>
 </div>
 
-  <%= link_to "Go shopping", products_path, class: "btn btn-text" %><i class="fas fa-arrow-right"></i>
+<%= link_to "Go shopping", products_path, class: "btn btn-text" %><i class="fas fa-arrow-right"></i>
