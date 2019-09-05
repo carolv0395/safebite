@@ -4,13 +4,17 @@
   margin: 20px 0;
 }
 
+.family-box {
+  flex: 0 0 50%;
+}
+
 .family-choice {
   width: 50%;
   background: white;
   padding: 20px;
   border-radius: 50px 50px 50px 50px;
   opacity: .4;
-  flex: 0 0 30%;
+  height: 77px;
   text-align: center;
   &:hover {
     opacity: 1;
@@ -25,6 +29,10 @@
 // .hidden {
 //   display: none;
 // }
+
+.family-choice img {
+  width: 30px;
+}
 
 .container-families {
   display: grid;

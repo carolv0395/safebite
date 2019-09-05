@@ -6,12 +6,14 @@
   <input type="hidden" name="post[category_ids][]" value="">
   <div class="family-choices">
       <% AllergenFamily.all.each do |af| %>
-
-        <%  @checked = @allergens.pluck(:allergen_family_id).include?(af.id) ? "checked" : "" %>
-        <input type="checkbox" class="hidden" value="<%= af.id %>" name="allergen[allergen_families_ids][]" id="allergen_families_ids_<%= af.id %>" <%= @checked %>>
-        <label class="family-choice" for="allergen_families_ids_<%= af.id %>">
-          <%= af.name %>
-        </label>
+        <div class="family-box">
+          <%= image_tag image_path('checked_icon.png') %>
+          <%  @checked = @allergens.pluck(:allergen_family_id).include?(af.id) ? "checked" : "" %>
+          <input type="checkbox" class="hidden" value="<%= af.id %>" name="allergen[allergen_families_ids][]" id="allergen_families_ids_<%= af.id %>" <%= @checked %>>
+          <label class="family-choice" for="allergen_families_ids_<%= af.id %>">
+            <%= af.name %>
+          </label>
+        </div>
     <% end %>
   </div>
 </div>
