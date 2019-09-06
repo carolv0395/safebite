@@ -41,4 +41,15 @@
   text-align: center;
   background-color: $orange;
   color: rgba(255,255,255,0.7);
+  &:active {
+    background-color: $orange;
+  }
+  &:focus {
+   background-color: $orange;
+   color: white;
+  }
+  &:hover {
+   background-color: $orange;
+   color: white;
+  }
 }
