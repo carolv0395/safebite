@@ -57,7 +57,7 @@ product_attributes = [
     discount: 0,
     stock: Faker::Number.between(from: 0, to: 200),
     description:"A delectable dance of Chocolate Chip Cookie Dough and Chocolate Fudge Brownie. Vanilla ice cream and chocolate ice cream with chunks of cookie dough and fudge brownies—it’s hard to imagine a better combination.Ben & Jerry’s Half Baked—which got its name because the cookie dough isn’t baked, but the brownies are—has been a bestselling flavor since we first decided to combine our classic ice cream creations back in 2000.Chocolate Chip Cookie Dough, with big chunks of chocolate chip cookie dough surrounded by vanilla ice cream, was created back in 1984 at our very first Scoop Shop after we received an anonymous fan’s flavor suggestion. It continues as a flavor phenomenon to this very day. Chocolate Fudge Brownie is a fan-favorite chocolate extravaganza, mixing chocolate ice cream with ridiculously delicious Greyston Bakery brownies. It’s been satisfying chocolate lovers since 1991. We know it can be hard to choose between those two legendary flavors. With Half Baked, you don’t have to!We work with Fairtrade certified producers for all the cocoa, sugar, and vanilla in our recipes. Our Caring Dairy farmers produce all the certified kosher milk and cream in a sustainable way. Greyston Bakery, one of the largest social enterprises in the US, provides the scrumptiuous brownies for this and all of our frozen dessert flavors. All our ice cream is made with non-GMO sourced ingredients and cage-free eggs. This ice cream pint, like every pint we make, features responsibly sourced packaging.",
-    photo: "https://i5.walmartimages.com/asr/e8f2a039-5588-417d-9acd-a12222cd37c6_1.fb4b255b3cd34249221c785f1cec0caa.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF",
+    photo: "https://images.pexels.com/photos/749102/pexels-photo-749102.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     price: 6
   },
   {
@@ -112,7 +112,7 @@ product_attributes = [
     discount: 0,
     stock: Faker::Number.between(from: 0, to: 200),
     description:"We aim to show you accurate product information. Manufacturers, suppliers and others provide what you see here, and we have not verified it. See our disclaimer Experience a delicious snack with Royal Dansk Cookies. They are the ideal complement to a cup of coffee or a glass of milk. The cookies come in assorted shapes with a delicate texture that is satisfying. ",
-    photo: "https://images-na.ssl-images-amazon.com/images/I/81oh50vv%2B6L._SL1500_.jpg",
+    photo: "https://images.pexels.com/photos/1775283/pexels-photo-1775283.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     price: 4
   },
   {
@@ -159,17 +159,17 @@ ingredient_attributes =[
   {
     name: 'soybean',
     is_allergen: true,
-    allergen_family_id: soy
+    allergen_family_id: soy.id
   },
   {
     name: 'wheat',
     is_allergen: true,
-    allergen_family_id: gluten
+    allergen_family_id: gluten.id
   },
   {
     name: 'flour',
     is_allergen: true,
-    allergen_family_id: gluten
+    allergen_family_id: gluten.id
   },
   {
     name: 'egg',
@@ -178,7 +178,7 @@ ingredient_attributes =[
   {
     name: 'cheese',
     is_allergen: true,
-    allergen_family_id: lactose
+    allergen_family_id: lactose.id
   },
   {
     name: 'orange',
@@ -191,7 +191,7 @@ ingredient_attributes =[
   {
     name: 'tuna',
     is_allergen: true,
-    allergen_family_id: fish_and_meat
+    allergen_family_id: fish_and_meat.id
   },
   {
     name: 'sugar',
@@ -204,22 +204,22 @@ ingredient_attributes =[
   {
     name: 'peanuts',
     is_allergen: true,
-    allergen_family_id: nuts
+    allergen_family_id: nuts.id
   },
   {
     name: 'pork',
     is_allergen: true,
-    allergen_family_id: fish_and_meat
+    allergen_family_id: fish_and_meat.id
   },
   {
     name: 'cashew',
     is_allergen: true,
-    allergen_family_id: nuts
+    allergen_family_id: nuts.id
   },
   {
     name: 'walnuts',
     is_allergen: true,
-    allergen_family_id: nuts
+    allergen_family_id: nuts.id
   },
   {
     name: 'coconut milk',
@@ -228,22 +228,22 @@ ingredient_attributes =[
   {
     name: 'clams',
     is_allergen: true,
-    allergen_family_id: shellfish
+    allergen_family_id: shellfish.id
   },
   {
     name: 'mussels',
     is_allergen: true,
-    allergen_family_id: shellfish
+    allergen_family_id: shellfish.id
   },
   {
     name: 'chicken broth',
     is_allergen: true,
-    allergen_family_id: fish_and_meat
+    allergen_family_id: fish_and_meat.id
   },
   {
     name: 'pumpkin seeds',
     is_allergen: true,
-    allergen_family_id: seeds
+    allergen_family_id: seeds.id
   },
   {
     name: 'margarine',
@@ -252,12 +252,12 @@ ingredient_attributes =[
   {
     name: 'barley',
     is_allergen: true,
-    allergen_family_id: gluten
+    allergen_family_id: gluten.id
   },
   {
     name: 'rye',
     is_allergen: true,
-    allergen_family_id: gluten
+    allergen_family_id: gluten.id
   },
   {
     name: 'apple',
@@ -266,12 +266,12 @@ ingredient_attributes =[
   {
     name: 'cream',
     is_allergen: true,
-    allergen_family_id: lactose
+    allergen_family_id: lactose.id
   },
   {
     name: 'poppy seeds',
     is_allergen: true,
-    allergen_family_id: seeds
+    allergen_family_id: seeds.id
   },
   {
     name: 'strawberry',
@@ -280,7 +280,7 @@ ingredient_attributes =[
   {
     name: 'whole wheat flour',
     is_allergen: true,
-    allergen_family_id: gluten
+    allergen_family_id: gluten.id
   },
 ]
 

@@ -3,6 +3,22 @@
 
   <div class="separator"></div>
 
+ <% allergen_family = AllergenFamily.find_by(name: "shellfish") %>
+ <% unwanted_ingredients = Ingredient.where(allergen_family_id: allergen_family) %>
+ <% product_array = [] %>
+ <% unwanted_products = [] %>
+
+
+<% unwanted_ingredients.each do |ingredient| %>
+  <% unwanted_products << IngredientsProduct.where(ingredient_id: ingredient.id) %>
+    <% unwanted_products.flatten! %>
+    <% unwanted_products.each do |product| %>
+      <% product_array << Product.where.not(id: product.product_id) %>
+      <% product_array.flatten! %>
+    <% end %>
+  <% end %>
+  <% product_array.uniq! %>
+
     <h4>Products you'll love</h4>
 </div>
 
@@ -28,7 +44,7 @@
 <h4>Products without <%= @allergen_family %></h4>
 
 <div class="product-list mb-4">
-  <% @products.each do |product| %>
+  <% product_array.each do |product| %>
     <%= link_to product_path(product) do %>
       <div class="card-trip">
         <img src=<%= product.photo %> />
