@@ -13,7 +13,7 @@ class OrdersController < ApplicationController
       order_product.save
     # if not, add product to the cart w/ qty = 1
     else
-      OrdersProduct.create(quantity: 1, product: product, order: order_pending)
+      OrdersProduct.create(quantity: 1, product: product, order: order_pending, price_cents: product.price_cents)
     end
     flash[:notice] = "You added one item to your shopping basket."
     # redirect to procreated_at).reverse.each do |orderduct show
@@ -30,10 +30,10 @@ class OrdersController < ApplicationController
     order_product = order_pending.orders_products.where(product: product).first
     # if exists, decrease qty by 1
     if order_product
+      order_product.quantity -= 1
       if order_product.quantity == 0
         order_product.destroy
       else
-        order_product.quantity -= 1
         order_product.save
         flash[:notice] = "You removed one item from your shopping basket."
       end
@@ -57,9 +57,8 @@ class OrdersController < ApplicationController
       order_product.save
     # if not, add product to the cart w/ qty = 1
     else
-      OrdersProduct.create(quantity: 1, product: product, order: order_pending)
+      OrdersProduct.create(quantity: 1, product: product, order: order_pending, price_cents: product.price_cents)
     end
-    flash[:notice] = "You added one item to your shopping basket."
     # redirect to procreated_at).reverse.each do |orderduct show
     authorize order_pending
     redirect_to shopping_cart_orders_path(product)
@@ -79,7 +78,6 @@ class OrdersController < ApplicationController
       else
         order_product.quantity -= 1
         order_product.save
-        flash[:notice] = "You removed one item from your shopping basket."
       end
     end
     authorize order_pending

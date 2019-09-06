@@ -1,15 +1,15 @@
 .card-shopping {
   overflow: hidden;
-  height: 120px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   width: 500px;
+  height: 150px;
 }
 
 .card-shopping h2 {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   margin: 0;
 }
@@ -23,7 +23,7 @@
 }
 
 .card-shopping .card-shopping-info {
-  padding: 16px;
+  padding: 20px;
 }
 
 .card-shopping .btn-add {
