@@ -1,9 +1,48 @@
+.btn-bottom {
+  width: 100vw;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  background-color: orange;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  padding-bottom: 15px;
+  font-size: 30px;
+  color: white;
+}
+
 .btn-text {
+  color: black;
+  font-size: 28px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  padding-bottom: 20px;
+
+  &:hover {
+    color: black;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0;
+  }
+}
+
+.btn-text-white {
   color: white;
   font-size: 28px;
   font-family: 'Raleway', sans-serif;
   font-weight: 500;
   padding-bottom: 20px;
+
+  &:hover {
+    color: white;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0;
+  }
 }
 
 .fa-arrow-right {
@@ -16,3 +55,17 @@
   margin-top: 5px;
   color: white !important;
 }
+
+.sign-up-links {
+  text-align: center;
+  padding-top: 20px;
+
+  a {
+    color: white;
+    font-size: 20px;
+    font-weight: 300;
+    opacity: 0.7;
+    margin-bottom: 10px;
+  }
+}
+

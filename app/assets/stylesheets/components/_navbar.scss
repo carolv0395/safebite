@@ -1,6 +1,11 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: transparent;
+  padding: 0px;
+}
+
+.navbar-brand {
+  padding: 15px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +14,31 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.burguer-menu {
+  border: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+
+  &:focus {
+    outline: 0px auto -webkit-focus-ring-color;
+  }
+}
+
+.dropdown-menu {
+  background-color: transparent;
+  border-radius: 0px;
+  border: none;
+  padding: 0px;
+}
+
+.dropdown-item {
+  padding: 10px;
+  font-size: 18px;
+  text-align: center;
+  background-color: $orange;
+  color: rgba(255,255,255,0.7);
 }
