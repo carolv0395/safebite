@@ -289,7 +289,7 @@ Ingredient.create!(ingredient_attributes)
 Product.create!(product_attributes)
 
 Product.all.each do |product|
-  Ingredient.order("RANDOM()").limit(rand(5..10)).each do |ingredient|
+  Ingredient.order("RANDOM()").limit(rand(2..4)).each do |ingredient|
     IngredientsProduct.create(product_id: product.id, ingredient_id: ingredient.id)
   end
 end
