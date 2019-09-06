@@ -22,7 +22,7 @@
   <% end %>
 </div>
 
-<h4>Products without <%= current_user.allergens_families[0].allergen_family.name %></h4>
+<h4>Products without <%= @allergen_family %></h4>
 
 <div class="product-list mb-4">
   <% @products.each do |product| %>
@@ -40,7 +40,7 @@
   <% end %>
 </div>
 
-<h4>Products without <%= current_user.allergens_families[0].allergen_family.name %></h4>
+<h4>Products without <%= @allergen_family %></h4>
 
 <div class="product-list mb-5">
   <% @products.each do |product| %>
