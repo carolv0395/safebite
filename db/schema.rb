@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(version: 2019_09_06_132955) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "address"
+    t.string "avatar"
     t.string "first_name"
     t.string "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true
