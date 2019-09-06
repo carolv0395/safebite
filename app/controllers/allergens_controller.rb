@@ -1,37 +1,47 @@
 class AllergensController < ApplicationController
-  skip_before_action :authenticate_user!
-  before_action :fetch_allergen, only: :destroy
+  before_action :fetch_allergen, only: [:destroy]
 
   def index
     @allergens = policy_scope(Allergen)
     @user = current_user if user_signed_in?
   end
 
-  def new
-    # @allergen = Allergen.new
-    # authorize @allergen
+  def edit_families
+    # define the data to check the right allergens in the view
+    @allergens = current_user.allergens_families
+    authorize @allergens
   end
 
-  def create
-    @allergen = Allergen.new(allergen_params)
-    authorize @allergen
-    @allergen.user = current_user
-    @allergen.save
-    redirect_to allergen_path(@allergen)
-  end
-
-  def destroy
-    @allergen.destroy
-    # redirect_to root_path
+  def update_families
+    # destroy the allergens
+    current_user.allergens_families.destroy_all
+    ids = params[:allergen][:allergen_families_ids]
+    if ids && ids.any?
+      ids.each do |id|
+        @allergen = Allergen.new(user: current_user,
+                                 allergen_family_id: id)
+        authorize @allergen
+        @allergen.save
+      end
+      redirect_to root_path
+    else
+      @allergens = current_user.allergens_families
+      authorize @allergens
+      render :edit_families
+    end
+    # same code as in what you alreay have in create
+    # ....
   end
 
   private
 
-  def fetch_allergen
-    @allergen = Allergen.find(params[:id])
+  def fetch_allergens
+    @allergens = policy_scope(Allergen)
     authorize @allergen
   end
 
-  def
+  def allergen_params
+    params.require(:allergen).permit(:allergen_type, allergen_families_ids: [])
   end
+
 end

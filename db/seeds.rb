@@ -5,10 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.destroy_all
-AllergenFamily.destroy_all
 Allergen.destroy_all
+IngredientsProduct.destroy_all
 Ingredient.destroy_all
+AllergenFamily.destroy_all
+User.destroy_all
 Product.destroy_all
 
 User.create!(
@@ -35,19 +36,85 @@ product_attributes = [
     discount: 0,
     stock: Faker::Number.between(from: 0, to: 200),
     description:"Make snack time more fun with Cheez-It Original Baked Snack Crackers, bite-size cheese crackers that are baked to crispy perfection. Cheez-It Baked Snack Crackers are the real deal—made with 100% real cheese that's been carefully aged for a yummy, irresistible taste that’s bursting with real cheese goodness in every crunchy bite. Each perfect square crisp is loaded with bold cheesy flavor that hits your taste buds with every delicious mouthful.",
-    photo: "https://images-na.ssl-images-amazon.com/images/I/81oh50vv%2B6L._SL1500_.jpg",
+    photo: "https://images.pexels.com/photos/1441067/pexels-photo-1441067.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     price: 5
   },
   {
-    name: 'Amazing Bolachas Belgas',
-    brand: 'Belgaz',
-    category: :cookies_and_snacks,
-    volume: '19 oz',
+    name: 'Nature Valley Granola Bars Variety Pack',
+    brand: 'Nature-Valley',
+    category: :breakfast_and_cereal,
+    volume: '22 oz',
     discount: 0,
     stock: Faker::Number.between(from: 0, to: 200),
-    description:"Make snack time more fun with Cheez-It Original Baked Snack Crackers, bite-size cheese crackers that are baked to crispy perfection. Cheez-It Baked Snack Crackers are the real deal—made with 100% real cheese that's been carefully aged for a yummy, irresistible taste that’s bursting with real cheese goodness in every crunchy bite. Each perfect square crisp is loaded with bold cheesy flavor that hits your taste buds with every delicious mouthful.",
-    photo: "https://images-na.ssl-images-amazon.com/images/I/81oh50vv%2B6L._SL1500_.jpg",
+    description:"Nature Valley Sweet & Salty Nut Granola Bars Variety Pack contains six Peanut, six Almond and six Dark Chocolate, Peanut & Almond bars. Each bar is packed with delicious crunchy nuts and dipped in a creamy nut butter or chocolate coating. It's a nut-filled snacking sensation you're sure to enjoy!",
+    photo: "https://images.pexels.com/photos/1374551/pexels-photo-1374551.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    price: 6
+  },
+  {
+    name: "Ben & Jerry's Ice Cream Half Bake",
+    brand: "Ben & Jerry's",
+    category: :frozen_foods,
+    volume: '16 oz',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description:"A delectable dance of Chocolate Chip Cookie Dough and Chocolate Fudge Brownie. Vanilla ice cream and chocolate ice cream with chunks of cookie dough and fudge brownies—it’s hard to imagine a better combination.Ben & Jerry’s Half Baked—which got its name because the cookie dough isn’t baked, but the brownies are—has been a bestselling flavor since we first decided to combine our classic ice cream creations back in 2000.Chocolate Chip Cookie Dough, with big chunks of chocolate chip cookie dough surrounded by vanilla ice cream, was created back in 1984 at our very first Scoop Shop after we received an anonymous fan’s flavor suggestion. It continues as a flavor phenomenon to this very day. Chocolate Fudge Brownie is a fan-favorite chocolate extravaganza, mixing chocolate ice cream with ridiculously delicious Greyston Bakery brownies. It’s been satisfying chocolate lovers since 1991. We know it can be hard to choose between those two legendary flavors. With Half Baked, you don’t have to!We work with Fairtrade certified producers for all the cocoa, sugar, and vanilla in our recipes. Our Caring Dairy farmers produce all the certified kosher milk and cream in a sustainable way. Greyston Bakery, one of the largest social enterprises in the US, provides the scrumptiuous brownies for this and all of our frozen dessert flavors. All our ice cream is made with non-GMO sourced ingredients and cage-free eggs. This ice cream pint, like every pint we make, features responsibly sourced packaging.",
+    photo: "https://i5.walmartimages.com/asr/e8f2a039-5588-417d-9acd-a12222cd37c6_1.fb4b255b3cd34249221c785f1cec0caa.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF",
+    price: 6
+  },
+  {
+    name: "Minute Maid 100'%' Orange Juice",
+    brand: "Minute Maid",
+    category: :beverages,
+    volume: '10 Fl Oz',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description:"About This Item We aim to show you accurate product information. Manufacturers, suppliers and others provide what you see here, and we have not verified it. See our disclaimer.",
+    photo: "https://images.pexels.com/photos/1282174/pexels-photo-1282174.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     price: 5
+  },
+  {
+    name: "Apothic Red Wine",
+    brand: "Apothic",
+    category: :beer_wine_and_spirits,
+    volume: '750 ml',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description:"Apothic Red features notes of black cherry and dark fruit. Hints of vanilla and mocha layer together and support the elegant structure of this delicious blend. Apothic Red Wine, 750mL.",
+    photo: "https://images.pexels.com/photos/1498923/pexels-photo-1498923.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    price: 8
+  },
+  {
+    name: "Smithfield Fresh Pork Center Cut Loin, Boneless",
+    brand: "Smithfield",
+    category: :meat_and_seafood,
+    volume: '4 lb',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description:"Smithfield Fresh Pork is made with no added preservatives, hormones or steroids for a clean flavor that you can feel good about serving. Just add your own spin with seasonings, rub or marinade, and you've got a tasty meal that everyone is sure to love.",
+    photo: "https://images.pexels.com/photos/1268549/pexels-photo-1268549.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    price: 9
+  },
+  {
+    name: 'Del Monte Fresh Cut Blue Lake Cut Green Beans',
+    brand: 'Del Monte',
+    category: :canned_goods_and_soups,
+    volume: '14 oz',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description:"Del Monte Fresh Cut Blue Lake Cut Green Beans are picked at the peak of ripeness then packed within hours to lock in the nutrition and the crisp, fresh taste. Our green beans contain just three simple ingredients: green beans, water and sea salt. Serve warmed and dusted with fresh ground pepper as a side, or use in a savory casserole. Del Monte works hard to cultivate the freshest, most nutritious fruits and vegetable to use in every one of our products. When you trust Del Monte, you can be sure what you're buying is the peak of quality and nutrition!",
+    photo: "https://images.pexels.com/photos/255469/pexels-photo-255469.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    price: 5
+  },
+  {
+    name: 'Royal Dansk Danish Butter Cookie',
+    brand: 'Royal Dansk',
+    category: :cookies_and_snacks,
+    volume: '12 oz',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description:"We aim to show you accurate product information. Manufacturers, suppliers and others provide what you see here, and we have not verified it. See our disclaimer Experience a delicious snack with Royal Dansk Cookies. They are the ideal complement to a cup of coffee or a glass of milk. The cookies come in assorted shapes with a delicate texture that is satisfying. ",
+    photo: "https://images-na.ssl-images-amazon.com/images/I/81oh50vv%2B6L._SL1500_.jpg",
+    price: 4
   },
   {
     name: 'Great Value Large White Eggs',
@@ -57,7 +124,7 @@ product_attributes = [
     discount: 0,
     stock: Faker::Number.between(from: 0, to: 200),
     description: "Great Value Large White Eggs are a delicious way to get in your daily recommended amount of protein for a healthy lifestyle. Our tasty eggs have received a Grade A rating from the USDA, so you know you're purchasing a high-quality product. Serve them scrambled alongside some sourdough toast and blueberries, or hard boil a few to take with you for a tasty, wholesome snack on the go.",
-    photo: "https://i5.walmartimages.com/asr/df2ea507-1953-4cb9-97b6-a1bc10f3dd19_1.bc951a020f826ffe87cf466c3fc1c130.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF",
+    photo: "https://images.pexels.com/photos/128885/egg-chicken-eggs-raw-eggs-eggshell-128885.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     price: 2
   },
   {
@@ -68,7 +135,7 @@ product_attributes = [
     discount: 0,
     stock: Faker::Number.between(from: 0, to: 200),
     description: "The sweet, juicy flavor of Fresh Strawberries make them a refreshing and delicious treat. Enjoy them for breakfast, lunch, dinner, or dessert. Use them as topping for pancakes, bake them in a mouthwatering bread, mix them with cucumbers for a light and flavorful salad, or puree them for strawberry shortcake.",
-    photo: "https://i5.walmartimages.com/asr/4e7dab6a-c54b-48f7-9bd2-57f5d211501d_1.3ba50bfdf1c7f082056c0f5022edf182.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF",
+    photo: "https://images.pexels.com/photos/89778/strawberries-frisch-ripe-sweet-89778.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     price: 2
   },
   {
@@ -79,7 +146,7 @@ product_attributes = [
     discount: 0,
     stock: Faker::Number.between(from: 0, to: 200),
     description: "In addition to their great taste and soft texture, Mission Soft Taco Whole Wheat Tortillas deliver all of the extra benefits of whole grain. Our tortillas are made with 100% whole wheat, so they're naturally satisfying, a great source of whole grain, and high in fiber. And since our tortillas are also free of trans fat and cholesterol, they're a smart addition to any meal.",
-    photo: "https://i5.walmartimages.com/asr/20fe1deb-89c7-41de-bc07-8b1d658f1d27_1.ee9f2d68e2d4c6b5fafdfe31d5d59a99.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF",
+    photo: "https://images.pexels.com/photos/2092507/pexels-photo-2092507.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     price: 3
   }
 ]

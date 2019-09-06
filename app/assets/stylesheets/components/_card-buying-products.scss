@@ -1,0 +1,76 @@
+.card-shopping {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  width: 500px;
+}
+
+.card-shopping h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-shopping p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-shopping .card-shopping-info {
+  padding: 16px;
+}
+
+.card-shopping .btn-add {
+  color: white;
+  background-color: green;
+  border-radius: 5px;
+  font-size: 20px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+
+  &:hover {
+  opacity: 0.8;
+  }
+}
+
+.card-shopping .btn-remove {
+  color: white;
+  background-color: orange;
+  border-radius: 5px;
+  font-size: 20px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+
+  &:hover {
+  opacity: 0.8;
+  }
+
+}
+
+.card-shopping .btn-delete {
+  display: inline-block;
+  background-color: grey;
+  color: white;
+  padding: 5px;
+  border-radius: 4px;
+}

@@ -1,35 +1,37 @@
 <div class="orange-background">
-  <div class="container mobile-container-bg">
-    <h2>Welcome to </br>safe bite</h2>
+  <div class="container sign-in-container">
+    <h1>Welcome to </br>safe bite</h1>
 
-    <div class="separator"></div>
+    <div class="separator separator-white"></div>
 
     <h4 class="mb-4">Stop wasting time </br>reading ingredient lists!</h4>
     <h4 class="mb-4">Safe Bite let's you <br/> eat safe, fast.</h4>
 
-    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="form-inputs">
-        <%= f.input :email,
-                    label: false,
-                    placeholder: 'e-mail',
-                    required: false,
-                    autofocus: true,
-                    input_html: { autocomplete: "email" } %>
-        <%= f.input :password,
-                    label: false,
-                    placeholder: 'password',
-                    required: false,
-                    input_html: { autocomplete: "current-password" } %>
-        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-      </div>
+    <div class="sign-in-form">
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-inputs">
+          <%= f.input :email,
+                      label: false,
+                      placeholder: 'e-mail',
+                      required: false,
+                      autofocus: true,
+                      input_html: { autocomplete: "off" } %>
+          <%= f.input :password,
+                      label: false,
+                      placeholder: 'password',
+                      required: false,
+                      input_html: { autocomplete: "current-password" } %>
+          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        </div>
 
-      <div class="form-actions">
-        <%= f.button :submit, "Start shopping", class: "btn btn-text" %><i class="fas fa-arrow-right"></i>
-      </div>
-    <% end %>
+        <div class="form-actions">
+          <%= f.button :submit, "Start shopping", class: "btn btn-text-white" %><i class="fas fa-arrow-right"></i>
+        </div>
+      <% end %>
 
-    <div class="sign-up-link">
-      <%= render "devise/shared/links" %>
+      <div class="sign-up-links">
+        <%= render "devise/shared/links" %>
+      </div>
     </div>
   </div>
 </div>
