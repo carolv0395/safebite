@@ -1,5 +1,4 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
+<div class="orange-background">
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 
@@ -10,7 +9,7 @@
     <div class = "container ">
 <div class="user-avatar" style="background-image: url('<%= image_path("photo") %>')">
 </div>
-<h1> Hello,<br> </h1>
+<h1> Hello, <%= current_user.first_name %><br> </h1>
      </div>
       <%= f.input :avatar,
                     required: false,
@@ -49,6 +48,6 @@
 <% end %>
 
 
-
+</div>
 
 
