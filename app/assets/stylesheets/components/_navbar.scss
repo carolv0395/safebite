@@ -2,10 +2,14 @@
   justify-content: space-between;
   background: transparent;
   padding: 0px;
+  li {
+  list-style-type: none;  
+  }
 }
 
 .navbar-brand {
   padding: 15px;
+  margin-right: 0;
 }
 
 .navbar-lewagon .navbar-collapse {
