@@ -35,7 +35,7 @@ product_attributes = [
     discount: 0,
     stock: Faker::Number.between(from: 0, to: 200),
     description:"Make snack time more fun with Cheez-It Original Baked Snack Crackers, bite-size cheese crackers that are baked to crispy perfection. Cheez-It Baked Snack Crackers are the real deal—made with 100% real cheese that's been carefully aged for a yummy, irresistible taste that’s bursting with real cheese goodness in every crunchy bite. Each perfect square crisp is loaded with bold cheesy flavor that hits your taste buds with every delicious mouthful.",
-    photo: "https://images-na.ssl-images-amazon.com/images/I/81oh50vv%2B6L._SL1500_.jpg",
+    photo: "https://images.pexels.com/photos/1441067/pexels-photo-1441067.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     price: 5
   },
   {
@@ -46,7 +46,7 @@ product_attributes = [
     discount: 0,
     stock: Faker::Number.between(from: 0, to: 200),
     description:"Nature Valley Sweet & Salty Nut Granola Bars Variety Pack contains six Peanut, six Almond and six Dark Chocolate, Peanut & Almond bars. Each bar is packed with delicious crunchy nuts and dipped in a creamy nut butter or chocolate coating. It's a nut-filled snacking sensation you're sure to enjoy!",
-    photo: "https://i5.walmartimages.com/asr/1dd023ce-666a-42b3-9d5e-3c34dd285214_1.737bfefd986f38c0124fc6d564d2c41d.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF",
+    photo: "https://images.pexels.com/photos/1374551/pexels-photo-1374551.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     price: 6
   },
   {
@@ -68,7 +68,7 @@ product_attributes = [
     discount: 0,
     stock: Faker::Number.between(from: 0, to: 200),
     description:"About This Item We aim to show you accurate product information. Manufacturers, suppliers and others provide what you see here, and we have not verified it. See our disclaimer.",
-    photo: "https://i5.walmartimages.com/asr/deb5fb3a-15ee-4401-b5d2-bb801d2849a2_1.aff556b955ab998824720f239a882ff0.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF",
+    photo: "https://images.pexels.com/photos/1282174/pexels-photo-1282174.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     price: 5
   },
   {
@@ -79,7 +79,7 @@ product_attributes = [
     discount: 0,
     stock: Faker::Number.between(from: 0, to: 200),
     description:"Apothic Red features notes of black cherry and dark fruit. Hints of vanilla and mocha layer together and support the elegant structure of this delicious blend. Apothic Red Wine, 750mL.",
-    photo: "https://i5.walmartimages.com/asr/d6b1863d-d799-4bfe-89e6-50b5f73a38cb_1.dd974b02ed28d67379becac4558707dc.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF",
+    photo: "https://images.pexels.com/photos/1498923/pexels-photo-1498923.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     price: 8
   },
   {
@@ -90,7 +90,7 @@ product_attributes = [
     discount: 0,
     stock: Faker::Number.between(from: 0, to: 200),
     description:"Smithfield Fresh Pork is made with no added preservatives, hormones or steroids for a clean flavor that you can feel good about serving. Just add your own spin with seasonings, rub or marinade, and you've got a tasty meal that everyone is sure to love.",
-    photo: "https://i5.walmartimages.com/asr/424ca152-bfc3-4c19-acd2-811e95a21f6f_1.6bc8194e2f6615f6cb94c9b4b5c2b22c.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF",
+    photo: "https://images.pexels.com/photos/1268549/pexels-photo-1268549.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     price: 9
   },
   {
@@ -101,19 +101,19 @@ product_attributes = [
     discount: 0,
     stock: Faker::Number.between(from: 0, to: 200),
     description:"Del Monte Fresh Cut Blue Lake Cut Green Beans are picked at the peak of ripeness then packed within hours to lock in the nutrition and the crisp, fresh taste. Our green beans contain just three simple ingredients: green beans, water and sea salt. Serve warmed and dusted with fresh ground pepper as a side, or use in a savory casserole. Del Monte works hard to cultivate the freshest, most nutritious fruits and vegetable to use in every one of our products. When you trust Del Monte, you can be sure what you're buying is the peak of quality and nutrition!",
-    photo: "https://i5.walmartimages.com/asr/9d72a626-5ced-4b37-af75-7d8cc941e4e0_1.44b4d02b0dac28b4d4a4982a30fc7795.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF",
+    photo: "https://images.pexels.com/photos/255469/pexels-photo-255469.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     price: 5
   },
   {
-    name: 'Amazing Bolachas Belgas',
-    brand: 'Belgaz',
+    name: 'Royal Dansk Danish Butter Cookie',
+    brand: 'Royal Dansk',
     category: :cookies_and_snacks,
-    volume: '19 oz',
+    volume: '12 oz',
     discount: 0,
     stock: Faker::Number.between(from: 0, to: 200),
-    description:"Make snack time more fun with Cheez-It Original Baked Snack Crackers, bite-size cheese crackers that are baked to crispy perfection. Cheez-It Baked Snack Crackers are the real deal—made with 100% real cheese that's been carefully aged for a yummy, irresistible taste that’s bursting with real cheese goodness in every crunchy bite. Each perfect square crisp is loaded with bold cheesy flavor that hits your taste buds with every delicious mouthful.",
+    description:"We aim to show you accurate product information. Manufacturers, suppliers and others provide what you see here, and we have not verified it. See our disclaimer Experience a delicious snack with Royal Dansk Cookies. They are the ideal complement to a cup of coffee or a glass of milk. The cookies come in assorted shapes with a delicate texture that is satisfying. ",
     photo: "https://images-na.ssl-images-amazon.com/images/I/81oh50vv%2B6L._SL1500_.jpg",
-    price: 5
+    price: 4
   },
   {
     name: 'Great Value Large White Eggs',
@@ -123,7 +123,7 @@ product_attributes = [
     discount: 0,
     stock: Faker::Number.between(from: 0, to: 200),
     description: "Great Value Large White Eggs are a delicious way to get in your daily recommended amount of protein for a healthy lifestyle. Our tasty eggs have received a Grade A rating from the USDA, so you know you're purchasing a high-quality product. Serve them scrambled alongside some sourdough toast and blueberries, or hard boil a few to take with you for a tasty, wholesome snack on the go.",
-    photo: "https://i5.walmartimages.com/asr/df2ea507-1953-4cb9-97b6-a1bc10f3dd19_1.bc951a020f826ffe87cf466c3fc1c130.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF",
+    photo: "https://images.pexels.com/photos/128885/egg-chicken-eggs-raw-eggs-eggshell-128885.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     price: 2
   },
   {
@@ -134,7 +134,7 @@ product_attributes = [
     discount: 0,
     stock: Faker::Number.between(from: 0, to: 200),
     description: "The sweet, juicy flavor of Fresh Strawberries make them a refreshing and delicious treat. Enjoy them for breakfast, lunch, dinner, or dessert. Use them as topping for pancakes, bake them in a mouthwatering bread, mix them with cucumbers for a light and flavorful salad, or puree them for strawberry shortcake.",
-    photo: "https://i5.walmartimages.com/asr/4e7dab6a-c54b-48f7-9bd2-57f5d211501d_1.3ba50bfdf1c7f082056c0f5022edf182.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF",
+    photo: "https://images.pexels.com/photos/89778/strawberries-frisch-ripe-sweet-89778.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     price: 2
   },
   {
@@ -145,7 +145,7 @@ product_attributes = [
     discount: 0,
     stock: Faker::Number.between(from: 0, to: 200),
     description: "In addition to their great taste and soft texture, Mission Soft Taco Whole Wheat Tortillas deliver all of the extra benefits of whole grain. Our tortillas are made with 100% whole wheat, so they're naturally satisfying, a great source of whole grain, and high in fiber. And since our tortillas are also free of trans fat and cholesterol, they're a smart addition to any meal.",
-    photo: "https://i5.walmartimages.com/asr/20fe1deb-89c7-41de-bc07-8b1d658f1d27_1.ee9f2d68e2d4c6b5fafdfe31d5d59a99.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF",
+    photo: "https://images.pexels.com/photos/2092507/pexels-photo-2092507.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     price: 3
   }
 ]
