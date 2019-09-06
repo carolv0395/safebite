@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :allergens
   has_many :allergen_families, through: :allergens
   has_many :ingredients, through: :allergens
-  
+
   def pending_order_in_cart
     pending_order = orders.where(order_status: :pending).first
     unless pending_order
@@ -15,7 +15,7 @@ class User < ApplicationRecord
     end
     return pending_order
   end
-    
+
   def allergens_ingredients
     allergens.where.not(ingredient_id: nil)
   end
