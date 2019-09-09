@@ -7,6 +7,7 @@ gem 'stripe'
 gem 'pundit'
 gem 'simple_form'
 
+
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'jbuilder', '~> 2.0'
