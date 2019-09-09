@@ -1,7 +1,30 @@
-<h1> <%= @products.first.category.gsub(/_/, ' ').gsub(/and/, '&').capitalize %> </h1>
+<div class="container pages-container">
+  <h1> <%= @products.first.category.gsub(/_/, ' ').gsub(/and/, '&').capitalize %> </h1>
+</div>
+  <% @products.each do |product| %>
 
-<% @products.each do |product| %>
-  <p> <%= link_to product.name, product_path(product) %> </p>
-<% end %>
+    <%= link_to product_path(product) do %>
+      <div class="add-product-card d-flex">
 
-<%= link_to 'Go back', products_path %>
+        <div class="product-image-price">
+          <img src=<%= product.photo %> />
+          <p><%= product.price %></p>
+        </div>
+
+        <div class="product-quantity">
+            <h4> <%= product.name %> </h4>
+            <p> <%= product.volume %> </p>
+        </div>
+
+          <div class="add-quantity d-flex flex-column justify-content-center">
+            <div class="plus">+</div>
+            <div class="quantity">0</div>
+            <div class="minus">-</div>
+          </div>
+
+      </div>
+
+    <% end %>
+  <% end %>
+
+  <%= link_to 'Go back', products_path %>
