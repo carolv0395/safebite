@@ -15,22 +15,21 @@ class AllergensController < ApplicationController
   def update_families
     # destroy the allergens
     current_user.allergens_families.destroy_all
-    ids = params[:allergen][:allergen_families_ids]
-    if ids && ids.any?
-      ids.each do |id|
-        @allergen = Allergen.new(user: current_user,
-                                 allergen_family_id: id)
-        authorize @allergen
-        @allergen.save
-      end
-      redirect_to root_path
-    else
+    if params[:allergen].nil?
       @allergens = current_user.allergens_families
       authorize @allergens
       render :edit_families
+      flash[:alert] = "Please select your allergy."
+    else
+      ids = params[:allergen][:allergen_families_ids]
+      ids.each do |id|
+        @allergen = Allergen.new(user: current_user,
+                                   allergen_family_id: id)
+        authorize @allergen
+        @allergen.save
+        redirect_to root_path
+      end
     end
-    # same code as in what you alreay have in create
-    # ....
   end
 
   private
@@ -43,5 +42,4 @@ class AllergensController < ApplicationController
   def allergen_params
     params.require(:allergen).permit(:allergen_type, allergen_families_ids: [])
   end
-
 end
