@@ -27,4 +27,7 @@
     <% end %>
   <% end %>
 
-  <%= link_to 'Go back', products_path %>
+<div class="btn mt-5">
+  <%= link_to "<", products_path, class: "btn btn-bottom-back" %>
+  <%= link_to "Ready to checkout?", shopping_cart_orders_path, class: "btn btn-bottom-checkout" %>
+</div>
