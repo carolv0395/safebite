@@ -1,5 +1,5 @@
-.category-arrow {
-    width: 300px;
+.category-card {
+    width: 100%;
     height: 100px;
     position: relative;
     background: #ffffff;
@@ -11,29 +11,20 @@
   }
 
 a:hover {
-      text-decoration: none !important;
-    }
-
-.category-arrow:before {
-      content: "";
-      position: absolute;
-      right: -25px;
-      bottom: 0;
-      width: 0;
-      height: 0;
-      border-left: 25px solid #ffffff;
-      border-top: 50px solid transparent;
-      border-bottom: 50px solid transparent;
+    text-decoration: none !important;
     }
 
 .category-text {
   width: 200px;
   padding-left: 20px;
+
+  h3 {
+    font-weight: 300;
+  }
 }
 
 #category-image {
-  width: 100px;
+  width: 120px;
   height: 100%;
   background-size: cover;
-  background-image: url('https://images.pexels.com/photos/1268558/pexels-photo-1268558.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
 }
