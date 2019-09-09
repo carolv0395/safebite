@@ -4,9 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   mount_uploader :avatar, AvatarUploader
-       
-  has_many :orders
-  has_many :allergens
+
+  has_many :orders, dependent: :destroy
+  has_many :allergens, dependent: :destroy
   has_many :allergen_families, through: :allergens
   has_many :ingredients, through: :allergens
 
