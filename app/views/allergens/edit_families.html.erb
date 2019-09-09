@@ -3,7 +3,7 @@
   <div class="separator"></div>
   <%= simple_form_for(Allergen.new, url: update_families_allergens_path) do |f| %>
     <div class="form-group">
-      <label class="control-label check_boxes optional">Go ahead and select your food restrictions: </label>
+      <label class="control-label check_boxes"><h2>Go ahead and select your food restrictions: </h2></label>
       <input type="hidden" name="post[category_ids][]" value="">
       <div class="family-choices">
         <div class="left-group">
