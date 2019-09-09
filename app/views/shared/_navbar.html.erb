@@ -3,10 +3,14 @@
       <%= image_tag image_path('safebite_logo.png') %>
     <% end %>
       <li class="nav-item">
-        <%= simple_form_for Product.new, url: root_path, method: :get do |f| %>
-          <%= f.input :search, label: false, placeholder: "search", input_html: { value: session[:search] } %>
-           <%= image_tag image_path('Ellipse.png') %>
-        <% end %>
+        <div class="search flex-container">
+          <i class="flex-item search-icon fas fa-search"></i>
+          <%#= image_tag image_path('Ellipse.png'), class: "search-icon" %>
+          <%= simple_form_for Product.new, url: root_path, method: :get, html: {class: "flex-item"} do |f| %>
+            <%= f.input :search, label: false, placeholder: "search", input_html: { class: "search-bar", value: session[:search] } %>
+          <% end %>
+        </div>
+
       </li>
         
         <button class="burguer-menu" type="button" data-toggle="dropdown" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
