@@ -53,7 +53,7 @@
   width: 20vw;
   padding-top: 10px;
   padding-bottom: 0px;
-  background-color: #ff935c;
+  background-color: #FFA759;
   position: fixed;
   bottom: 0px;
   left: 0px;
@@ -67,4 +67,14 @@
   &:focus {
     box-shadow: 0 0 0 0;
   }
+}
+
+a.btn.btn-bottom-back {
+  text-decoration: none;
+  color: white;
+}
+
+a.btn.btn-bottom-checkout {
+  text-decoration: none;
+  color: white;
 }

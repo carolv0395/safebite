@@ -40,22 +40,34 @@
   }
 }
 
-.plus {
+.add {
+  width: 30px;
+  height: 30px;
   background-color: $orange;
   color: white;
-  padding: 5px 13px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
-.minus {
+.remove {
   background-color: #B1B1B1;
+  width: 30px;
+  height: 30px;
   color: white;
-  padding: 5px 13px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
 .add-quantity {
   color: #202020;
   text-align: center;
-  margin: auto;
+  margin: 0;
 }
 
 a.plus {
@@ -66,4 +78,18 @@ a.plus {
 a.minus {
   text-decoration: none;
   color: white;
+}
+
+a.add {
+  text-decoration: none;
+  color: white;
+}
+
+a.remove {
+  text-decoration: none;
+  color: white;
+}
+
+.centered {
+  padding: 6px;
 }
