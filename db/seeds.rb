@@ -29,7 +29,7 @@ seeds = AllergenFamily.create!(name: 'seeds')
 
 product_attributes = [
   {
-    name: 'Cheez-It Baked Original Cheese Crackers Family',
+    name: 'Baked Original Cheese Crackers',
     brand: 'Cheez-It',
     category: :cookies_and_snacks,
     volume: '21 oz',
@@ -40,7 +40,7 @@ product_attributes = [
     price: 5
   },
   {
-    name: 'Nature Valley Granola Bars Variety Pack',
+    name: 'Granola Bars Variety Pack',
     brand: 'Nature-Valley',
     category: :breakfast_and_cereal,
     volume: '22 oz',
@@ -51,7 +51,7 @@ product_attributes = [
     price: 6
   },
   {
-    name: "Ben & Jerry's Ice Cream Half Bake",
+    name: "Half Bake Ice Cream",
     brand: "Ben & Jerry's",
     category: :frozen_foods,
     volume: '16 oz',
@@ -62,7 +62,7 @@ product_attributes = [
     price: 6
   },
   {
-    name: "Minute Maid 100'%' Orange Juice",
+    name: "100'%' Orange Juice",
     brand: "Minute Maid",
     category: :beverages,
     volume: '10 Fl Oz',
@@ -73,7 +73,7 @@ product_attributes = [
     price: 5
   },
   {
-    name: "Apothic Red Wine",
+    name: "Red Wine",
     brand: "Apothic",
     category: :beer_wine_and_spirits,
     volume: '750 ml',
@@ -84,7 +84,7 @@ product_attributes = [
     price: 8
   },
   {
-    name: "Smithfield Fresh Pork Center Cut Loin, Boneless",
+    name: "Fresh Pork Center Cut Loin",
     brand: "Smithfield",
     category: :meat_and_seafood,
     volume: '4 lb',
@@ -95,7 +95,7 @@ product_attributes = [
     price: 9
   },
   {
-    name: 'Del Monte Fresh Cut Blue Lake Cut Green Beans',
+    name: 'Fresh Cut Blue Lake Cut Green Beans',
     brand: 'Del Monte',
     category: :canned_goods_and_soups,
     volume: '14 oz',
@@ -106,7 +106,7 @@ product_attributes = [
     price: 5
   },
   {
-    name: 'Royal Dansk Danish Butter Cookie',
+    name: 'Danish Butter Cookie',
     brand: 'Royal Dansk',
     category: :cookies_and_snacks,
     volume: '12 oz',
@@ -117,7 +117,7 @@ product_attributes = [
     price: 4
   },
   {
-    name: 'Great Value Large White Eggs',
+    name: 'Large White Eggs',
     brand: 'Great Value',
     category: :dairy_eggs_and_cheese,
     volume: '36 oz',
@@ -139,7 +139,7 @@ product_attributes = [
     price: 2
   },
   {
-    name: 'Mission Soft Taco Whole Wheat Tortillas',
+    name: 'Soft Taco Whole Wheat Tortillas',
     brand: 'Mission',
     category: :grains_pasta_and_sides,
     volume: '450g',
