@@ -9,17 +9,62 @@ class OrdersController < ApplicationController
     # if exists, increment qty by 1
     if order_product
       order_product.quantity += 1
+      order_product.price = product.price
       order_product.save
     # if not, add product to the cart w/ qty = 1
     else
-      OrdersProduct.create(quantity: 1, product: product, order: order_pending)
+      OrdersProduct.create(quantity: 1, product: product, order: order_pending, price_cents: product.price_cents)
+    end
+    flash[:notice] = "You added one item to your shopping basket."
+    # redirect to procreated_at).reverse.each do |orderduct show
+    authorize order_pending
+    redirect_to product_path(product)
+  end
+
+  def remove_product_quantity
+    # create/get cart
+    order_pending = current_user.pending_order_in_cart
+    # associate product and qty to cart
+    product = Product.find(params[:product_id])
+    # check if order_product exist
+    order_product = order_pending.orders_products.where(product: product).first
+    # if exists, decrease qty by 1
+    if order_product
+      order_product.quantity -= 1
+      if order_product.quantity == 0
+        order_product.destroy
+      else
+        order_product.save
+        flash[:notice] = "You removed one item from your shopping basket."
+      end
     end
     authorize order_pending
     # redirect to product show
     redirect_to product_path(product)
   end
 
-  def remove_product_quantity
+  def add_product_quantity_checkout
+    # create/get cart
+    order_pending = current_user.pending_order_in_cart
+    # associate product and qty to cart
+    product = Product.find(params[:product_id])
+    # check if order_product exist
+    order_product = order_pending.orders_products.where(product: product).first
+    # if exists, increment qty by 1
+    if order_product
+      order_product.quantity += 1
+      order_product.price = product.price
+      order_product.save
+    # if not, add product to the cart w/ qty = 1
+    else
+      OrdersProduct.create(quantity: 1, product: product, order: order_pending, price_cents: product.price_cents)
+    end
+    # redirect to procreated_at).reverse.each do |orderduct show
+    authorize order_pending
+    redirect_to shopping_cart_orders_path(product)
+  end
+
+  def remove_product_quantity_checkout
     # create/get cart
     order_pending = current_user.pending_order_in_cart
     # associate product and qty to cart
@@ -37,19 +82,31 @@ class OrdersController < ApplicationController
     end
     authorize order_pending
     # redirect to product show
-    redirect_to product_path(product)
+    redirect_to shopping_cart_orders_path(product)
   end
 
-  
+  def product_delete
+    order_product = OrdersProduct.find(params[:id])
+    authorize order_product.order
+    order_product.destroy
+    redirect_to shopping_cart_orders_path
+  end
+
+  def shopping_cart
+    @order = current_user.pending_order_in_cart
+    authorize @order
+    @total_price = @order.orders_products.sum("(orders_products.price_cents * orders_products.quantity)/100")
+  end
+
   # def index
-  #  @orders = policy_scope(Order)
-  #  @user = current_user if user_signed_in?
-  #  authorize @orders
+  #   @orders = policy_scope(Order)
+  #   @user = current_user if user_signed_in?
+  #   authorize @orders
   # end
 
   # def show
-  #  @order = Order.current_user.pending_order_in_cart
-  #  authorize @order
+  #   @order = Order.find(params[:id])
+  #   authorize @order
   # end
 
   # def create

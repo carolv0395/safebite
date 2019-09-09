@@ -16,7 +16,7 @@
     <div class="row mt-3">
       <div class="col-sm-12">
         <h2><%= @product.brand.capitalize %></h2>
-        <h3><%= @product.category %></h3>
+        <h3><%= @product.category.gsub(/_/, ' ').gsub(/and/, '&') %></h3>
         <p><%= @product.volume %></p>
       </div>
     </div>
@@ -39,18 +39,21 @@
     </div>
 
     <div class="row mt-3 cart">
-      <div class="col-sm-12 d-flex justify-content-between p-3">
+      <div class="col-sm-12 d-flex justify-content-between p-3 m-2">
         <%= link_to "+", add_product_quantity_orders_path(product_id: @product.id), class: "btn-add" %>
         <p><strong><%= @quantity_in_pending_order %></strong></p>
         <%= link_to "-", remove_product_quantity_orders_path(product_id: @product.id), class: "btn-remove" %>
         <i class="fas fa-shopping-cart"></i>
-        </div>
       </div>
     </div>
 
-    <%= link_to "Checkout?", order_path, class: "btn-text" %>
+    <div>
+      <p><strong>Total price: <%= @total_price %></strong></p>
+    </div>
 
-  </div>
+    <div class="btn mt-5">
+      <%= link_to "ready to checkout?", shopping_cart_orders_path, class: "btn btn-bottom" %>
+    </div>
 </div>
 
 

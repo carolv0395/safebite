@@ -1,0 +1,33 @@
+<h1>Shopping Basket</h1>
+
+<% @order.orders_products.each do |orderproduct| %>
+
+  <div class="card-shopping m-3">
+    <div class="row mt-3 cart">
+      <div class="card-shopping-info">
+        <h2><strong><%= orderproduct.product.name.capitalize %></strong></h2>
+        <p><%= orderproduct.product.brand.capitalize %></p>
+      </div>
+    </div>
+
+    <div class="card-shopping-action">
+      <div class="row">
+        <div class="col-sm-12 d-flex justify-content-between p-3 m-2">
+          <%= link_to "+", add_product_quantity_checkout_orders_path(product_id: orderproduct.product.id), class: "btn-add" %>
+          <p><strong><%= orderproduct.quantity %></strong></p>
+          <%= link_to "-", remove_product_quantity_checkout_orders_path(product_id: orderproduct.product.id), class: "btn-remove" %>
+          <i class="fas fa-shopping-cart"></i>
+        </div>
+        <div class="delete justify-content-center">
+          <%= link_to "delete product", product_delete_orders_path(id: orderproduct.id), class: "btn-delete" %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+<% end %>
+
+<div class="container">
+  <p>Total price: <%= @total_price %></p>
+</div>

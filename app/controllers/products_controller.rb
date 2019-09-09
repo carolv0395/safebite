@@ -24,5 +24,6 @@ class ProductsController < ApplicationController
       else
         @quantity_in_pending_order = 0
       end
+    @total_price = @product.orders_products.sum("(orders_products.price_cents * orders_products.quantity)/100")
   end
 end

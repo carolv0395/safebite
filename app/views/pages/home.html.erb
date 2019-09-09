@@ -4,59 +4,43 @@
   <div class="separator"></div>
 
     <h4>Products you'll love</h4>
-</div>
 
-<div class="product-list mb-4">
-  <% @products_love.each do |product| %>
-    <%= link_to product_path(product) do %>
-      <div class="card-trip">
-        <img src=<%= product.photo %> />
-        <div class="card-trip-infos">
-          <div>
-            <h2><%= product.name %></h2>
+  <div class="product-list mb-4">
+    <% product_array = [] %>
+    <% rand(4..9).times { product_array << @products.sample } %>
+    <% product_array.uniq! %>
+    <% product_array.each do |product| %>
+      <%= link_to product_path(product) do %>
+        <div class="card-trip">
+          <img src=<%= product.photo %> />
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= product.name %></h2>
+            </div>
+            <h2 class="card-trip-pricing">£99.99</h2>
           </div>
-          <h2 class="card-trip-pricing">£99.99</h2>
         </div>
-      </div>
+      <% end %>
     <% end %>
-  <% end %>
-</div>
+  </div>
 
-<h4>Products without <%= current_user.allergens_families[0].allergen_family.name %></h4>
+  <h4>Products without <%= @allergen_family %></h4>
 
-<div class="product-list mb-4">
-  <% @products.each do |product| %>
-    <%= link_to product_path(product) do %>
-      <div class="card-trip">
-        <img src=<%= product.photo %> />
-        <div class="card-trip-infos">
-          <div>
-            <h2><%= product.name %></h2>
+  <div class="product-list mb-5">
+    <% @filtered_products.each do |product| %>
+      <%= link_to product_path(product) do %>
+        <div class="card-trip">
+          <img src=<%= product.photo %> />
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= product.name %></h2>
+            </div>
+            <h2 class="card-trip-pricing">£99.99</h2>
           </div>
-          <h2 class="card-trip-pricing">£99.99</h2>
         </div>
-      </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
 
-<h4>Products without <%= current_user.allergens_families[0].allergen_family.name %></h4>
-
-<div class="product-list mb-5">
-  <% @products.each do |product| %>
-    <%= link_to product_path(product) do %>
-      <div class="card-trip">
-        <img src=<%= product.photo %> />
-        <div class="card-trip-infos">
-          <div>
-            <h2><%= product.name %></h2>
-          </div>
-          <h2 class="card-trip-pricing">£99.99</h2>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
-</div>
-
-  <%= link_to "Go shopping", products_path, class: "btn btn-bottom" %><i class="fas fa-arrow-right"></i>
-</div>
+    <%= link_to "Go shopping", products_path, class: "btn btn-bottom" %>

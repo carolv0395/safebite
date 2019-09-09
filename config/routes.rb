@@ -27,6 +27,10 @@ Rails.application.routes.draw do
     collection do
       get 'add_product_quantity'
       get 'remove_product_quantity'
+      get 'add_product_quantity_checkout'
+      get 'remove_product_quantity_checkout'
+      get 'product_delete'
+      get 'shopping_cart'
     end
   end
 end
