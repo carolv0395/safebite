@@ -40,12 +40,6 @@
   }
 }
 
-.plus {
-  background-color: $orange;
-  color: white;
-  padding: 5px 13px;
-}
-
 .add {
   width: 30px;
   height: 30px;
@@ -56,12 +50,6 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
-}
-
-.minus {
-  background-color: #B1B1B1;
-  color: white;
-  padding: 10px 13px;
 }
 
 .remove {
@@ -79,7 +67,7 @@
 .add-quantity {
   color: #202020;
   text-align: center;
-  margin: auto;
+  margin: 0;
 }
 
 a.plus {
@@ -90,4 +78,18 @@ a.plus {
 a.minus {
   text-decoration: none;
   color: white;
+}
+
+a.add {
+  text-decoration: none;
+  color: white;
+}
+
+a.remove {
+  text-decoration: none;
+  color: white;
+}
+
+.centered {
+  padding: 6px;
 }
