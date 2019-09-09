@@ -21,7 +21,15 @@
                       placeholder: 'password',
                       required: false,
                       input_html: { autocomplete: "current-password" } %>
+
+          <label class="container-checkbox">Remember me
+            <input type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+            <span style="display:none;">
           <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+            </span>
+
         </div>
 
         <div class="form-actions">
