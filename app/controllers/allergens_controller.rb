@@ -27,8 +27,8 @@ class AllergensController < ApplicationController
                                    allergen_family_id: id)
         authorize @allergen
         @allergen.save
-        redirect_to root_path
       end
+      redirect_to root_path
     end
   end
 

@@ -12,7 +12,11 @@
             <div class="hidden-icons 0 d-flex justify-content-center">
               <%= image_tag image_path('checked_icon.png'), class: "checked-icon"%>
             </div>
-            <%  @checked = @allergens.pluck(:allergen_family_id).include?(AllergenFamily.all[0].id) ? "checked" : "" %>
+            <% if @allergens.present? %>
+              <%  @checked = @allergens.pluck(:allergen_family_id).include?(AllergenFamily.all[0].id) ? "checked" : "" %>
+            <% else %>
+              <% @checked = "" %>
+            <% end %>
             <input type="checkbox" class="d-none" value="<%= AllergenFamily.all[0].id %>" name="allergen[allergen_families_ids][]" id="allergen_families_ids_<%= AllergenFamily.all[0].id %>" <%= @checked %>>
             <label class="family-choice 0 left-choice" for="allergen_families_ids_<%= AllergenFamily.all[0].id %>">
             <%= image_tag image_path('peanuts_01.png'), class: "allergen-image" %><%= AllergenFamily.all[0].name.upcase %>
@@ -23,7 +27,11 @@
             <div class="hidden-icons 1 d-flex justify-content-center">
               <%= image_tag image_path('checked_icon.png'), class: "checked-icon"%>
             </div>
-            <%  @checked = @allergens.pluck(:allergen_family_id).include?(AllergenFamily.all[1].id) ? "checked" : "" %>
+            <% if @allergens.present? %>
+              <%  @checked = @allergens.pluck(:allergen_family_id).include?(AllergenFamily.all[1].id) ? "checked" : "" %>
+            <% else %>
+              <% @checked = "" %>
+            <% end %>
             <input type="checkbox" class="d-none" value="<%= AllergenFamily.all[1].id %>" name="allergen[allergen_families_ids][]" id="allergen_families_ids_<%= AllergenFamily.all[1].id %>" <%= @checked %>>
             <label class="family-choice 1 left-choice" for="allergen_families_ids_<%= AllergenFamily.all[1].id %>">
             <%= image_tag image_path('milk_01.png'), class: "allergen-image" %><%= AllergenFamily.all[1].name.upcase %>
@@ -34,7 +42,11 @@
             <div class="hidden-icons 2 d-flex justify-content-center">
               <%= image_tag image_path('checked_icon.png'), class: "checked-icon"%>
             </div>
-            <%  @checked = @allergens.pluck(:allergen_family_id).include?(AllergenFamily.all[2].id) ? "checked" : "" %>
+            <% if @allergens.present? %>
+              <%  @checked = @allergens.pluck(:allergen_family_id).include?(AllergenFamily.all[2].id) ? "checked" : "" %>
+            <% else %>
+              <% @checked = "" %>
+            <% end %>
             <input type="checkbox" class="d-none" value="<%= AllergenFamily.all[2].id %>" name="allergen[allergen_families_ids][]" id="allergen_families_ids_<%= AllergenFamily.all[2].id %>" <%= @checked %>>
             <label class="family-choice 2 left-choice" for="allergen_families_ids_<%= AllergenFamily.all[2].id %>">
             <%= image_tag image_path('crab_01.png'), class: "allergen-image" %><%= AllergenFamily.all[2].name.upcase %>
@@ -45,7 +57,11 @@
             <div class="hidden-icons 3 d-flex justify-content-center">
               <%= image_tag image_path('checked_icon.png'), class: "checked-icon"%>
             </div>
-            <%  @checked = @allergens.pluck(:allergen_family_id).include?(AllergenFamily.all[3].id) ? "checked" : "" %>
+            <% if @allergens.present? %>
+              <%  @checked = @allergens.pluck(:allergen_family_id).include?(AllergenFamily.all[3].id) ? "checked" : "" %>
+            <% else %>
+              <% @checked = "" %>
+            <% end %>
             <input type="checkbox" class="d-none" value="<%= AllergenFamily.all[3].id %>" name="allergen[allergen_families_ids][]" id="allergen_families_ids_<%= AllergenFamily.all[3].id %>" <%= @checked %>>
             <label class="family-choice 3 left-choice" for="allergen_families_ids_<%= AllergenFamily.all[3].id %>">
             <%= image_tag image_path('gluten_01.png'), class: "allergen-image" %><%= AllergenFamily.all[3].name.upcase %>
@@ -58,7 +74,11 @@
             <div class="hidden-icons 4 d-flex justify-content-center">
               <%= image_tag image_path('checked_icon.png'), class: "checked-icon"%>
             </div>
-            <%  @checked = @allergens.pluck(:allergen_family_id).include?(AllergenFamily.all[4].id) ? "checked" : "" %>
+            <% if @allergens.present? %>
+              <%  @checked = @allergens.pluck(:allergen_family_id).include?(AllergenFamily.all[4].id) ? "checked" : "" %>
+            <% else %>
+              <% @checked = "" %>
+            <% end %>
             <input type="checkbox" class="d-none" value="<%= AllergenFamily.all[4].id %>" name="allergen[allergen_families_ids][]" id="allergen_families_ids_<%= AllergenFamily.all[4].id %>" <%= @checked %>>
             <label class="family-choice 4 right-choice" for="allergen_families_ids_<%= AllergenFamily.all[4].id %>">
             <%= image_tag image_path('fish_01.png'), class: "allergen-image" %><%= AllergenFamily.all[4].name.upcase %>
@@ -69,7 +89,11 @@
             <div class="hidden-icons 5 d-flex justify-content-center">
               <%= image_tag image_path('checked_icon.png'), class: "checked-icon"%>
             </div>
-            <%  @checked = @allergens.pluck(:allergen_family_id).include?(AllergenFamily.all[5].id) ? "checked" : "" %>
+            <% if @allergens.present? %>
+              <%  @checked = @allergens.pluck(:allergen_family_id).include?(AllergenFamily.all[5].id) ? "checked" : "" %>
+            <% else %>
+              <% @checked = "" %>
+            <% end %>
             <input type="checkbox" class="d-none" value="<%= AllergenFamily.all[5].id %>" name="allergen[allergen_families_ids][]" id="allergen_families_ids_<%= AllergenFamily.all[5].id %>" <%= @checked %>>
             <label class="family-choice 5 right-choice" for="allergen_families_ids_<%= AllergenFamily.all[5].id %>">
             <%= image_tag image_path('soybean_01.png'), class: "allergen-image" %><%= AllergenFamily.all[5].name.upcase %>
@@ -80,7 +104,11 @@
             <div class="hidden-icons 6 d-flex justify-content-center">
               <%= image_tag image_path('checked_icon.png'), class: "checked-icon"%>
             </div>
-            <%  @checked = @allergens.pluck(:allergen_family_id).include?(AllergenFamily.all[6].id) ? "checked" : "" %>
+            <% if @allergens.present? %>
+              <%  @checked = @allergens.pluck(:allergen_family_id).include?(AllergenFamily.all[6].id) ? "checked" : "" %>
+            <% else %>
+              <% @checked = "" %>
+            <% end %>
             <input type="checkbox" class="d-none" value="<%= AllergenFamily.all[6].id %>" name="allergen[allergen_families_ids][]" id="allergen_families_ids_<%= AllergenFamily.all[6].id %>" <%= @checked %>>
             <label class="family-choice 6 right-choice" for="allergen_families_ids_<%= AllergenFamily.all[6].id %>">
             <%= image_tag image_path('seeds_01.png'), class: "allergen-image" %><%= AllergenFamily.all[6].name.upcase %>
