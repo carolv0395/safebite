@@ -156,9 +156,9 @@ product_attributes = [
     photo: "https://images.pexels.com/photos/2092507/pexels-photo-2092507.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     price: 3
   }
-]
+];
 
-ingredient_attributes =[
+ingredient_attributes = [
   {
     name: 'milk',
     is_allergen: true,
@@ -310,12 +310,12 @@ ingredient_attributes =[
   {
     name: 'salt',
     is_allergen: false
-  }
+  },
   {
     name: 'honey',
     is_allergen: false
   }
-]
+];
 
 Ingredient.create!(ingredient_attributes)
 Product.create!(product_attributes)
@@ -328,7 +328,6 @@ Product.create!(product_attributes)
 # IngredientsProduct.create(product_id: Product.find_by(name: ''), ingredient_id: Ingredient.find_by(name: ''))
 # IngredientsProduct.create(product_id: Product.find_by(name: ''), ingredient_id: Ingredient.find_by(name: ''))
 # IngredientsProduct.create(product_id: Product.find_by(name: ''), ingredient_id: Ingredient.find_by(name: ''))
-
 
 Product.all.each do |product|
   Ingredient.order("RANDOM()").limit(rand(2..4)).each do |ingredient|
