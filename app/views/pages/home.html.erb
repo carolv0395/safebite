@@ -23,8 +23,9 @@
       <% end %>
     <% end %>
   </div>
-
-  <h4>Products without <%= @allergen_family %></h4>
+  
+  <h4>Products without <%= @allergen_family.map(&:name).to_sentence %></h4>
+  
 
   <div class="product-list mb-5">
     <% @filtered_products.each do |product| %>
