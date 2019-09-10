@@ -29,5 +29,5 @@ class PaymentsController < ApplicationController
 
   def set_order
     @order = current_user.orders.find(params[:order_id])
-  end
+  end 
 end
