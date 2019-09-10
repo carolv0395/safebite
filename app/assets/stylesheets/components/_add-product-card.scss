@@ -21,7 +21,7 @@
 
   p {
     position: absolute;
-    font-size: 22px;
+    font-size: 25px;
     bottom: 0px;
     left: 10px;
     color: white;
@@ -38,18 +38,23 @@
     font-weight: 500;
     padding-top: 20px;
   }
+
+  p {
+    font-size: 13px;
+  }
+
 }
 
 .add {
   width: 30px;
   height: 30px;
-  background-color: $orange;
+  background-color: #FC9233;
   color: white;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 15px;
 }
 
 .remove {
@@ -61,35 +66,33 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 15px;
 }
 
 .add-quantity {
   color: #202020;
   text-align: center;
+  font-weight: 600;
   margin: 0;
-}
-
-a.plus {
-  text-decoration: none;
-  color: white;
-}
-
-a.minus {
-  text-decoration: none;
-  color: white;
 }
 
 a.add {
   text-decoration: none;
   color: white;
+  font-size: 30px;
 }
 
 a.remove {
   text-decoration: none;
   color: white;
+  font-size: 30px;
+}
+
+.quantity {
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .centered {
-  padding: 6px;
+  padding: 3px;
 }

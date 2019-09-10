@@ -1,34 +1,34 @@
-<div class="container p-3">
+<div class="container pages-container">
   <h1>Shopping Basket</h1>
-
-  <% @order.orders_products.sort_by(&:created_at).each do |orderproduct| %>
-    <div class="add-product-card d-flex mt-4">
-
-      <div class="product-image-price">
-        <img src=<%= orderproduct.product.photo %> />
-        <p><%= orderproduct.product.price %> €</p>
-      </div>
-
-      <div class="product-quantity">
-        <h4> <%= orderproduct.product.name.capitalize %> </h4>
-        <p> <%= orderproduct.product.brand.capitalize %> </p>
-      </div>
-
-      <div class="add-quantity d-flex flex-column justify-content-center">
-        <%= link_to "+", add_product_quantity_checkout_orders_path(product_id: orderproduct.product.id), class: "add" %>
-        <div class ="quantity"><%= orderproduct.quantity %></div>
-        <%= link_to "-", remove_product_quantity_checkout_orders_path(product_id: orderproduct.product.id), class: "remove" %>
-      </div>
-    </div>
-
-  <div class="justify-content-center">
-    <%= link_to "delete product", product_delete_orders_path(id: orderproduct.id), class: "btn-delete" %>
-  </div>
-
-  <% end %>
 </div>
 
-<div class="container d-flex flex-column justify-content-centerd-flex inline-block">
+<% @order.orders_products.sort_by(&:created_at).each do |orderproduct| %>
+  <div class="add-product-card d-flex">
+
+    <div class="product-image-price">
+      <img src=<%= orderproduct.product.photo %> />
+      <p><%= orderproduct.product.price %> €</p>
+    </div>
+
+    <div class="product-quantity">
+      <h4> <%= orderproduct.product.name.capitalize %> </h4>
+      <p> <%= orderproduct.product.brand.capitalize %> </p>
+    </div>
+
+    <div class="add-quantity d-flex flex-column justify-content-center pl-5">
+      <%= link_to "+", add_product_quantity_checkout_orders_path(product_id: orderproduct.product.id), class: "add" %>
+      <div class ="quantity"><%= orderproduct.quantity %></div>
+      <%= link_to "-", remove_product_quantity_checkout_orders_path(product_id: orderproduct.product.id), class: "remove" %>
+    </div>
+  </div>
+
+<div class="justify-content-center pb-4">
+  <%= link_to "delete product", product_delete_orders_path(id: orderproduct.id), class: "btn-delete" %>
+</div>
+
+<% end %>
+
+<div class="container d-flex flex-column justify-content-centerd-flex inline-block pt-2">
     <div class="ml-auto">
       <p class="total">TOTAL <span class="price"><strong><%= @total_price %> € *</strong></span></p>
     </div>
