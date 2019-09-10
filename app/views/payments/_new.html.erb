@@ -2,7 +2,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="paymentsModalLabel"><h1>Purchase of your <%= @order %></h1></h5>
+        <h1 class="modal-title" id="paymentsModalLabel">Shopping Basket Payment></h1>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -12,7 +12,7 @@
 		<%= form_tag order_payments_path(@order) do %>
 		  <article>
 		    <label class="total">
-		      <span>Amount: <%= humanized_money_with_symbol(@order.total) %></span>
+		      <span>Total price: <%= humanized_money_with_symbol(@order.total) %></span>
 		    </label>
 		  </article>
 
@@ -24,11 +24,12 @@
 		    data-amount="<%= @order.total_cents %>"
 		    data-currency="<%= @order.total.currency %>"></script>
 		<% end %>
-        
+
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
       </div>
     </div>
   </div>
 </div>
+
