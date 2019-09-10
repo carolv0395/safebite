@@ -1,50 +1,68 @@
-<div class="orange-background">
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+  <div class="">
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
-    <div class = "container ">
-<div class="user-avatar" style="background-image: url('<%= image_path("photo") %>')">
-</div>
+    <div class="d-flex container pages-container pb-4">
+      <div style="width: 200px;">
+        <h1> Hello, <%= current_user.first_name %>!<br> </h1>
+      </div>
 
-<h1> Hello, <%= current_user.first_name %><br> </h1>
-     </div>
-      <%= f.input :avatar,
-                    required: false,
-                    input_html: { autocomplete: "avatar" } %>
-      <%= f.input :avatar_cache, as: :hidden %>               
-    <div class="name-input ">
-    <div class style ="justify-content: space-between;
-    margin-right: 26px;">
-    <%= f.input :first_name, label: false, required: false, placeholder: "first name" %>
-    </div>
-    <%= f.input :last_name, required: false, label: false, placeholder: "last name" %>
-    </div> 
-    <%= f.input :email, required: true, autofocus: true, label:false, placeholder: "email" %>
-    <%= f.input :address, required: false, label:false, placeholder: "adress" %>
-    <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
+        <div class="avatar-large" style="background-image: url('<%= image_path("photo") %>')">
+          <label class="btn btn-profile-pic">
+            <p>Edit photo</p>
+          <span style="display: none;">
+            <%= f.input :avatar,
                 required: false,
-                input_html: { autocomplete: "new-password" }, label:false, placeholder: "password" %>
-  
-    <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
-                required: true,
-                input_html: { autocomplete: "current-password" } ,label: false, placeholder: "current password"%>
+                input_html: { autocomplete: "avatar" } %>
+            <%= f.input :avatar_cache, as: :hidden %>
+          </span>
+        </label>
     </div>
-     <div class='form-edit-buttons'>
-      <%= f.button :submit, "Update your restrictions", class: 'btn-orange m-3' %>
-      <div class='d-flex justify-content-between w-75'>
-          <%= f.button :submit, "Save", class: 'btn-green' %>
-          <%= f.button :submit, "Cancel", class: 'btn-gray' %>
-        
-      </div>   
-    </div>
+
   </div>
 
+    <div class="container profile-form">
+        <div class="row">
+          <div class="col">
+            <%= f.input :first_name, label: false, required: false, placeholder: "first name" %>
+          </div>
+          <div class="col">
+            <%= f.input :last_name, required: false, label: false, placeholder: "last name" %>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <%= f.input :email, required: true, autofocus: true, label:false, placeholder: "e-mail" %>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <%= f.input :address, required: false, label:false, placeholder: "address" %>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm">
+            <%= f.input :password,
+                    hint: "leave it blank if you don't want to change it",
+                    required: false,
+                    input_html: { autocomplete: "new-password" }, label:false, placeholder: "password" %>
+
+        <%= f.input :current_password,
+                    hint: "we need your current password to confirm your changes",
+                    required: true,
+                    input_html: { autocomplete: "current-password" } ,label: false, placeholder: "current password"%>
+          </div>
+        </div>
+      </div>
+
+      <%= link_to "Update food restrictions", edit_families_allergens_path , class: 'btn btn-bottom btn-food-restrictions' %>
+      <%= f.button :submit, "Save profile", class: 'btn btn-bottom btn-bottom-green' %>
 
 <% end %>
 
