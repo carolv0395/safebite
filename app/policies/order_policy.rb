@@ -13,6 +13,14 @@ class OrderPolicy < ApplicationPolicy
     true
   end
 
+  def add_product_quantity_quick_shop?
+    true
+  end
+
+  def remove_product_quantity_quick_shop?
+    true
+  end
+
   def add_product_quantity?
     true
   end

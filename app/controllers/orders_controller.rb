@@ -1,4 +1,48 @@
 class OrdersController < ApplicationController
+  def add_product_quantity_quick_shop
+    # create/get cart
+    order_pending = current_user.pending_order_in_cart
+    # associate product and qty to cart
+    product = Product.find(params[:product_id])
+    # check if order_product exist
+    order_product = order_pending.orders_products.where(product: product).first
+    # if exists, increment qty by 1
+    if order_product
+      order_product.quantity += 1
+      order_product.price = product.price
+      order_product.save
+    # if not, add product to the cart w/ qty = 1
+    else
+      OrdersProduct.create(quantity: 1, product: product, order: order_pending, price_cents: product.price_cents)
+    end
+    # redirect to procreated_at).reverse.each do |orderduct show
+    flash[:notice] = "You added one item to your shopping basket."
+    authorize order_pending
+    redirect_to category_products_path(product.category)
+  end
+
+  def remove_product_quantity_quick_shop
+    # create/get cart
+    order_pending = current_user.pending_order_in_cart
+    # associate product and qty to cart
+    product = Product.find(params[:product_id])
+    # check if order_product exist
+    order_product = order_pending.orders_products.where(product: product).first
+    # if exists, decrease qty by 1
+    if order_product
+      if order_product.quantity == 0
+        order_product.destroy
+      else
+        order_product.quantity -= 1
+        order_product.save
+      end
+    end
+    flash[:notice] = "You removed one item from your shopping basket."
+    authorize order_pending
+    # redirect to product show
+    redirect_to category_products_path(product.category)
+  end
+
   def add_product_quantity
     # create/get cart
     order_pending = current_user.pending_order_in_cart
