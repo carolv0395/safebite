@@ -38,13 +38,13 @@
 
 </div>
 
-<div class="container white-background pl-4 pr-4 pt-3 pb-4">
+<div class="container white-background pl-5 pr-5 pt-3 pb-5">
   <div class="row mt-3">
-    <div class="col-sm-12 add-quantity d-flex justify-content-between">
-      <%= link_to "-", remove_product_quantity_orders_path(product_id: @product.id), class: "minus" %>
-      <p class="quantity"><strong><%= @quantity_in_pending_order %></strong></p>
-      <%= link_to "+", add_product_quantity_orders_path(product_id: @product.id), class: "plus" %>
-      <p><strong>Total price: <%= @total_price %></strong></p>
+    <div class="col-sm-12 add-quantity d-flex align-self-center justify-content-between">
+      <%= link_to "-", remove_product_quantity_orders_path(product_id: @product.id), class: "remove" %>
+      <p class="centered"><strong><%= @quantity_in_pending_order %></strong></p>
+      <%= link_to "+", add_product_quantity_orders_path(product_id: @product.id), class: "add" %>
+      <p class="centered"><strong>Total price: <%= @total_price %> €</strong></p>
   </div>
 </div>
 
