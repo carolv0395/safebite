@@ -2,8 +2,10 @@
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag image_path('safebite_logo.png') %>
     <% end %>
+
+    <% # if #home %>
       <li class="nav-item">
-        <div class="search flex-container">
+        <div class="search">
           <i class="flex-item search-icon fas fa-search"></i>
           <%#= image_tag image_path('Ellipse.png'), class: "search-icon" %>
           <%= simple_form_for Product.new, url: root_path, method: :get, html: {class: "flex-item"} do |f| %>
@@ -11,8 +13,10 @@
           <% end %>
         </div>
       </li>
+    <% #end %>
       <button class="burguer-menu" type="button" id = "sidebarCollapse">
         <span class="navbar-toggler-icon"></span>
       </button>
+
 </div>
 
