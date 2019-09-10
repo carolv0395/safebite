@@ -138,10 +138,29 @@ class OrdersController < ApplicationController
 
   def shopping_cart
     @order = current_user.pending_order_in_cart
+    calculate_total
+    @total_price = @results.sum
+    @order.total = @total_price
+    @order.save
     authorize @order
-    @total_price = @order.orders_products.sum("(orders_products.price_cents * orders_products.quantity)/100")
   end
 
+  def show
+    @order = current_user.orders.where(order_status: 'paid').find(params[:id])
+    authorize @order
+  end
+
+  private
+  
+  def calculate_total
+    @results = []
+    @order.orders_products.each do |product|
+      @results << product.quantity * product.price
+    end
+    @results
+  end
+
+end
   # def index
   #   @orders = policy_scope(Order)
   #   @user = current_user if user_signed_in?
@@ -169,4 +188,3 @@ class OrdersController < ApplicationController
   # def order_params
   #  params.require(:order).permit(:order_status, :user_id, :payment, :created_at, :updated_at)
   # end
-end
