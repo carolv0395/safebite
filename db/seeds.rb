@@ -315,7 +315,7 @@ ingredient_attributes = [
     name: 'honey',
     is_allergen: false
   }
-];
+]
 
 Ingredient.create!(ingredient_attributes)
 Product.create!(product_attributes)
