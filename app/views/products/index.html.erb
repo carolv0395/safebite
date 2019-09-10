@@ -1,5 +1,5 @@
 <div class="container py-4 category-message">
-  <h1>We know you want to avoid <span style="color: #FC9233;"><%= current_user.allergens_families[0].allergen_family.name %></span>.</h1>
+  <h1>We know you want to avoid <span style="color: #FC9233;"><%= current_user.allergen_families.map(&:name).to_sentence.gsub(/and/, '&') %></span>.</h1>
 
 </div>
 
