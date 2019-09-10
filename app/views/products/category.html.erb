@@ -20,7 +20,7 @@
 
       <% end %>
 
-      <div class="add-quantity d-flex flex-column justify-content-center pl-4">
+      <div class="add-quantity d-flex flex-column justify-content-center pl-5">
           <%= link_to "+", add_product_quantity_quick_shop_orders_path(product_id: product.id), class: "add" %>
           <div class ="quantity">
             <% if OrdersProduct.where(product: product, order: current_user.pending_order_in_cart).first.nil? %>
