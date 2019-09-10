@@ -310,7 +310,7 @@ ingredient_attributes =[
   {
     name: 'salt',
     is_allergen: false
-  }
+  },
   {
     name: 'honey',
     is_allergen: false

@@ -1,8 +1,12 @@
 import "bootstrap";
-import { initImagePreview } from '../plugins/image-preview';
+
+import { initImagePreview } from '../plugins/image-preview'
+import { sidebarCollapse } from '../plugins/sidebar'
 import { showSearchBar } from '../plugins/show-search-bar';
 
+
 initImagePreview();
+sidebarCollapse();
 
 // Hide search bar
 const searchBar = document.querySelector('.search');
