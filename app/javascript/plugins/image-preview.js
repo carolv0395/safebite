@@ -4,7 +4,7 @@ const readURL = function(input) {
     console.log(reader)
     reader.onload = function(e) {
       // $('#meerkat-preview-img').attr('src', e.target.result);
-      $('.user-avatar').attr('style', "background-image: url(' " + e.target.result + "')");
+      $('.avatar-large').attr('style', "background-image: url(' " + e.target.result + "')");
     }
 
     reader.readAsDataURL(input.files[0]);
