@@ -25,6 +25,8 @@ Rails.application.routes.draw do
   resources :orders, only: [:index, :show, :new, :create] do
     resources :payments, only: [:new, :create]
     collection do
+      get 'add_product_quantity_quick_shop'
+      get 'remove_product_quantity_quick_shop'
       get 'add_product_quantity'
       get 'remove_product_quantity'
       get 'add_product_quantity_checkout'

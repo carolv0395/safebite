@@ -1,30 +1,38 @@
 <div class="container pages-container">
   <h1> <%= @products.first.category.gsub(/_/, ' ').gsub(/and/, '&').capitalize %> </h1>
 </div>
+
   <% @products.each do |product| %>
 
-    <%= link_to product_path(product) do %>
-      <div class="add-product-card d-flex">
+    <div class="add-product-card d-flex">
+      <div class="product-image-price">
 
-        <div class="product-image-price">
-          <img src=<%= product.photo %> />
-          <p><%= product.price %> €</p>
-        </div>
+        <%= link_to product_path(product) do %>
 
-        <div class="product-quantity">
-            <h4> <%= product.name %> </h4>
-            <p> <%= product.brand.capitalize %> </p>
-        </div>
-
-          <div class="add-quantity d-flex flex-column justify-content-center pl-4">
-            <div class="add">+</div>
-            <div class="quantity">0</div>
-            <div class="remove">-</div>
-          </div>
-
+        <img src=<%= product.photo %> />
+        <p><%= product.price %> €</p>
       </div>
 
-    <% end %>
+      <div class="product-quantity">
+          <h4> <%= product.name %> </h4>
+          <p> <%= product.brand.capitalize %> </p>
+      </div>
+
+      <% end %>
+
+      <div class="add-quantity d-flex flex-column justify-content-center pl-4">
+          <%= link_to "+", add_product_quantity_quick_shop_orders_path(product_id: product.id), class: "add" %>
+          <div class ="quantity">
+            <% if OrdersProduct.where(product: product, order: current_user.pending_order_in_cart).first.nil? %>
+              <div class ="quantity">0</div>
+            <% else %>
+              <%= OrdersProduct.where(product: product, order: current_user.pending_order_in_cart).first.quantity %>
+            <% end %>
+          </div>
+          <%= link_to "-", remove_product_quantity_quick_shop_orders_path(product_id: product.id), class: "remove" %>
+      </div>
+    </div>
+
   <% end %>
 
 <div class="btn mt-5">
