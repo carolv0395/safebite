@@ -16,8 +16,6 @@
 #
 #
 default: &default
-  # username: pedro
-  # password: password
   adapter: postgresql
   encoding: unicode
 

@@ -1,0 +1,80 @@
+.product-info > h2 {
+  color: black;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.product-info > h3 {
+  color: rgb(40,40,40);
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.product-info > h4 {
+  color: rgb(40,40,40);
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.product-price > p {
+  font-size: 18px;
+}
+
+.product-description > p {
+  color: rgb(40,40,40);
+  font-size: 16px;
+}
+
+.white-background {
+  background-color: white;
+}
+
+.btn-bottom-checkout {
+  width: 80vw;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  background-color: orange;
+  position: fixed;
+  bottom: 0px;
+  left: 75px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  padding-bottom: 15px;
+  font-size: 30px;
+  color: white;
+  border-radius: 0px;
+
+  &:focus {
+    box-shadow: 0 0 0 0;
+  }
+}
+
+.btn-bottom-back {
+  width: 20vw;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  background-color: #FFA759;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  padding-bottom: 15px;
+  font-size: 30px;
+  color: white;
+  border-radius: 0px;
+
+  &:focus {
+    box-shadow: 0 0 0 0;
+  }
+}
+
+a.btn.btn-bottom-back {
+  text-decoration: none;
+  color: white;
+}
+
+a.btn.btn-bottom-checkout {
+  text-decoration: none;
+  color: white;
+}

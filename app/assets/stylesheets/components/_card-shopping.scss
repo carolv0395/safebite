@@ -6,10 +6,7 @@
   width: 200px;
 }
 
-a.btn-add {
-  text-decoration: none;
-  color: white;
-}
+
 
 a.btn-remove {
   text-decoration: none;
@@ -30,11 +27,6 @@ a.btn-remove {
   justify-content: center;
   align-items: center;
   padding: 15px;
-
-  &:hover {
-  opacity: 0.8;
-  }
-
 }
 
 .btn-remove {
@@ -51,9 +43,4 @@ a.btn-remove {
   justify-content: center;
   align-items: center;
   padding: 15px;
-
-  &:hover {
-  opacity: 0.8;
-  }
-
 }

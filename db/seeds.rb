@@ -1,10 +1,6 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed mmand (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
 Allergen.destroy_all
 IngredientsProduct.destroy_all
 Ingredient.destroy_all
@@ -23,16 +19,16 @@ nuts = AllergenFamily.create!(name: 'nuts')
 lactose = AllergenFamily.create!(name: 'lactose')
 shellfish = AllergenFamily.create!(name: 'shellfish')
 gluten = AllergenFamily.create!(name: 'gluten')
-fish_and_meat = AllergenFamily.create!(name: 'fish & meat')
+fish = AllergenFamily.create!(name: 'fish')
 soy = AllergenFamily.create!(name: 'soy')
 seeds = AllergenFamily.create!(name: 'seeds')
 
 product_attributes = [
   {
-    name: 'Cheez-It Baked Original Cheese Crackers Family',
+    name: 'Baked Original Cheese Crackers',
     brand: 'Cheez-It',
     category: :cookies_and_snacks,
-    volume: '21 oz',
+    volume: "500 g",
     discount: 0,
     stock: Faker::Number.between(from: 0, to: 200),
     description:"Make snack time more fun with Cheez-It Original Baked Snack Crackers, bite-size cheese crackers that are baked to crispy perfection. Cheez-It Baked Snack Crackers are the real deal—made with 100% real cheese that's been carefully aged for a yummy, irresistible taste that’s bursting with real cheese goodness in every crunchy bite. Each perfect square crisp is loaded with bold cheesy flavor that hits your taste buds with every delicious mouthful.",
@@ -40,7 +36,18 @@ product_attributes = [
     price: 5
   },
   {
-    name: 'Nature Valley Granola Bars Variety Pack',
+    name: 'Bran Flakes',
+    brand: 'Crownfield',
+    category: :breakfast_and_cereal,
+    volume: "500 g",
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description:"A nutritious breakfast, with flakes of wholegrain wheat and wheat bran.",
+    photo: "",
+    price: 1
+  },
+  {
+    name: 'Granola Bars Variety Pack',
     brand: 'Nature-Valley',
     category: :breakfast_and_cereal,
     volume: '22 oz',
@@ -51,7 +58,7 @@ product_attributes = [
     price: 6
   },
   {
-    name: "Ben & Jerry's Ice Cream Half Bake",
+    name: "Half Bake Ice Cream",
     brand: "Ben & Jerry's",
     category: :frozen_foods,
     volume: '16 oz',
@@ -62,7 +69,7 @@ product_attributes = [
     price: 6
   },
   {
-    name: "Minute Maid 100'%' Orange Juice",
+    name: "100'%' Orange Juice",
     brand: "Minute Maid",
     category: :beverages,
     volume: '10 Fl Oz',
@@ -73,7 +80,7 @@ product_attributes = [
     price: 5
   },
   {
-    name: "Apothic Red Wine",
+    name: "Red Wine",
     brand: "Apothic",
     category: :beer_wine_and_spirits,
     volume: '750 ml',
@@ -84,7 +91,7 @@ product_attributes = [
     price: 8
   },
   {
-    name: "Smithfield Fresh Pork Center Cut Loin, Boneless",
+    name: "Fresh Pork Center Cut Loin",
     brand: "Smithfield",
     category: :meat_and_seafood,
     volume: '4 lb',
@@ -95,7 +102,7 @@ product_attributes = [
     price: 9
   },
   {
-    name: 'Del Monte Fresh Cut Blue Lake Cut Green Beans',
+    name: 'Fresh Cut Blue Lake Cut Green Beans',
     brand: 'Del Monte',
     category: :canned_goods_and_soups,
     volume: '14 oz',
@@ -106,7 +113,7 @@ product_attributes = [
     price: 5
   },
   {
-    name: 'Royal Dansk Danish Butter Cookie',
+    name: 'Danish Butter Cookie',
     brand: 'Royal Dansk',
     category: :cookies_and_snacks,
     volume: '12 oz',
@@ -117,7 +124,7 @@ product_attributes = [
     price: 4
   },
   {
-    name: 'Great Value Large White Eggs',
+    name: 'Large White Eggs',
     brand: 'Great Value',
     category: :dairy_eggs_and_cheese,
     volume: '36 oz',
@@ -139,7 +146,7 @@ product_attributes = [
     price: 2
   },
   {
-    name: 'Mission Soft Taco Whole Wheat Tortillas',
+    name: 'Soft Taco Whole Wheat Tortillas',
     brand: 'Mission',
     category: :grains_pasta_and_sides,
     volume: '450g',
@@ -192,7 +199,7 @@ ingredient_attributes =[
   {
     name: 'tuna',
     is_allergen: true,
-    allergen_family_id: fish_and_meat.id
+    allergen_family_id: fish.id
   },
   {
     name: 'sugar',
@@ -209,8 +216,7 @@ ingredient_attributes =[
   },
   {
     name: 'pork',
-    is_allergen: true,
-    allergen_family_id: fish_and_meat.id
+    is_allergen: false
   },
   {
     name: 'cashew',
@@ -238,8 +244,7 @@ ingredient_attributes =[
   },
   {
     name: 'chicken broth',
-    is_allergen: true,
-    allergen_family_id: fish_and_meat.id
+    is_allergen: false
   },
   {
     name: 'pumpkin seeds',
@@ -283,10 +288,47 @@ ingredient_attributes =[
     is_allergen: true,
     allergen_family_id: gluten.id
   },
+  {
+    name: 'wholegrain wheat',
+    is_allergen: true,
+    allergen_family_id: gluten.id
+  },
+  {
+    name: 'wheat bran',
+    is_allergen: true,
+    allergen_family_id: gluten.id
+  },
+  {
+    name: 'sugar',
+    is_allergen: false
+  },
+  {
+    name: 'barley malt extract',
+    is_allergen: true,
+    allergen_family_id: seeds.id
+  },
+  {
+    name: 'salt',
+    is_allergen: false
+  }
+  {
+    name: 'honey',
+    is_allergen: false
+  }
 ]
 
 Ingredient.create!(ingredient_attributes)
 Product.create!(product_attributes)
+
+# IngredientsProduct.create(product_id: Product.find_by(name: 'Fresh Strawberries'), ingredient_id: Ingredient.find_by(name: 'strawberry'))
+# IngredientsProduct.create(product_id: Product.find_by(name: 'Large White Eggs'), ingredient_id: Ingredient.find_by(name: 'egg'))
+# IngredientsProduct.create(product_id: Product.find_by(name: 'Bran Flakes'), ingredient_id: Ingredient.find_by(name: ''))
+# IngredientsProduct.create(product_id: Product.find_by(name: 'Bran Flakes'), ingredient_id: Ingredient.find_by(name: ''))
+# IngredientsProduct.create(product_id: Product.find_by(name: 'Bran Flakes'), ingredient_id: Ingredient.find_by(name: ''))
+# IngredientsProduct.create(product_id: Product.find_by(name: ''), ingredient_id: Ingredient.find_by(name: ''))
+# IngredientsProduct.create(product_id: Product.find_by(name: ''), ingredient_id: Ingredient.find_by(name: ''))
+# IngredientsProduct.create(product_id: Product.find_by(name: ''), ingredient_id: Ingredient.find_by(name: ''))
+
 
 Product.all.each do |product|
   Ingredient.order("RANDOM()").limit(rand(2..4)).each do |ingredient|

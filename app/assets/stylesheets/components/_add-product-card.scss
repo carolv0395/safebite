@@ -1,0 +1,95 @@
+.add-product-card {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  position: relative;
+
+  img {
+    height: 100%;
+    width: 120px;
+    object-fit: cover;
+  }
+}
+
+.product-image-price {
+  height: 100%;
+  width: 140px;
+
+  p {
+    position: absolute;
+    font-size: 22px;
+    bottom: 0px;
+    left: 10px;
+    color: white;
+    font-weight: bold;
+  }
+}
+
+.product-quantity {
+  color: #202020;
+  width:140px;
+
+  h4 {
+    font-size: 18px;
+    font-weight: 500;
+    padding-top: 20px;
+  }
+}
+
+.add {
+  width: 30px;
+  height: 30px;
+  background-color: $orange;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.remove {
+  background-color: #B1B1B1;
+  width: 30px;
+  height: 30px;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.add-quantity {
+  color: #202020;
+  text-align: center;
+  margin: 0;
+}
+
+a.plus {
+  text-decoration: none;
+  color: white;
+}
+
+a.minus {
+  text-decoration: none;
+  color: white;
+}
+
+a.add {
+  text-decoration: none;
+  color: white;
+}
+
+a.remove {
+  text-decoration: none;
+  color: white;
+}
+
+.centered {
+  padding: 6px;
+}
