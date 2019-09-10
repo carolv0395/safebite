@@ -8,18 +8,18 @@
 
         <div class="product-image-price">
           <img src=<%= product.photo %> />
-          <p><%= product.price %></p>
+          <p><%= product.price %> €</p>
         </div>
 
         <div class="product-quantity">
             <h4> <%= product.name %> </h4>
-            <p> <%= product.volume %> </p>
+            <p> <%= product.brand.capitalize %> </p>
         </div>
 
-          <div class="add-quantity d-flex flex-column justify-content-center">
-            <div class="plus">+</div>
+          <div class="add-quantity d-flex flex-column justify-content-center pl-4">
+            <div class="add">+</div>
             <div class="quantity">0</div>
-            <div class="minus">-</div>
+            <div class="remove">-</div>
           </div>
 
       </div>
@@ -27,3 +27,7 @@
     <% end %>
   <% end %>
 
+<div class="btn mt-5">
+  <%= link_to "<", products_path, class: "btn btn-bottom-back" %>
+  <%= link_to "Ready to checkout?", shopping_cart_orders_path, class: "btn btn-bottom-checkout" %>
+</div>

@@ -1,4 +1,5 @@
 <div class="container">
+
   <div class="container p-3">
 
     <div class="row">
@@ -9,51 +10,47 @@
 
     <div class="row">
       <div class="col-sm-12">
-        <div class="show-photo" style="background-image: url('<%= image_path(@product.photo) %>')"></div>
+        <div class="product-photo" style="background-image: url('<%= image_path(@product.photo) %>')"></div>
       </div>
     </div>
 
     <div class="row mt-3">
-      <div class="col-sm-12">
+      <div class="col-sm-12 product-info">
         <h2><%= @product.brand.capitalize %></h2>
-        <h3><%= @product.category.gsub(/_/, ' ').gsub(/and/, '&') %></h3>
-        <p><%= @product.volume %></p>
+        <h3><%= @product.category.gsub(/_/, ' ').gsub(/and/, '&').capitalize %></h3>
+        <h4><%= @product.volume %></h4>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-sm-12">
-        <p><strong><%= humanized_money_with_symbol(@product.price) %></strong></p>
-        <% unless @product.discount == 0 || @product.discount.nil? || @product.discount.empty? %>
-          <p>Discount: <%= @product.discount %></p>
-          <% discount_price = @product.price - (@product.price * @product.discount) %>
-          <p><%= discount_price %></p>
-        <% end %>
+      <div class="col-sm-12 product-price">
+        <p><strong><%= humanized_money_with_symbol(@product.price) %> per unit</strong></p>
       </div>
     </div>
 
     <div class="row mt-3">
-      <div class="col-sm-12">
+      <div class="col-sm-12 product-description">
         <p><strong>Description:</strong> <%= @product.description %></p>
       </div>
     </div>
 
-    <div class="row mt-3 cart">
-      <div class="col-sm-12 d-flex justify-content-between p-3 m-2">
-        <%= link_to "+", add_product_quantity_orders_path(product_id: @product.id), class: "btn-add" %>
-        <p><strong><%= @quantity_in_pending_order %></strong></p>
-        <%= link_to "-", remove_product_quantity_orders_path(product_id: @product.id), class: "btn-remove" %>
-        <i class="fas fa-shopping-cart"></i>
-      </div>
-    </div>
+  </div>
 
-    <div>
-      <p><strong>Total price: <%= @total_price %></strong></p>
-    </div>
+</div>
 
-    <div class="btn mt-5">
-      <%= link_to "ready to checkout?", shopping_cart_orders_path, class: "btn btn-bottom" %>
-    </div>
+<div class="container white-background pl-5 pr-5 pt-3 pb-5">
+  <div class="row mt-3">
+    <div class="col-sm-12 add-quantity d-flex align-self-center justify-content-between">
+      <%= link_to "-", remove_product_quantity_orders_path(product_id: @product.id), class: "remove" %>
+      <p class="centered"><strong><%= @quantity_in_pending_order %></strong></p>
+      <%= link_to "+", add_product_quantity_orders_path(product_id: @product.id), class: "add" %>
+      <p class="centered"><strong>Total price: <%= @total_price %> €</strong></p>
+  </div>
+</div>
+
+<div class="btn mt-5">
+  <%= link_to "<", category_products_path(@product.category), class: "btn btn-bottom-back" %>
+  <%= link_to "Ready to checkout?", shopping_cart_orders_path, class: "btn btn-bottom-checkout" %>
 </div>
 
 
