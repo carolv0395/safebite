@@ -9,6 +9,10 @@ class OrderPolicy < ApplicationPolicy
     true
   end
 
+  def create?
+    true    
+  end
+
   def category?
     true
   end
