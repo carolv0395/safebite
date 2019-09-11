@@ -6,7 +6,6 @@ import { showSearchBar } from '../plugins/show-search-bar';
 import { flashDismiss } from '../plugins/flash-dismiss';
 import { removeFlash } from '../plugins/flash-dismiss';
 
-
 initImagePreview();
 sidebarCollapse();
 flashDismiss();

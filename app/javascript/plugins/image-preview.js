@@ -3,7 +3,6 @@ const readURL = function(input) {
     var reader = new FileReader();
     console.log(reader)
     reader.onload = function(e) {
-      // $('#meerkat-preview-img').attr('src', e.target.result);
       $('.avatar-large').attr('style', "background-image: url(' " + e.target.result + "')");
     }
 
