@@ -102,13 +102,13 @@ product_attributes = [
     price: 9
   },
   {
-    name: 'Fresh Cut Blue Lake Cut Green Beans',
+    name: 'Fresh Cut Blue Lake Soy Beans',
     brand: 'Del Monte',
     category: :canned_goods_and_soups,
     volume: '14 oz',
     discount: 0,
     stock: Faker::Number.between(from: 0, to: 200),
-    description:"Del Monte Fresh Cut Blue Lake Cut Green Beans are picked at the peak of ripeness then packed within hours to lock in the nutrition and the crisp, fresh taste. Our green beans contain just three simple ingredients: green beans, water and sea salt. Serve warmed and dusted with fresh ground pepper as a side, or use in a savory casserole. Del Monte works hard to cultivate the freshest, most nutritious fruits and vegetable to use in every one of our products. When you trust Del Monte, you can be sure what you're buying is the peak of quality and nutrition!",
+    description:"Del Monte Fresh Cut Blue Lake Soy Beans are picked at the peak of ripeness then packed within hours to lock in the nutrition and the crisp, fresh taste. Our soy green beans contain just three simple ingredients: soy green beans, water and sea salt. Serve warmed and dusted with fresh ground pepper as a side, or use in a savory casserole. Del Monte works hard to cultivate the freshest, most nutritious fruits and vegetable to use in every one of our products. When you trust Del Monte, you can be sure what you're buying is the peak of quality and nutrition!",
     photo: "https://images.pexels.com/photos/255469/pexels-photo-255469.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     price: 5
   },
@@ -155,6 +155,17 @@ product_attributes = [
     description: "In addition to their great taste and soft texture, Mission Soft Taco Whole Wheat Tortillas deliver all of the extra benefits of whole grain. Our tortillas are made with 100% whole wheat, so they're naturally satisfying, a great source of whole grain, and high in fiber. And since our tortillas are also free of trans fat and cholesterol, they're a smart addition to any meal.",
     photo: "https://images.pexels.com/photos/2092507/pexels-photo-2092507.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     price: 3
+  },
+  {
+    name: 'Frozen Cooked Shrimp',
+    brand: 'Mission',
+    category: :frozen_foods,
+    volume: '12 oz',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "Our Medium Shrimp are cooked, peeled, deveined, and tail on. These shrimp are ready to thaw and eat. They pair well with a side of steamed red potatoes, garlic roasted broccoli, corn bread and wild rice. They are a great low calorie, lean source of protein. This product is Best Aquaculture Practices certified, making it a responsible seafood choice. Enjoying your favorite seafood is easy with our Cooked Medium Shrimp.",
+    photo: "https://images.pexels.com/photos/51948/gourmet-salad-lunch-breakfast-51948.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    price: 5
   }
 ];
 
@@ -238,6 +249,11 @@ ingredient_attributes = [
     allergen_family_id: shellfish.id
   },
   {
+    name: 'shrimp',
+    is_allergen: true,
+    allergen_family_id: shellfish.id
+  },
+  {
     name: 'mussels',
     is_allergen: true,
     allergen_family_id: shellfish.id
@@ -314,23 +330,77 @@ ingredient_attributes = [
   {
     name: 'honey',
     is_allergen: false
+  },
+  {
+    name: 'chocolate',
+    is_allergen: false
+  },
+  {
+    name: 'wine',
+    is_allergen: false
   }
 ]
 
 Ingredient.create!(ingredient_attributes)
 Product.create!(product_attributes)
 
-# IngredientsProduct.create(product_id: Product.find_by(name: 'Fresh Strawberries'), ingredient_id: Ingredient.find_by(name: 'strawberry'))
-# IngredientsProduct.create(product_id: Product.find_by(name: 'Large White Eggs'), ingredient_id: Ingredient.find_by(name: 'egg'))
-# IngredientsProduct.create(product_id: Product.find_by(name: 'Bran Flakes'), ingredient_id: Ingredient.find_by(name: ''))
-# IngredientsProduct.create(product_id: Product.find_by(name: 'Bran Flakes'), ingredient_id: Ingredient.find_by(name: ''))
-# IngredientsProduct.create(product_id: Product.find_by(name: 'Bran Flakes'), ingredient_id: Ingredient.find_by(name: ''))
-# IngredientsProduct.create(product_id: Product.find_by(name: ''), ingredient_id: Ingredient.find_by(name: ''))
-# IngredientsProduct.create(product_id: Product.find_by(name: ''), ingredient_id: Ingredient.find_by(name: ''))
-# IngredientsProduct.create(product_id: Product.find_by(name: ''), ingredient_id: Ingredient.find_by(name: ''))
+# Baked Original Cheese Crackers
+IngredientsProduct.create(product_id: Product.find_by(name: 'Baked Original Cheese Crackers').id, ingredient_id: Ingredient.find_by(name: 'wheat').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Baked Original Cheese Crackers').id, ingredient_id: Ingredient.find_by(name: 'cheese').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Baked Original Cheese Crackers').id, ingredient_id: Ingredient.find_by(name: 'sugar').id)
 
-Product.all.each do |product|
-  Ingredient.order("RANDOM()").limit(rand(2..4)).each do |ingredient|
-    IngredientsProduct.create(product_id: product.id, ingredient_id: ingredient.id)
-  end
-end
+# Bran Flakes
+IngredientsProduct.create(product_id: Product.find_by(name: 'Bran Flakes').id, ingredient_id: Ingredient.find_by(name: 'wheat').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Bran Flakes').id, ingredient_id: Ingredient.find_by(name: 'cheese').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Bran Flakes').id, ingredient_id: Ingredient.find_by(name: 'honey').id)
+
+# Granola Bars Variety Pack
+IngredientsProduct.create(product_id: Product.find_by(name: 'Granola Bars Variety Pack').id, ingredient_id: Ingredient.find_by(name: 'wheat').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Granola Bars Variety Pack').id, ingredient_id: Ingredient.find_by(name: 'walnuts').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Granola Bars Variety Pack').id, ingredient_id: Ingredient.find_by(name: 'peanuts').id)
+
+# Half Bake Ice Cream
+IngredientsProduct.create(product_id: Product.find_by(name: 'Half Bake Ice Cream').id, ingredient_id: Ingredient.find_by(name: 'coconut milk').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Half Bake Ice Cream').id, ingredient_id: Ingredient.find_by(name: 'chocolate').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Half Bake Ice Cream').id, ingredient_id: Ingredient.find_by(name: 'sugar').id)
+
+# 100'%' Orange Juice
+IngredientsProduct.create(product_id: Product.find_by(name: "100'%' Orange Juice").id, ingredient_id: Ingredient.find_by(name: 'orange').id)
+IngredientsProduct.create(product_id: Product.find_by(name: "100'%' Orange Juice").id, ingredient_id: Ingredient.find_by(name: 'sugar').id)
+
+# Red Wine
+IngredientsProduct.create(product_id: Product.find_by(name: 'Red Wine').id, ingredient_id: Ingredient.find_by(name: 'wine').id)
+
+# Fresh Pork Center Cut Loin
+IngredientsProduct.create(product_id: Product.find_by(name: 'Fresh Pork Center Cut Loin').id, ingredient_id: Ingredient.find_by(name: 'pork').id)
+
+# Fresh Cut Blue Lake Soy Beans
+IngredientsProduct.create(product_id: Product.find_by(name: 'Fresh Cut Blue Lake Soy Beans').id, ingredient_id: Ingredient.find_by(name: 'soybean').id)
+
+# Danish Butter Cookie
+IngredientsProduct.create(product_id: Product.find_by(name: 'Danish Butter Cookie').id, ingredient_id: Ingredient.find_by(name: 'whole wheat flour').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Danish Butter Cookie').id, ingredient_id: Ingredient.find_by(name: 'sugar').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Danish Butter Cookie').id, ingredient_id: Ingredient.find_by(name: 'sugar').id)
+
+# Large White Eggs
+IngredientsProduct.create(product_id: Product.find_by(name: 'Large White Eggs').id, ingredient_id: Ingredient.find_by(name: 'egg').id)# Large White Eggs
+
+# Fresh Strawberries
+IngredientsProduct.create(product_id: Product.find_by(name: 'Fresh Strawberries').id, ingredient_id: Ingredient.find_by(name: 'strawberry').id)# Fresh Strawberries
+
+# Soft Taco Whole Wheat Tortillas
+IngredientsProduct.create(product_id: Product.find_by(name: 'Soft Taco Whole Wheat Tortillas').id, ingredient_id: Ingredient.find_by(name: 'wheat').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Soft Taco Whole Wheat Tortillas').id, ingredient_id: Ingredient.find_by(name: 'flour').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Soft Taco Whole Wheat Tortillas').id, ingredient_id: Ingredient.find_by(name: 'egg').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Soft Taco Whole Wheat Tortillas').id, ingredient_id: Ingredient.find_by(name: 'sugar').id)
+
+# Frozen Cooked Shrimp
+IngredientsProduct.create(product_id: Product.find_by(name: 'Frozen Cooked Shrimp').id, ingredient_id: Ingredient.find_by(name: 'shrimp').id)
+
+
+
+# Product.all.each do |product|
+#   Ingredient.order("RANDOM()").limit(rand(2..4)).each do |ingredient|
+#     IngredientsProduct.create(product_id: product.id, ingredient_id: ingredient.id)
+#   end
+# end
