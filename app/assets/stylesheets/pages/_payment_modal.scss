@@ -1,0 +1,43 @@
+.modal-title {
+  color: #FC9233,
+}
+
+.modal-list {
+  font-size: 14px;
+}
+
+.modal-total {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.modal-body {
+}
+
+button.stripe-button-el {
+  background-color: #ADB13A !important;
+  background-image: none;
+  border-radius: 0;
+  text-shadow: none;
+  span {
+    background-color: #ADB13A !important;
+    background-image: none;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    text-shadow: none;
+  }
+  &:active {
+    span {
+      background: #ADB13A !important;
+    }
+  }
+
+}
+
+button.btn.btn-secondary {
+  background-color: #B1B1B1;
+  font-size: 14px;
+  border-color: #B1B1B1;
+  font-weight: 500;
+  border-radius: 0;
+}
