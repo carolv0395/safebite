@@ -6,10 +6,10 @@
     <h4>Products you'll love</h4>
 
   <div class="product-list mb-4">
-    <% product_array = [] %>
-    <% rand(4..9).times { product_array << @products.sample } %>
-    <% product_array.uniq! %>
-    <% product_array.each do |product| %>
+    <%# product_array = [] %>
+    <%# rand(4..9).times { product_array << @products.sample } %>
+    <%# product_array.uniq! %>
+    <% @products_love.each do |product| %>
       <%= link_to product_path(product) do %>
         <div class="card-trip">
           <img src=<%= product.photo %> />

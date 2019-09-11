@@ -12,12 +12,12 @@ class PagesController < ApplicationController
       session[:search] = ''
     end
 
-    @products_love = @products.sample(4)
-
     if current_user.allergen_families.any?
       @allergen_family = current_user.allergen_families
       @filtered_products = search_allergens
     end
+
+    @products_love = @filtered_products.sample(rand(4..8)) if !@filtered_products.nil?
   end
 
 
