@@ -43,8 +43,8 @@ product_attributes = [
     discount: 0,
     stock: Faker::Number.between(from: 0, to: 200),
     description:"A nutritious breakfast, with flakes of wholegrain wheat and wheat bran.",
-    photo: "",
-    price: 1
+    photo: "https://cdn.shopify.com/s/files/1/1305/4751/products/StaySteady_Maple_Pecan_Life_26708371-ecea-4ea9-bd54-3feb5cdf2caf_2000x.png?v=1554409757",
+    price: 3
   },
   {
     name: 'Granola Bars Variety Pack',
@@ -69,7 +69,7 @@ product_attributes = [
     price: 6
   },
   {
-    name: "100'%' Orange Juice",
+    name: '100' + '%' + ' Orange Juice',
     brand: "Minute Maid",
     category: :beverages,
     volume: '10 Fl Oz',
@@ -109,7 +109,7 @@ product_attributes = [
     discount: 0,
     stock: Faker::Number.between(from: 0, to: 200),
     description:"Del Monte Fresh Cut Blue Lake Soy Beans are picked at the peak of ripeness then packed within hours to lock in the nutrition and the crisp, fresh taste. Our soy green beans contain just three simple ingredients: soy green beans, water and sea salt. Serve warmed and dusted with fresh ground pepper as a side, or use in a savory casserole. Del Monte works hard to cultivate the freshest, most nutritious fruits and vegetable to use in every one of our products. When you trust Del Monte, you can be sure what you're buying is the peak of quality and nutrition!",
-    photo: "https://images.pexels.com/photos/255469/pexels-photo-255469.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    photo: "https://www.northstargenetics.com/ca/wp-content/uploads/sites/3/2018/12/gs-post-1600x1100.jpg",
     price: 5
   },
   {
@@ -158,7 +158,7 @@ product_attributes = [
   },
   {
     name: 'Frozen Cooked Shrimp',
-    brand: 'Mission',
+    brand: 'Shrimp & Co',
     category: :frozen_foods,
     volume: '12 oz',
     discount: 0,
@@ -166,6 +166,120 @@ product_attributes = [
     description: "Our Medium Shrimp are cooked, peeled, deveined, and tail on. These shrimp are ready to thaw and eat. They pair well with a side of steamed red potatoes, garlic roasted broccoli, corn bread and wild rice. They are a great low calorie, lean source of protein. This product is Best Aquaculture Practices certified, making it a responsible seafood choice. Enjoying your favorite seafood is easy with our Cooked Medium Shrimp.",
     photo: "https://images.pexels.com/photos/51948/gourmet-salad-lunch-breakfast-51948.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     price: 5
+  },
+  {
+    name: 'Pasta Elbows',
+    brand: 'Barilla',
+    category: :grains_pasta_and_sides,
+    volume: '32 oz',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "Barilla pasta is the perfect foundation for a nutritious & delicious meal especially when paired with other healthy foods like olive oil, vegetables, legumes and lean proteins.",
+    photo: "https://img.taste.com.au/FjWQAr5i/taste/2016/11/gluten-free-elbows-pasta-salad-with-tomatoes-and-eggplant-sauce-95189-1.jpeg",
+    price: 4
+  },
+  {
+    name: 'Great Value Rotini (4 pack)',
+    brand: 'Great Value',
+    category: :grains_pasta_and_sides,
+    volume: '16 oz',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "Packing - Recyclable. 100% Recycled Paperboard. Including 30% Post-Consumer Content",
+    photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsyOP_Lw9dzfMIeB_ge0bfpXrGDo6oSWSJrU9inkgr4LB2hu-EOg",
+    price: 5
+  },
+  {
+    name: 'Rice Crackers',
+    brand: 'Osumi',
+    category: :cookies_and_snacks,
+    volume: '1 kg',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "Osumi rice crackers are a glorious crispy treat. Enjoy them on their own, or pair with Far Eastern dipping sauces, fresh veg or other tasty snacks.",
+    photo: "https://assets.marthastewart.com/styles/wmax-1500/d61/iranian-rice-cookies-mbak909-middle-east-1565-v2-d113210-0118/iranian-rice-cookies-mbak909-middle-east-1565-v2-d113210-0118_horiz.jpg?itok=v7qK1qkQ",
+    price: 3
+  },
+  {
+    name: 'Savoury Roasted Two Seed Mix',
+    brand: 'Savoury Seeds',
+    category: :cookies_and_snacks,
+    volume: '1 kg',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "Osumi rice crackers are a glorious crispy treat. Enjoy them on their own, or pair with Far Eastern dipping sauces, fresh veg or other tasty snacks.",
+    photo: "https://cdn.shopify.com/s/files/1/2028/5817/products/soaking-seed-mix-seeds-grains-parrot-society-of-australia-parrot-supplies-australia_2048x@2x.jpg?v=1513793350",
+    price: 3
+  },
+  {
+    name: 'Steak Ground Beef Patties',
+    brand: 'Angus',
+    category: :meat_and_seafood,
+    volume: '4 lb',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "Our All Natural 85" + "%" + "Fat/15 % Lean, Extra Thick Angus Beef Steak Burgers are enough to get your mouth watering while you grill them. These all natural Angus steak patties are made with quality USDA-approved beef and no artificial ingredients. Our steak burgers are juicy, tender and flavorful. Our beef is an excellent source of protein, vitamin B6, vitamin B12, zinc, niacin, selenium and a good source of phosphorous, riboflavin, iron, and choline. All 10 essential minerals are naturally found in beef and are a flavorful way to give your body nutrients to help power through the day. These patties are great for grilling or sauteing and are a delicious addition to your favorite recipes. Trying cooking and serving simply with avocado, lettuce and tomato for a delicious lunch or dinner.",
+    photo: "https://www.thespruceeats.com/thmb/qJcCRSZzFlOG6NiHOi5Z7ZkdLAw=/2048x1365/filters:no_upscale():max_bytes(150000):strip_icc()/easy-vegan-black-bean-veggie-burgers-3377008-29_preview-5afc802c31283400372201fc.jpeg",
+    price: 7
+  },
+  {
+    name: 'Vienna Sausage',
+    brand: "Libby's",
+    category: :meat_and_seafood,
+    volume: '4,6 oz',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "Whip up a delicious dish with Libby's® Vienna Sausage (4.6 oz. cans, 18-count). They're fully cooked and ready to eat. Plump and tasty, these delicately seasoned sausages offer a mouthful of subtle flavor and texture with every bite.",
+    photo: "https://d5q6n6g7.stackpathcdn.com//content/images/thumbs/0001489.jpeg",
+    price: 9
+  },
+  {
+    name: 'Country Style Pork Loin Back Ribs',
+    brand: "Farmland",
+    category: :meat_and_seafood,
+    volume: '4,8 oz',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "Country Style Pork Loin Back Ribs Lg, 3.6-4.8lbs Pork",
+    photo: "https://cdn.apartmenttherapy.info/image/fetch/f_auto,q_auto:eco/https" + "%" + "3A" + "%" + "2F" "%" + "2Fstorage.googleapis.com" + "%" + "2Fgen-atmedia" + "%" + "2F3" + "%" + "2F2018" + "%" + "2F06" + "%" + "2F1edfc42ff34171f7386e1da588846634c1517eaf.jpeg",
+    price: 15
+  },
+  {
+    name: 'Porridge Oats',
+    brand: "Wholefoods",
+    category: :breakfast_and_cereal,
+    volume: '5 kg',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "Rolled flat and then steel cut to make nice super-fine porridge oats, this slow-energy-release foodstuff is a must-have porridge- and pudding-making ingredient. The fineness of these organic oats gives them great flexibility: make your porridge (or snacking and baking mixtures) thick and gloopy, or super-smooth and creamy. The choice is always yours!",
+    photo: "https://www.thespruceeats.com/thmb/J5RKO7qWhiz3Jn2aWmqb4-SQrzQ=/3200x2400/smart/filters:no_upscale()/traditional-scottish-porridge-435821-Hero-5bb643d14cedfd00263c2ecd.jpg",
+    price: 7
+  },
+  {
+    name: 'Whole Kernel Corn',
+    brand: 'Great Value',
+    category: :frozen_foods,
+    volume: '12 oz',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "About This Item
+We aim to show you accurate product information. Manufacturers, suppliers and others provide what you see here, and we have not verified it. See our disclaimer
+Great Value Whole Kernel Corn has a vibrant yellow color and a fresh from the farm flavor. When steamed, they have a crisp, delicious taste that is also great for you. Corn has a versatile taste that allows you to use it in dozens of ways. Use it as an ingredient to make homemade Asian-style stir fry, corn-chowder soup, or chicken pot pie. Season it with salt and pepper and enjoy it as a healthy side to hearty meat loaf and garlic mashed potatoes. It is great for health conscious individuals as it has no trans fat or cholesterol. It comes in a steamable, microwave-safe bag for your convenience.",
+    photo: "https://previews.123rf.com/images/bravissimos/bravissimos1511/bravissimos151100081/48513526-background-frozen-corn-close-up-in-studio.jpg",
+    price: 3
+  },
+  {
+    name: 'Detox Rocks Fruit & Vegetable Smoothie',
+    brand: 'Great Value',
+    category: :beverages,
+    volume: '24 oz',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "About This Item
+We aim to show you accurate product information. Manufacturers, suppliers and others provide what you see here, and we have not verified it. See our disclaimer
+Great Value Detox Rocks Fruit and Vegetable Smoothie is made with a delicious blend of pineapple, banana, cranberry, kale and lemon. It's great for quick and easy smoothies at home, at the office or on the go. Simply add water to make this tasty creation come to life. Make it an extra special treat and substitute water for your favorite juice or milk. Serve with a fresh garden salad to enjoy a well-balanced meal that's great for you. It also offers nutritional benefits as it is a great source of dietary fiber, iron, potassium, vitamin C and calcium. Nourish your body, soul and taste buds with the great taste of Great Value Detox Rocks Smoothie.",
+    photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7Wi0xJDtK-UetIwMusQu2aQNsba3YQ-N-MM8o-YXbs99GabFn",
+    price: 3
   }
 ];
 
@@ -227,6 +341,10 @@ ingredient_attributes = [
   },
   {
     name: 'pork',
+    is_allergen: false
+  },
+  {
+    name: 'beef',
     is_allergen: false
   },
   {
@@ -300,6 +418,10 @@ ingredient_attributes = [
     is_allergen: true
   },
   {
+    name: 'raspberry',
+    is_allergen: true
+  },
+  {
     name: 'whole wheat flour',
     is_allergen: true,
     allergen_family_id: gluten.id
@@ -338,6 +460,15 @@ ingredient_attributes = [
   {
     name: 'wine',
     is_allergen: false
+  },
+  {
+    name: 'oats',
+    is_allergen: true,
+    allergen_family_id: gluten.id
+  },
+  {
+    name: 'corn',
+    is_allergen: false
   }
 ]
 
@@ -365,8 +496,8 @@ IngredientsProduct.create(product_id: Product.find_by(name: 'Half Bake Ice Cream
 IngredientsProduct.create(product_id: Product.find_by(name: 'Half Bake Ice Cream').id, ingredient_id: Ingredient.find_by(name: 'sugar').id)
 
 # 100'%' Orange Juice
-IngredientsProduct.create(product_id: Product.find_by(name: "100'%' Orange Juice").id, ingredient_id: Ingredient.find_by(name: 'orange').id)
-IngredientsProduct.create(product_id: Product.find_by(name: "100'%' Orange Juice").id, ingredient_id: Ingredient.find_by(name: 'sugar').id)
+IngredientsProduct.create(product_id: Product.find_by(name: '100' + '%' + ' Orange Juice').id, ingredient_id: Ingredient.find_by(name: 'orange').id)
+IngredientsProduct.create(product_id: Product.find_by(name: '100' + '%' + ' Orange Juice').id, ingredient_id: Ingredient.find_by(name: 'sugar').id)
 
 # Red Wine
 IngredientsProduct.create(product_id: Product.find_by(name: 'Red Wine').id, ingredient_id: Ingredient.find_by(name: 'wine').id)
@@ -397,10 +528,38 @@ IngredientsProduct.create(product_id: Product.find_by(name: 'Soft Taco Whole Whe
 # Frozen Cooked Shrimp
 IngredientsProduct.create(product_id: Product.find_by(name: 'Frozen Cooked Shrimp').id, ingredient_id: Ingredient.find_by(name: 'shrimp').id)
 
+# Pasta Elbows
+IngredientsProduct.create(product_id: Product.find_by(name: 'Pasta Elbows').id, ingredient_id: Ingredient.find_by(name: 'wheat').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Pasta Elbows').id, ingredient_id: Ingredient.find_by(name: 'flour').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Pasta Elbows').id, ingredient_id: Ingredient.find_by(name: 'egg').id)
 
+# Pasta Elbows
+IngredientsProduct.create(product_id: Product.find_by(name: 'Pasta Elbows').id, ingredient_id: Ingredient.find_by(name: 'wheat').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Pasta Elbows').id, ingredient_id: Ingredient.find_by(name: 'flour').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Pasta Elbows').id, ingredient_id: Ingredient.find_by(name: 'egg').id)
 
-# Product.all.each do |product|
-#   Ingredient.order("RANDOM()").limit(rand(2..4)).each do |ingredient|
-#     IngredientsProduct.create(product_id: product.id, ingredient_id: ingredient.id)
-#   end
-# end
+# Rice Crackers
+IngredientsProduct.create(product_id: Product.find_by(name: 'Rice Crackers').id, ingredient_id: Ingredient.find_by(name: 'wheat').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Rice Crackers').id, ingredient_id: Ingredient.find_by(name: 'flour').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Rice Crackers').id, ingredient_id: Ingredient.find_by(name: 'coconut milk').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Rice Crackers').id, ingredient_id: Ingredient.find_by(name: 'sugar').id)
+
+# Steak Ground Beef Patties
+IngredientsProduct.create(product_id: Product.find_by(name: 'Steak Ground Beef Patties').id, ingredient_id: Ingredient.find_by(name: 'beef').id)
+
+# Vienna Sausage
+IngredientsProduct.create(product_id: Product.find_by(name: 'Vienna Sausage').id, ingredient_id: Ingredient.find_by(name: 'beef').id)
+
+# Country Style Pork Loin Back Ribs
+IngredientsProduct.create(product_id: Product.find_by(name: 'Country Style Pork Loin Back Ribs').id, ingredient_id: Ingredient.find_by(name: 'beef').id)
+
+# Porridge Oats
+IngredientsProduct.create(product_id: Product.find_by(name: 'Porridge Oats').id, ingredient_id: Ingredient.find_by(name: 'oats').id)
+
+# Whole Kernel Corn
+IngredientsProduct.create(product_id: Product.find_by(name: 'Whole Kernel Corn').id, ingredient_id: Ingredient.find_by(name: 'corn').id)
+
+# Detox Rocks Fruit & Vegetable Smoothie
+IngredientsProduct.create(product_id: Product.find_by(name: 'Detox Rocks Fruit & Vegetable Smoothie').id, ingredient_id: Ingredient.find_by(name: 'strawberry').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Detox Rocks Fruit & Vegetable Smoothie').id, ingredient_id: Ingredient.find_by(name: 'raspberry').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Detox Rocks Fruit & Vegetable Smoothie').id, ingredient_id: Ingredient.find_by(name: 'coconut milk').id)
