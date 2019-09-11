@@ -8,4 +8,8 @@ class Product < ApplicationRecord
   enum category: [:breakfast_and_cereal, :canned_goods_and_soups, :dairy_eggs_and_cheese, :frozen_foods, :grains_pasta_and_sides, :fruits_and_vegetables, :cookies_and_snacks, :meat_and_seafood, :beverages, :beer_wine_and_spirits]
 
   attr_reader :search
+
+  def total_price
+    orders_products.sum("(orders_products.price_cents * orders_products.quantity)/100")
+  end
 end
