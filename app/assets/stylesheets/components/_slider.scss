@@ -1,15 +1,15 @@
 /* simple slider  */
 .product-list {
   display: flex;
-  padding: 0 2rem 1rem 0;
-  width: 100vw;
+  padding: 0 0 1rem 0;
+  width: 96vw;
   margin-left: 0;
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
 }
 
 .product-list::-webkit-scrollbar {
-  width: 7px;
+  width: 0px;
   height: 7px;
 }
 

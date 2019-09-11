@@ -1,4 +1,4 @@
-<div class="container pages-container">
+<div id="show-search-bar" class="container pages-container">
   <h1>Welcome <%= current_user.first_name.nil? ? 'to Safebite' : current_user.first_name %> </h1>
 
   <div class="separator"></div>
@@ -23,9 +23,9 @@
       <% end %>
     <% end %>
   </div>
-  
+
   <h4>Products without <%= @allergen_family.map(&:name).to_sentence %></h4>
-  
+
 
   <div class="product-list mb-5">
     <% @filtered_products.each do |product| %>
@@ -44,4 +44,4 @@
   </div>
 </div>
 
-    <%= link_to "Go shopping", products_path, class: "btn btn-bottom" %>
+<%= link_to "Go shopping", products_path, class: "btn btn-bottom" %>

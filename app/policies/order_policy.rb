@@ -9,31 +9,15 @@ class OrderPolicy < ApplicationPolicy
     true
   end
 
+  def create?
+    true
+  end
+
   def category?
     true
   end
 
-  def add_product_quantity_quick_shop?
-    true
-  end
-
-  def remove_product_quantity_quick_shop?
-    true
-  end
-
-  def add_product_quantity?
-    true
-  end
-
-  def remove_product_quantity?
-    true
-  end
-
-  def add_product_quantity_checkout?
-    true
-  end
-
-  def remove_product_quantity_checkout?
+  def destroy?
     true
   end
 

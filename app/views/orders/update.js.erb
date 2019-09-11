@@ -1,0 +1,16 @@
+var count = document.getElementById('order_count_<%= @product.id %>');
+count.innerHTML = '<%= @order_product.quantity %>';
+
+var totalPrice = document.getElementById('total_price_<%= @product.id %>');
+
+if (totalPrice) {
+  totalPrice.innerHTML = '<%= @product.total_price %>';
+}
+
+var grandTotals = document.querySelectorAll('.grand_total');
+
+if (grandTotals.length > 0) {
+  grandTotals.forEach(totalSpan => totalSpan.innerHTML = '<%= @order.total %>');
+}
+
+StripeCheckout.__app.configurations.button0.amount = '<%= @order.total_cents %>';
