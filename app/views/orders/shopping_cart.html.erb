@@ -36,9 +36,11 @@
       <p class="vat">* Including VAT</p>
     </div>
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-bottom" data-toggle="modal" data-target="#paymentsModal">
+    <% unless @order.orders_products.empty? %>
+      <button type="button" class="btn btn-bottom" data-toggle="modal" data-target="#paymentsModal">
       Proceed to payment
-    </button>
+      </button>
+    <% end %>
 </div>
 
 <%= render 'payments/new' %>

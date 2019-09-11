@@ -2,25 +2,31 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title" id="paymentsModalLabel">Shopping Basket Payment</h1>
+        <h2 class="modal-title" id="paymentsModalLabel">Shopping Basket <strong>Payment</strong></h2>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
 
+      <p><strong>Your order:</strong></p>
+      <ul>
+        <% @order.orders_products.each do |product| %>
+        <li class="modal-list"><%= product.product.name %>, <%= product.quantity %> unit(s)</li>
+      <% end %>
+      </ul>
+
 		<%= form_tag order_payments_path(@order) do %>
 		  <article>
-		    <label class="total">
-		      <span>Total price: <span class="grand_total"><%= @order.total %></span> €</span>
+		    <label class="modal-total">
+		      <p><strong>Total price: <span class="grand_total"><%= @order.total %></span> €</strong></p>
 		    </label>
 		  </article>
 
 		  <script src="https://checkout.stripe.com/checkout.js" id="stripe-button" class="stripe-button"
 		    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-		    data-name="My Order"
+		    data-name="My Purchase"
 		    data-email="<%= current_user.email %>"
-		    data-description="Products <%= @order.orders_products %>"
 		    data-amount="<%= @order.total_cents %>"
 		    data-currency="<%= @order.total.currency %>"></script>
 		<% end %>
