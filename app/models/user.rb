@@ -15,14 +15,7 @@ class User < ApplicationRecord
     unless pending_order
       pending_order = Order.create(user: self, order_status: :pending)
     end
-    return pending_order
-  end
 
-  def allergens_ingredients
-    allergens.where.not(ingredient_id: nil)
-  end
-
-  def allergens_families
-    allergens.where.not(allergen_family_id: nil)
+    pending_order
   end
 end
