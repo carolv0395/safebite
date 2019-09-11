@@ -1,10 +1,11 @@
 class PagesController < ApplicationController
   def home
-    redirect_to edit_families_allergens_path if current_user.allergens.empty?
     @products = Product.all
-    if params[:product] && params[:product][:search]
+    redirect_to edit_families_allergens_path if current_user.allergens.empty?
+    if params[:product] && params[:product][:search] 
     	@products = @products.where('lower(products.name) LIKE ?', '%' + params[:product][:search].downcase + '%')
     	session[:search] = params[:product][:search]
+      redirect_to root_path, alert: "No result found" if @products.empty?
     else
     	session[:search] = ''
     end
