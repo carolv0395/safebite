@@ -23,11 +23,11 @@ class AllergensController < ApplicationController
     else
       ids = params[:allergen][:allergen_families_ids]
       ids.each do |id|
-        @allergen = Allergen.new(user: current_user,
-        allergen_family_id: id)
+        @allergen = Allergen.new(user: current_user, allergen_family_id: id)
         authorize @allergen
         @allergen.save
       end
+      flash[:notice] = "You've added your allergies."
       redirect_to root_path
     end
   end
