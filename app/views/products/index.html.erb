@@ -6,7 +6,7 @@
   <% @categories.each do |category| %>
     <%= link_to category_products_path(category) do %>
       <div class="category-card">
-        <div id="category-image" style="background-image: url(<%= image_url("#{category + '.jpeg'}") %>)"></div>
+        <div id="category-image" style="background-image: url(<%= asset_url("#{category + '.jpeg'}") %>)"></div>
         <div class="category-text">
           <h3> <%= category.gsub(/_/, ' ').gsub(/and/, '&').capitalize %> </h3>
         </div>
