@@ -12,4 +12,8 @@ class AllergenFamilyPolicy < ApplicationPolicy
   def edit_families?
     true
   end
+
+  def update_families?
+    true
+  end
 end
