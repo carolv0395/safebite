@@ -17,20 +17,16 @@ Rails.application.routes.draw do
 
   resources :products, only: [:index, :show] do
     resources :ingredients, only: :index
-      collection do
-        get 'categories/:category', to: 'products#category', as: 'category'
-      end
+    resources :orders, only: [:create, :destroy]
+
+    collection do
+      get 'categories/:category', to: 'products#category', as: 'category'
+    end
   end
 
   resources :orders, only: [:index, :show, :new, :create] do
     resources :payments, only: [:new, :create]
     collection do
-      get 'add_product_quantity_quick_shop'
-      get 'remove_product_quantity_quick_shop'
-      get 'add_product_quantity'
-      get 'remove_product_quantity'
-      get 'add_product_quantity_checkout'
-      get 'remove_product_quantity_checkout'
       get 'product_delete'
       get 'shopping_cart'
     end
