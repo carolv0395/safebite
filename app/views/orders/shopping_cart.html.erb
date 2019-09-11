@@ -16,9 +16,9 @@
     </div>
 
     <div class="add-quantity d-flex flex-column justify-content-center pl-5">
-      <%= link_to "+", add_product_quantity_checkout_orders_path(product_id: orderproduct.product.id), class: "add" %>
-      <div class ="quantity"><%= orderproduct.quantity %></div>
-      <%= link_to "-", remove_product_quantity_checkout_orders_path(product_id: orderproduct.product.id), class: "remove" %>
+      <%= link_to "+", product_orders_path(orderproduct.product), method: :post, remote: true, class: "add" %>
+      <div class ="quantity" id="order_count_<%= orderproduct.product.id %>"><%= orderproduct.quantity %></div>
+      <%= link_to "-", product_order_path(orderproduct.product, 0), method: :delete, remote: true, class: "remove" %>
     </div>
   </div>
 
@@ -30,7 +30,7 @@
 
 <div class="container d-flex flex-column justify-content-centerd-flex inline-block pt-2">
     <div class="ml-auto">
-      <p class="total">TOTAL <span class="price"><strong><%= @total_price %> € *</strong></span></p>
+      <p class="total">TOTAL <span class="price"><strong><span class="grand_total"><%= @order.total %></span> € *</strong></span></p>
     </div>
     <div class="ml-auto">
       <p class="vat">* Including VAT</p>

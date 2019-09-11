@@ -2,7 +2,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title" id="paymentsModalLabel">Shopping Basket Payment></h1>
+        <h1 class="modal-title" id="paymentsModalLabel">Shopping Basket Payment</h1>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -12,11 +12,11 @@
 		<%= form_tag order_payments_path(@order) do %>
 		  <article>
 		    <label class="total">
-		      <span>Total price: <%= humanized_money_with_symbol(@order.total) %></span>
+		      <span>Total price: <span class="grand_total"><%= @order.total %></span> €</span>
 		    </label>
 		  </article>
 
-		  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+		  <script src="https://checkout.stripe.com/checkout.js" id="stripe-button" class="stripe-button"
 		    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
 		    data-name="My Order"
 		    data-email="<%= current_user.email %>"
