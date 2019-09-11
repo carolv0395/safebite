@@ -28,6 +28,7 @@ class AllergensController < ApplicationController
         authorize @allergen
         @allergen.save
       end
+      flash[:notice] = "You've saved your allergies!"
       redirect_to root_path
     end
   end
