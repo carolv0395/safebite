@@ -10,7 +10,6 @@ initImagePreview();
 sidebarCollapse();
 flashDismiss();
 removeFlash();
-
 // Hide search bar
 const searchBar = document.querySelector('.search');
 searchBar.classList.add('hide-search-bar', 0);

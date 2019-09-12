@@ -1,0 +1,23 @@
+<div class="error-500" data-text="Oh no! Our spaghetti code is not working properly. Porra Pedro!">
+    <spaguetti>
+    <fork></fork>
+    <meat></meat>
+    <pasta></pasta>
+    <plate></plate>
+  </spaguetti>
+  <%= link_to "Back to home", root_path, class:"btn-sphagetti" %>
+</div>
+<script>
+	const error = document.querySelector(".error-500");
+	let i = 0, data = "", text = error.getAttribute("data-text");
+
+	let typing = setInterval(() => {
+	  if(i == text.length){
+	    clearInterval(typing);
+	  }else{
+	    data += text[i];
+	    document.querySelector(".error-500").setAttribute("data-text", data);
+	    i++;
+	  }
+	}, 100);
+</script>
