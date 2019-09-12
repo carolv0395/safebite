@@ -313,7 +313,75 @@ Great Value Detox Rocks Fruit and Vegetable Smoothie is made with a delicious bl
     description: "Need a nutrition boost to go? Got picky eaters? LIVfit Superfood Organic Superfood Blend is perfect for you! This flavor-neutral power pack of nutrients is your new best friend. Made from whole fruit and vegetable concentrates, LIVfit Superfood174; Organic Superfood Blend scoops into smoothies, spaghetti sauces, yogurts and pretty much anything you or your family eat. The B Vitamins in it help provide your body with natural energy, and the pea protein and hemp protein give your muscles a little boost of nutrition. Its neutral flavor means they'll never suspect you've boosted the nutrition. Don't worry; we'll keep your secret. Add two scoops of LIVfit Superfood174; Organic Superfood Blend to eight ounces of juice or a smoothie and blend well.",
     photo: "https://images.pexels.com/photos/1171552/pexels-photo-1171552.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     price: 12
-  }
+  },
+  {
+    name: 'Lambrusco',
+    brand: 'Riobello Rosso',
+    category: :beverages,
+    volume: '75 cl',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "Italian red wine grape and a wine made principally from the grape. Delicate taste, fresh and sweet taste. 8,5% alcohol. Keep it around 11ºC.",
+    photo: "http://www.amberdistribution.lv/cache/images/698be261da592b2112073a832aeae1ff.jpg",
+    price: 5
+  },
+  {
+    name: 'Bio Beer Gluten Free',
+    brand: 'Neumarkter Lammsbrau',
+    category: :beverages,
+    volume: '330 cl',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "First gluten free beer, bio and real beer taste. Lammsbrau was able to remove gluten from barley before bottle the product. Fine option for gluten intolerants.",
+    photo: "https://www.celeiro.pt/pub/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/2/5/25539-cerveja-sem-gluten-biologica-330-ml-ltr-lammsbrau_2.jpg",
+    price: 2
+  },
+  {
+    name: 'Freshé Gourmet Canned Tuna',
+    brand: 'Naztec Ensalada',
+    category: :canned_goods_and_soups,
+    volume: '4.25 oz can',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "Premium Sustainably Caught Canned Tuna that Makes a Perfect High Protein Backpacking Food.",
+    photo: "https://images-na.ssl-images-amazon.com/images/I/719Qk1sF3WL._SL1000_.jpg",
+    price: 4
+  },
+  {
+    name: 'Palmini Low Carb Pasta',
+    brand: 'Linguine',
+    category: :canned_goods_and_soups,
+    volume: '14 oz can',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "No Sugar and Gluten Free. Palmini is a low carb pasta substitute made 100% out of a natural plant known as Hearts of Palm. When this plant is cut and cooked in the proper way, it’s resemblance to regular noodles is remarkable. Not only does it look like pasta, but it can also taste like pasta if you add the proper sauce! Great low carb pasta option for Keto and Paleo diets.",
+    photo: "https://images-na.ssl-images-amazon.com/images/I/81nmUfXpQdL._SL1500_.jpg",
+    price: 3
+  },
+  {
+    name: 'Grecian Style Eggplant with Tomatoes & Onions',
+    brand: 'Trader Joe',
+    category: :canned_goods_and_soups,
+    volume: '9.9 oz can',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "No Sugar and Gluten Free. Palmini is a low carb pasta substitute made 100% out of a natural plant known as Hearts of Palm. When this plant is cut and cooked in the proper way, it’s resemblance to regular noodles is remarkable. Not only does it look like pasta, but it can also taste like pasta if you add the proper sauce! Great low carb pasta option for Keto and Paleo diets.",
+    photo: "https://images-na.ssl-images-amazon.com/images/I/51vQO3Zl6kL.jpg",
+    price: 3
+  },
+  {
+    name: 'Amy Light in Sodium Minestrone',
+    brand: 'Organic Soups - Minestrone',
+    category: :canned_goods_and_soups,
+    volume: '9.9 oz can',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "Tons of organic veggies, beans, and potatoes make this Italian option a total thumbs-up. Equally important, it keeps the salt in check at 290mg, only 12% of your daily value.",
+    photo: "https://d2lnr5mha7bycj.cloudfront.net/product-image/file/large_60a0858d-686b-404b-8fe9-16d637117ac9.jpg",
+    price: 3
+  },
+
+
 ];
 
 ingredient_attributes = [
@@ -510,6 +578,50 @@ ingredient_attributes = [
   {
     name: 'water',
     is_allergen: false
+  },
+  {
+    name: 'millet',
+    is_allergen: false
+  },
+  {
+    name: 'rice',
+    is_allergen: false
+  },
+  {
+    name: 'corn',
+    is_allergen: false
+  },
+  {
+    name: 'beans',
+    is_allergen: false
+  },
+  {
+    name: 'onion',
+    is_allergen: false
+  },
+  {
+    name: 'peppers',
+    is_allergen: false
+  },
+  {
+    name: 'palm noodles',
+    is_allergen: false
+  },
+  {
+    name: 'eggplant',
+    is_allergen: false
+  },
+  {
+    name: 'tomatoes',
+    is_allergen: false
+  },
+  {
+    name: 'potatoes',
+    is_allergen: false
+  },
+  {
+    name: 'veggies',
+    is_allergen: false
   }
 ]
 
@@ -618,3 +730,32 @@ IngredientsProduct.create(product_id: Product.find_by(name: 'Capri Sun Splash Co
 IngredientsProduct.create(product_id: Product.find_by(name: 'Organic Superfood Blend Powder').id, ingredient_id: Ingredient.find_by(name: 'strawberry').id)
 IngredientsProduct.create(product_id: Product.find_by(name: 'Organic Superfood Blend Powder').id, ingredient_id: Ingredient.find_by(name: 'raspberry').id)
 IngredientsProduct.create(product_id: Product.find_by(name: 'Organic Superfood Blend Powder').id, ingredient_id: Ingredient.find_by(name: 'sugar').id)
+
+#Lambrusco
+IngredientsProduct.create(product_id: Product.find_by(name: 'Lambrusco').id, ingredient_id: Ingredient.find_by(name: 'wine').id)
+
+#Bio Beer Gluten Free
+IngredientsProduct.create(product_id: Product.find_by(name: 'Bio Beer Gluten Free').id, ingredient_id: Ingredient.find_by(name: 'rice').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Bio Beer Gluten Free').id, ingredient_id: Ingredient.find_by(name: 'millet').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Bio Beer Gluten Free').id, ingredient_id: Ingredient.find_by(name: 'corn').id)
+
+#Freshé Gourmet Canned Tuna
+IngredientsProduct.create(product_id: Product.find_by(name: 'Freshé Gourmet Canned Tuna').id, ingredient_id: Ingredient.find_by(name: 'tuna').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Freshé Gourmet Canned Tuna').id, ingredient_id: Ingredient.find_by(name: 'peppers').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Freshé Gourmet Canned Tuna').id, ingredient_id: Ingredient.find_by(name: 'corn').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Freshé Gourmet Canned Tuna').id, ingredient_id: Ingredient.find_by(name: 'beans').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Freshé Gourmet Canned Tuna').id, ingredient_id: Ingredient.find_by(name: 'onion').id)
+
+#Palmini Low Carb Pasta
+IngredientsProduct.create(product_id: Product.find_by(name: 'Palmini Low Carb Pasta').id, ingredient_id: Ingredient.find_by(name: 'palm noodles').id)
+
+#Grecian Style Eggplant with Tomatoes & Onions
+IngredientsProduct.create(product_id: Product.find_by(name: 'Grecian Style Eggplant with Tomatoes & Onions').id, ingredient_id: Ingredient.find_by(name: 'onion').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Grecian Style Eggplant with Tomatoes & Onions').id, ingredient_id: Ingredient.find_by(name: 'tomatoes').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Grecian Style Eggplant with Tomatoes & Onions').id, ingredient_id: Ingredient.find_by(name: 'eggplant').id)
+
+#Amy Light in Sodium Minestrone
+IngredientsProduct.create(product_id: Product.find_by(name: 'Amy Light in Sodium Minestrone').id, ingredient_id: Ingredient.find_by(name: 'potatoes').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Amy Light in Sodium Minestrone').id, ingredient_id: Ingredient.find_by(name: 'veggies').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Amy Light in Sodium Minestrone').id, ingredient_id: Ingredient.find_by(name: 'beans').id)
+
