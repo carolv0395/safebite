@@ -14,17 +14,9 @@ class PagesController < ApplicationController
 
     if current_user.allergen_families.any?
       @allergen_family = current_user.allergen_families
-      @filtered_products = search_allergens
+      @filtered_products = @products.search_allergens(current_user)
     end
 
     @products_love = @filtered_products.sample(rand(4..8)) if !@filtered_products.nil?
-  end
-
-
-  private
-
-  def search_allergens
-    @products.includes(:ingredients).where
-              .not(ingredients: { allergen_family: current_user.allergen_families })
   end
 end

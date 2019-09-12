@@ -1,5 +1,5 @@
 class Ingredient < ApplicationRecord
-  has_many :ingredients_product
+  has_many :ingredients_products
   has_many :products, through: :ingredients_products
   has_one :allergen
 
