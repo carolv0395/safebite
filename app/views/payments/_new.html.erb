@@ -7,7 +7,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body payment-card">
 
       <p><strong>Your order:</strong></p>
       <ul>
@@ -16,26 +16,34 @@
       <% end %>
       </ul>
 
-		<%= form_tag order_payments_path(@order) do %>
 		  <article>
 		    <label class="modal-total">
 		      <p><strong>Total price: <span class="grand_total"><%= @order.total %></span> €</strong></p>
 		    </label>
 		  </article>
 
-		  <script src="https://checkout.stripe.com/checkout.js" id="stripe-button" class="stripe-button"
-		    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-		    data-name="My Purchase"
-		    data-email="<%= current_user.email %>"
-		    data-amount="<%= @order.total_cents %>"
-		    data-currency="<%= @order.total.currency %>"></script>
-		<% end %>
+      <hr>
 
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+    <form action="/orders/<%= @order.id %>/payments" method="post" id="payment-form">
+        <div class="form-row">
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+          <label for="card-element">
+            <p><strong>Proceed to payment below:</strong></p>
+          </label>
+          <div id="card-element">
+            <!-- A Stripe Element will be inserted here. -->
+          </div>
+          <!-- Used to display Element errors. -->
+          <div id="card-errors" role="alert"></div>
+        </div>
+        <button class="btn btn-payment" style="margin-top: 10px;">Pay</button>
+        <button type="button" class="btn btn-secondary" style="margin-top: 10px;" data-dismiss="modal">Cancel</button>
+      </form>
+
       </div>
     </div>
   </div>
 </div>
+
+<script src="https://js.stripe.com/v3/"></script>
 
