@@ -337,14 +337,14 @@ Great Value Detox Rocks Fruit and Vegetable Smoothie is made with a delicious bl
     price: 2
   },
   {
-    name: 'Freshé Gourmet Canned Tuna',
-    brand: 'Naztec Ensalada',
+    name: 'Condensed Chicken Noodle Soup',
+    brand: 'Campbell Soup',
     category: :canned_goods_and_soups,
     volume: '4.25 oz can',
     discount: 0,
     stock: Faker::Number.between(from: 0, to: 200),
     description: "Premium Sustainably Caught Canned Tuna that Makes a Perfect High Protein Backpacking Food.",
-    photo: "https://images-na.ssl-images-amazon.com/images/I/719Qk1sF3WL._SL1000_.jpg",
+    photo: "https://amp.businessinsider.com/images/5bc9e22aa977742a2d4fdcab-750-562.jpg",
     price: 4
   },
   {
@@ -355,7 +355,7 @@ Great Value Detox Rocks Fruit and Vegetable Smoothie is made with a delicious bl
     discount: 0,
     stock: Faker::Number.between(from: 0, to: 200),
     description: "No Sugar and Gluten Free. Palmini is a low carb pasta substitute made 100% out of a natural plant known as Hearts of Palm. When this plant is cut and cooked in the proper way, it’s resemblance to regular noodles is remarkable. Not only does it look like pasta, but it can also taste like pasta if you add the proper sauce! Great low carb pasta option for Keto and Paleo diets.",
-    photo: "https://images-na.ssl-images-amazon.com/images/I/81nmUfXpQdL._SL1500_.jpg",
+    photo: "https://media1.popsugar-assets.com/files/thumbor/Bu_IJslOstLy0dLBqzdGXlI5oyQ/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2019/03/26/856/n/1922729/08efc1305c9a7e9941dd59.51789901_/i/Palmini-Low-Carb-Pasta-Review.jpg",
     price: 3
   },
   {
