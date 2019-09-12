@@ -2,7 +2,7 @@
   width: 100vw;
   padding-top: 10px;
   padding-bottom: 0px;
-  background-color: orange;
+  background-color: $orange;
   position: fixed;
   bottom: 0px;
   left: 0px;
@@ -63,22 +63,6 @@
     box-shadow: 0 0 0 0;
   }
 }
-
-// .btn-text-white {
-//   color: white;
-//   font-size: 28px;
-//   font-family: 'Raleway', sans-serif;
-//   font-weight: 500;
-//   padding-bottom: 20px;
-
-//   &:hover {
-//     color: white;
-//   }
-
-//   &:focus {
-//     box-shadow: 0 0 0 0;
-//   }
-// }
 
 .fa-arrow-right {
   font-size: 28px;

@@ -5,8 +5,8 @@
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
-    <div class="d-flex container pages-container pb-4">
-      <div style="width: 200px;">
+    <div class="d-flex container pages-container">
+      <div style="width: 65%;">
       <h1>Hello
         <% if current_user.first_name.present? %>
           <span>, <%= current_user.first_name %>!</span>
