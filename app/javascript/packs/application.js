@@ -19,3 +19,4 @@ searchBar.classList.add('hide-search-bar', 0);
 if (document.querySelector('#show-search-bar')) {
   showSearchBar();
 };
+
