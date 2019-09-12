@@ -380,8 +380,28 @@ Great Value Detox Rocks Fruit and Vegetable Smoothie is made with a delicious bl
     photo: "https://d2lnr5mha7bycj.cloudfront.net/product-image/file/large_60a0858d-686b-404b-8fe9-16d637117ac9.jpg",
     price: 3
   },
-
-
+  {
+    name: 'Absolut Vodka Sweden Original',
+    brand: 'Absolut',
+    category: :beer_wine_and_spirits,
+    volume: '1.75 L',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "Absolut Vodka is a Swedish vodka made exclusively from natural ingredients, and unlike some other vodkas, it doesn’t contain any added sugar. In fact Absolut is as clean as vodka can be. Still, it has a certain taste: Rich, full-bodied and complex, yet smooth and mellow with a distinct character of grain, followed by a hint of dried fruit. In 1879, Lars Olsson Smith pioneered the continuous distillation: Instead of the usual three or four times, the vodka was distilled an infinite number of times. Today, just as then, Absolut is produced in Åhus in southern Sweden. This is also the region where L.O. Smith was born and where the main ingredients wheat and water come from. We call this our One Source process.",
+    photo: "https://i.pinimg.com/originals/99/51/ba/9951baacc82f6eb4ea1d9b3f8583fcf3.jpg",
+    price: 28
+  },
+  {
+    name: 'Queijo Serra da Estrela DOP',
+    brand: 'Vale Da Estrela',
+    category: :dairy_eggs_and_cheese,
+    volume: '500 gr',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "O queijo Serra da Estrela DOP é obtido a partir de leite cru de ovelha, da raça Bordaleira da Serra da Estrela ou Churra Mondegueira. Trata-se de um queijo curado, que pode apresentar pasta semi-mole amanteigada e cor branca amarelada (Queijo Serra da Estrela) ou, pasta semi-dura a extra-dura de cor laranja acastanhada (Queijo Serra da Estrela Velho).",
+    photo: "https://media-manager.noticiasaominuto.com/1920/naom_5bc6df6ad85ce.jpg",
+    price: 15
+  }
 ];
 
 ingredient_attributes = [
@@ -621,6 +641,9 @@ ingredient_attributes = [
   },
   {
     name: 'veggies',
+  },
+  {
+    name: 'vodka',
     is_allergen: false
   }
 ]
@@ -759,3 +782,8 @@ IngredientsProduct.create(product_id: Product.find_by(name: 'Amy Light in Sodium
 IngredientsProduct.create(product_id: Product.find_by(name: 'Amy Light in Sodium Minestrone').id, ingredient_id: Ingredient.find_by(name: 'veggies').id)
 IngredientsProduct.create(product_id: Product.find_by(name: 'Amy Light in Sodium Minestrone').id, ingredient_id: Ingredient.find_by(name: 'beans').id)
 
+# Absolut Vodka Sweden Original
+IngredientsProduct.create(product_id: Product.find_by(name: 'Absolut Vodka Sweden Original').id, ingredient_id: Ingredient.find_by(name: 'vodka').id)
+
+# Queijo Serra da Estrela DOP
+IngredientsProduct.create(product_id: Product.find_by(name: 'Queijo Serra da Estrela DOP').id, ingredient_id: Ingredient.find_by(name: 'cheese').id)
