@@ -10,12 +10,13 @@ function swipeToDelete() {
       if (e) {
           // list will collapse over that element
           e.target.parentNode.removeChild(e.target);
-          let productOrderId = document.querySelector(".add-product-card").id;
+          let productOrderId = e.target.querySelector(".add-product-card").id;
           let orderId = document.querySelector("ul").attributes["order"].value;
-          let url = "/orders/${orderId}/product_orders/${productOrderId}"
-          let token = document.querySelector('[name="csrf-token"]').content
-          console.log(token);
-          console.log("Benfica!")
+          let url = "/orders/" + orderId + "/product_orders/" + productOrderId;
+          let currentPrice = parseFloat(document.querySelector(".grand_total").innerText);
+          let productPrice = parseFloat(e.target.querySelector(".product-image-price p").innerText);
+          let productQuantity = parseFloat(e.target.querySelector(".quantity").innerText);
+          document.querySelector(".grand_total").innerText = currentPrice - productPrice * productQuantity;
           // delete
           fetch(url, {
               method: 'DELETE',
@@ -25,12 +26,10 @@ function swipeToDelete() {
                 'X-Requested-With': 'XMLHttpRequest',
                 'X-CSRF-Token': document.querySelector('[name="csrf-token"]').content
               },
-              body: { pId: productOrderId, oId: orderId },
+              body: JSON.stringify({ pId: productOrderId, oId: orderId }),
               credentials: 'same-origin'
             })
-            .then(response => response.json())
-            .then((data) => {
-              console.log(data);
+            .then(response => {
             });
 
       } else {

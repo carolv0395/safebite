@@ -1,5 +1,4 @@
 .add-product-card {
-  overflow: hidden;
   height: 120px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.05);
@@ -7,6 +6,7 @@
   align-items: center;
   margin-bottom: 10px;
   position: relative;
+  min-width: 100vw;
 
   img {
     height: 100%;

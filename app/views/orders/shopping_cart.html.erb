@@ -4,7 +4,7 @@
 
 <ul id="shopping-card-list slippylist" class="shopping-card-list" order="<%= @order.id %>">
   <% @order.orders_products.sort_by(&:created_at).each do |orderproduct| %>
-    <li>
+    <li class="d-flex">
       <div id="<%= orderproduct.id %>" class="add-product-card d-flex">
 
         <div class="product-image-price">
@@ -23,6 +23,9 @@
           <%= link_to "-", product_order_path(orderproduct.product, 0), method: :delete, remote: true, class: "remove" %>
         </div>
       </div>
+      <div class="delete-red-background">
+        <i class="far fa-trash-alt"></i>
+      </div>
     </li>
 
 <!--   <div class="justify-content-center pb-4">
@@ -33,7 +36,7 @@
 
 </ul>
 
-<div class="container d-flex flex-column justify-content-centerd-flex inline-block pt-2">
+<div class="container d-flex flex-column justify-content-centerd-flex inline-block pt-2 grand-total">
     <div class="ml-auto">
       <p class="total">TOTAL <span class="price"><strong><span class="grand_total"><%= @order.total %></span> € *</strong></span></p>
     </div>

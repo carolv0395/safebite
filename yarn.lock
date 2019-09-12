@@ -6157,11 +6157,6 @@ simple-swizzle@^0.2.2:
   dependencies:
     is-arrayish "^0.3.1"
 
-slip@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/slip/-/slip-1.0.2.tgz#ba45a923034d6cf41b1a27aebe7128282c8d551f"
-  integrity sha1-ukWpIwNNbPQbGieuvnEoKCyNVR8=
-
 snapdragon-node@^2.0.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/snapdragon-node/-/snapdragon-node-2.1.1.tgz#6c175f86ff14bdb0724563e8f3c1b021a286853b"

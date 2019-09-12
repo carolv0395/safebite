@@ -1,6 +1,4 @@
 import "bootstrap";
-import { initImagePreview } from '../plugins/image-preview'
-import { sidebarCollapse } from '../plugins/sidebar'
 import { initImagePreview } from '../plugins/image-preview';
 import { sidebarCollapse } from '../plugins/sidebar';
 import { showSearchBar } from '../plugins/show-search-bar';
