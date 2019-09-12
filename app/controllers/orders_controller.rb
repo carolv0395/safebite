@@ -48,7 +48,10 @@ class OrdersController < ApplicationController
     order_product = OrdersProduct.find(params[:id])
     authorize order_product.order
     order_product.destroy
-    redirect_to shopping_cart_orders_path
+    respond_to do |format|
+      format.html { redirect_to shopping_cart_orders_path }
+      format.js
+    end
   end
 
   def shopping_cart

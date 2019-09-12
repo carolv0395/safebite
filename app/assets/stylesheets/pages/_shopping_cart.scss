@@ -27,3 +27,29 @@ a.btn-delete {
   font-weight: 700;
 }
 
+.shopping-card-list {
+  padding-left: 0px;
+  list-style-type: none;
+}
+
+.grand-total {
+  padding-bottom: 102px;
+}
+
+.delete-red-background {
+    height: 120px;
+    width: 500px;
+    background-color: #F02311;
+    overflow: hidden;
+    margin-right: -270px;
+    display: flex;
+    align-items: center;
+    padding-right: 500px;
+}
+
+.fa-trash-alt {
+  color: white;
+  font-size: 30px;
+  margin: 20px;
+}
+

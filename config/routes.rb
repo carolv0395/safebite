@@ -25,9 +25,9 @@ Rails.application.routes.draw do
   end
 
   resources :orders, only: [:index, :show, :new, :create] do
+    delete 'product_orders/:id', to: "orders#product_delete"
     resources :payments, only: [:new, :create]
     collection do
-      get 'product_delete'
       get 'shopping_cart'
     end
   end
