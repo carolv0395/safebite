@@ -12,11 +12,11 @@ sidebarCollapse();
 flashDismiss();
 removeFlash();
 
+
 const stripecheckoutpage = document.querySelector(".orders.shopping_cart");
 if (stripecheckoutpage){
  stripeFunction();
 }
-
 
 // Hide search bar
 const searchBar = document.querySelector('.search');
