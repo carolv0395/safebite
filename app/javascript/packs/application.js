@@ -20,7 +20,10 @@ if (stripecheckoutpage){
 
 // Hide search bar
 const searchBar = document.querySelector('.search');
-searchBar.classList.add('hide-search-bar', 0);
+if(searchBar) {
+  searchBar.classList.add('hide-search-bar', 0);
+}
+
 
 //show search bar
 if (document.querySelector('#show-search-bar')) {
