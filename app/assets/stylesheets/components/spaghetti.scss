@@ -4,11 +4,13 @@
   --height: 180px;
 }
 
-body{ background: orange; }
+.error {
+  background-color: $orange;
+}
 
 .error-500{
   position: absolute;
-  top: 300px; 
+  top: 300px;
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: 'VT323';
@@ -121,4 +123,3 @@ fork{
   bottom: 25%; left: 75%;
   transform: translate(-75%, 0%) rotate(25deg);
 }
-  
