@@ -8,16 +8,35 @@
       </h1>
 </div>
 
-<div class="container ty-pg-order">
+<div class="container ty-pg-order thank-you-info">
   <h2>Items you've ordered:</h2>
-  <ul>
-    <% @order.orders_products.each do |product| %>
-      <li><%= product.product.name %>, <%= product.quantity %> unit(s)</li>
+
+  <div class="ordered-items-thank-you">
+
+    <% @order.orders_products.sort_by(&:created_at).each do |orderproduct| %>
+      <div class="add-product-card d-flex">
+
+        <div class="product-image-price">
+          <img src=<%= orderproduct.product.photo %> />
+        </div>
+
+        <div class="product-quantity">
+          <h4> <%= orderproduct.product.name.capitalize %> </h4>
+          <p> <%= orderproduct.product.brand.capitalize %> </p>
+        </div>
+
+        <div class="add-quantity d-flex flex-column justify-content-center pl-5">
+          <div class ="quantity" id="order_count_<%= orderproduct.product.id %>">Quantity: <%= orderproduct.quantity %>
+            <p>Price: <%= orderproduct.product.price %> €</p>
+          </div>
+        </div>
+      </div>
+
     <% end %>
-  <ul>
+  </div>
 </div>
 
-<div class="container">
+<div class="container total-price-thank-you">
   <p><strong>Total price paid: <%= humanized_money_with_symbol(@order.total) %></strong></p>
   <div class="pt-3">
     <span><strong>Your deliver is on the way.</strong></span>
