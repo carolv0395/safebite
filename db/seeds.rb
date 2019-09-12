@@ -136,7 +136,7 @@ product_attributes = [
   },
   {
     name: 'Fresh Strawberries',
-    brand: '',
+    brand: 'Quinta da Fonte',
     category: :fruits_and_vegetables,
     volume: '1 lb',
     discount: 0,
@@ -317,33 +317,33 @@ Great Value Detox Rocks Fruit and Vegetable Smoothie is made with a delicious bl
   {
     name: 'Lambrusco',
     brand: 'Riobello Rosso',
-    category: :beverages,
+    category: :beer_wine_and_spirits,
     volume: '75 cl',
     discount: 0,
     stock: Faker::Number.between(from: 0, to: 200),
     description: "Italian red wine grape and a wine made principally from the grape. Delicate taste, fresh and sweet taste. 8,5% alcohol. Keep it around 11ºC.",
-    photo: "http://www.amberdistribution.lv/cache/images/698be261da592b2112073a832aeae1ff.jpg",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/a/a2/Glass_of_lambrusco_%2819545132502%29.jpg",
     price: 5
   },
   {
     name: 'Bio Beer Gluten Free',
     brand: 'Neumarkter Lammsbrau',
-    category: :beverages,
+    category: :beer_wine_and_spirits,
     volume: '330 cl',
     discount: 0,
     stock: Faker::Number.between(from: 0, to: 200),
     description: "First gluten free beer, bio and real beer taste. Lammsbrau was able to remove gluten from barley before bottle the product. Fine option for gluten intolerants.",
-    photo: "https://www.celeiro.pt/pub/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/2/5/25539-cerveja-sem-gluten-biologica-330-ml-ltr-lammsbrau_2.jpg",
+    photo: "https://www.singlutenismo.com/wp-content/uploads/cerveza-sin-gluten-neumarkter-lammsbrau.jpg",
     price: 2
   },
   {
     name: 'Condensed Chicken Noodle Soup',
     brand: 'Campbell Soup',
     category: :canned_goods_and_soups,
-    volume: '4.25 oz can',
+    volume: '10.75 oz can',
     discount: 0,
     stock: Faker::Number.between(from: 0, to: 200),
-    description: "Premium Sustainably Caught Canned Tuna that Makes a Perfect High Protein Backpacking Food.",
+    description: "Classic chicken noodle soup crafted with seasoned chicken broth, enriched egg noodles and chicken meat with no antibiotics.",
     photo: "https://amp.businessinsider.com/images/5bc9e22aa977742a2d4fdcab-750-562.jpg",
     price: 4
   },
@@ -359,28 +359,6 @@ Great Value Detox Rocks Fruit and Vegetable Smoothie is made with a delicious bl
     price: 3
   },
   {
-    name: 'Grecian Style Eggplant with Tomatoes & Onions',
-    brand: 'Trader Joe',
-    category: :canned_goods_and_soups,
-    volume: '9.9 oz can',
-    discount: 0,
-    stock: Faker::Number.between(from: 0, to: 200),
-    description: "No Sugar and Gluten Free. Palmini is a low carb pasta substitute made 100% out of a natural plant known as Hearts of Palm. When this plant is cut and cooked in the proper way, it’s resemblance to regular noodles is remarkable. Not only does it look like pasta, but it can also taste like pasta if you add the proper sauce! Great low carb pasta option for Keto and Paleo diets.",
-    photo: "https://images-na.ssl-images-amazon.com/images/I/51vQO3Zl6kL.jpg",
-    price: 3
-  },
-  {
-    name: 'Amy Light in Sodium Minestrone',
-    brand: 'Organic Soups - Minestrone',
-    category: :canned_goods_and_soups,
-    volume: '9.9 oz can',
-    discount: 0,
-    stock: Faker::Number.between(from: 0, to: 200),
-    description: "Tons of organic veggies, beans, and potatoes make this Italian option a total thumbs-up. Equally important, it keeps the salt in check at 290mg, only 12% of your daily value.",
-    photo: "https://d2lnr5mha7bycj.cloudfront.net/product-image/file/large_60a0858d-686b-404b-8fe9-16d637117ac9.jpg",
-    price: 3
-  },
-  {
     name: 'Absolut Vodka Sweden Original',
     brand: 'Absolut',
     category: :beer_wine_and_spirits,
@@ -392,15 +370,323 @@ Great Value Detox Rocks Fruit and Vegetable Smoothie is made with a delicious bl
     price: 28
   },
   {
-    name: 'Queijo Serra da Estrela DOP',
+    name: 'Serra da Estrela Cheese',
     brand: 'Vale Da Estrela',
     category: :dairy_eggs_and_cheese,
     volume: '500 gr',
     discount: 0,
     stock: Faker::Number.between(from: 0, to: 200),
-    description: "O queijo Serra da Estrela DOP é obtido a partir de leite cru de ovelha, da raça Bordaleira da Serra da Estrela ou Churra Mondegueira. Trata-se de um queijo curado, que pode apresentar pasta semi-mole amanteigada e cor branca amarelada (Queijo Serra da Estrela) ou, pasta semi-dura a extra-dura de cor laranja acastanhada (Queijo Serra da Estrela Velho).",
+    description: "With a buttery or dry dough, yellow colour and intense flavour, Serra da Estrela cheese is made exclusively with milk from Bordaleira breed sheep, and puts all the generosity of Serra da Estrela on the table.",
     photo: "https://media-manager.noticiasaominuto.com/1920/naom_5bc6df6ad85ce.jpg",
     price: 15
+  },
+  {
+    name: 'Mango',
+    brand: 'Palmer',
+    category: :fruits_and_vegetables,
+    volume: '600 gr',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "The sweet, juicy flavor of mango make them a refreshing and delicious treat. Enjoy them for breakfast, lunch, dinner, or dessert. Use them in smoothies mixed with other fruits, on salads, or make a great mango mousse!",
+    photo: "https://foodforward.org/wp-content/uploads/2018/04/mango-min.png",
+    price: 2
+  },
+  {
+    name: 'Fig',
+    brand: 'Mogadouro de Baixo',
+    category: :fruits_and_vegetables,
+    volume: '600 gr',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "Delicious, sweet fig fruit is one of the popular fruits enjoyed since ancient times. Fig is rich in natural health benefiting phytonutrients, antioxidants, and vitamins. Entirely developed and ripe fig features bell or pear shape with succulent, juicy flesh inside.",
+    photo: "https://img.vixdata.io/pd/jpg-large/en/sites/default/files/figo-fruta-0117-1400x800.jpg",
+    price: 5
+  },
+  {
+    name: 'Alcobaca Apple',
+    brand: 'IGP Maca Alcobaca',
+    category: :fruits_and_vegetables,
+    volume: '1000 gr',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "IGP Maçã de Alcobaça is an apple from Portugal, the fruit of which originates from cultivars of Malus domestica Boekh, of the varieties Royal Gala, Delicious, Jonagold, Fuji, Casa Nova de Alcobaça, Golden Delicious, Granny Smith and Reineta Parda.",
+    photo: "https://www.flfrevista.pt/file/2016/09/ma%C3%A7%C3%A3_alcoba%C3%A7a-IGP-735x400.jpg",
+    price: 3
+  },
+  {
+    name: 'Algarve Orange',
+    brand: 'Naturally Sweet Citrus',
+    category: :fruits_and_vegetables,
+    volume: '700 gr',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "The Algarve is the region in Europe with the most sun exposure. The oranges absorb all this heat and light and conserve them up until it reaches your table.",
+    photo: "https://www.portugalresident.com/wp-content/uploads/2019/02/orange.jpg",
+    price: 3
+  },
+  {
+    name: 'Lemon',
+    brand: 'Naturally Sweet Citrus',
+    category: :fruits_and_vegetables,
+    volume: '500 gr',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "Lemons are high in vitamin C, fiber, and various beneficial plant compounds. These nutrients are responsible for several health benefits. Theories suggest that drinking hot water with lemon will help you lose weight.",
+    photo: "https://images-na.ssl-images-amazon.com/images/I/718jRtF-PaL._SL1500_.jpg",
+    price: 2
+  },
+  {
+    name: 'Peanut Cookies',
+    brand: 'D. Maria',
+    category: :cookies_and_snacks,
+    volume: '234 gr',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "Gluten free peanut cookies. These flourless peanut butter cookies only take one bowl and are a breeze to whip up. Their ultra-rich flavor makes them perfect for peanut butter lovers!",
+    photo: "https://homemadehooplah.com/wp-content/uploads/2017/10/4-ingredient-peanut-butter-cookies-2.jpg",
+    price: 1
+  },
+  {
+    name: 'Plain Greek Yogurt',
+    brand: 'Fage',
+    category: :breakfast_and_cereal,
+    volume: '17.6 oz',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "Gluten free, Protein-Rich and no Added Sugar. FAGE Total 5% Plain strained yoghurt that's unbelievably thick and creamy. It's a whole milk Greek yogurt that features the famously rich FAGE Total taste and texture.",
+    photo: "https://soufflebombay.com/wp-content/uploads/2019/02/Blueberry-Swirl-Yogurt.jpg",
+    price: 3
+  },
+  {
+    name: 'Soya Yogurt',
+    brand: 'Alpro',
+    category: :breakfast_and_cereal,
+    volume: '500 gr',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "Alpro Soya simply plain plant-based alternative to yogurt. 100% plant-based, naturally lactose free. Free from dairy and gluten. Vegan.To call it 'plain', is a bit of an injustice. With a soft, mild and balanced taste and plenty of plant protein, really it's a beautiful thing.",
+    photo: "https://www.foodbev.com/wp-content/uploads/2015/04/pbay-500g-coconut-almond-soya-00014-reto-660w.jpg",
+    price: 3
+  },
+  {
+    name: 'Peanut Butter',
+    brand: 'Prozis',
+    category: :breakfast_and_cereal,
+    volume: '450 gr',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "High protein and high fiber. Peanut butter and fresh fruits or veggies is the perfect combo. Slather the spread on apples, celery, bananas and more.",
+    photo: "https://i.ytimg.com/vi/PjTb_c-mEcI/maxresdefault.jpg",
+    price: 4
+  },
+  {
+    name: 'Frozen Mussels',
+    brand: 'Pescanova',
+    category: :frozen_foods,
+    volume: '500 gr',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "Mussles are shellfish seafood which can be chilled, stuffed, skewered and served plain, with beans, on toasts, in soups.",
+    photo: "https://www.simplyrecipes.com/wp-content/uploads/2012/03/mussels-white-wine-sauce-horiz-a-1200.jpg",
+    price: 7
+  },
+  {
+    name: 'Frozen Salmon',
+    brand: 'Iglo',
+    category: :frozen_foods,
+    volume: '1100 gr',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "Salmon is rich in Omega-3 fatty acids, great source of protein, high in B vitamins, good source of potassium, loaded with selenium. It's a super food to reduce the risk of heart disease and weight control.",
+    photo: "https://nutritiouslife.com/wp-content/uploads/2016/09/Parchment-Baked-Salmon-1302x863.jpg",
+    price: 9
+  },
+  {
+    name: 'Smoked Salmon',
+    brand: 'Skandia',
+    category: :meat_and_seafood,
+    volume: '80 gr',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "Most Awarded Pre-Sliced Smoked Salmon (Natural). 100% NATURAL. Cold smoked, 100% natural Atlantic salmon fillets from the pristine waters of the Chilean Patagonia. No artificial flavoring, coloring or preservatives. Circle-K Kosher certified, gluten free and high in Omega 3. May be kept in the freezer for up to 12 months.",
+    photo: "https://images-na.ssl-images-amazon.com/images/I/8129O7SG3hL._SL1500_.jpg",
+    price: 5
+  },
+  {
+    name: 'Anchovy in Olive Oil',
+    brand: 'Lorea',
+    category: :canned_goods_and_soups,
+    volume: '100 gr',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "Anchovy in Virgin Olive Oil. Anchovies are a notably rich source of omega 3 fats. Omega 3s help to decrease inflammation and maintain the health of all the cells in the body, especially the fatty tissues of the eyes, brain, and nervous system.",
+    photo: "https://obagastronomia.com.br/wp-content/uploads/2016/09/Anchova-1.jpg",
+    price: 4
+  },
+  {
+    name: 'Tuna (Natural)',
+    brand: '',
+    category: :meat_and_seafood,
+    volume: '100 gr',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "Tuna, for its part, is a source of high-quality protein with almost no fat. It contains all essential amino acids required by the body for growth and maintenance of lean muscle tissue.",
+    photo: "https://www.thespruceeats.com/thmb/ujasAHkpwjPaRS7S6LdiH_iiqPM=/2848x2848/smart/filters:no_upscale()/spice-rubbed-seared-tuna-steaks-balsamic-101974-13-5b46531a46e0fb003778c140.jpg",
+    price: 4
+  },
+  {
+    name: 'Tuna in Olive Oil',
+    brand: 'Bom Petisco',
+    category: :canned_goods_and_soups,
+    volume: '120 gr',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "Tuna, for its part, is a source of high-quality protein with almost no fat. Canned tuna can be a good source of heart-healthy omega-3 fatty acids, with 150 milligrams or more per four-ounce serving.",
+    photo: "http://cdn.24.co.za/files/Cms/General/d/3678/804c25bc6ed34e4bbdeb41f7b55196a1.jpg",
+    price: 2
+  },
+  {
+    name: 'Pure white bread',
+    brand: 'Bimbo Rusty',
+    category: :breakfast_and_cereal,
+    volume: '400 gr',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "A delicious bread with a very light center with crunchy crust. You may substitute butter or vegetable oil for the lard if you wish.",
+    photo: "https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/paul_hollywoods_crusty_83536_16x9.jpg",
+    price: 1
+  },
+  {
+    name: 'Dark bread',
+    brand: 'Rye M.',
+    category: :breakfast_and_cereal,
+    volume: '250 gr',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "A study in the American Journal of Clinical Nutrition found that eating rye leads to better blood-sugar control compared to wheat. Rye bread is packed with magnesium, which helps control blood pressure and optimize heart health. Its high levels of soluble fibre can also reduce cholesterol.",
+    photo: "https://nordicfoodliving.com/wp-content/uploads/2015/09/20198183221_eb41aa8508_b.jpg",
+    price: 3
+  },
+  {
+    name: 'S. Jorge Island Cheese',
+    brand: 'Nova Açores',
+    category: :dairy_eggs_and_cheese,
+    volume: '400 gr',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "São Jorge is a Portuguese cheese from an island of the same name, located 900 miles from the west coast of Portugal and part of Azores archipelago.",
+    photo: "https://images.e-konomista.pt/articles/850_400_big-yellow-goat-cheese-heads_1504277350.jpg",
+    price: 3
+  },
+  {
+    name: 'Ricotta Cheese',
+    brand: 'Mimosa',
+    category: :dairy_eggs_and_cheese,
+    volume: '250 gr',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "Ricotta is an Italian whey cheese made from sheep, cow, goat, or Italian water buffalo milk whey left over from the production of other cheeses. Like other whey cheeses, it is made by coagulating the proteins that remain after the casein has been used to make cheese, notably albumin and globulin.",
+    photo: "https://www.thespruceeats.com/thmb/uvaQq55Glyfqdff8IOfNXVzHFgg=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/106908888-58aefb225f9b58a3c9287cf3.jpg",
+    price: 2
+  },
+  {
+    name: 'Mozzarella Cheese',
+    brand: 'Galbany',
+    category: :dairy_eggs_and_cheese,
+    volume: '250 gr',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "Apparently, an ounce of mozzarella contains 18% of your daily intake of calcium - which aids the health of your bone structure and even manages to strengthen your pearly whites! 2. This velvety smooth cheese also contains phosphorus, a mineral that allows the body to use the aforementioned calcium.",
+    photo: "https://www.zingermanscreamery.com/app/uploads/2018/04/zing-creamery-285.jpg",
+    price: 3
+  },
+  {
+    name: 'Brocolis',
+    brand: '',
+    category: :fruits_and_vegetables,
+    volume: '400 gr',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "Broccoli is an edible green plant in the cabbage family whose large flowering head and stalk is eaten as a vegetable.",
+    photo: "https://nit.pt/wp-content/uploads/2018/05/585fc00b9c6b9d67e19ad637391936bd-754x394.jpeg",
+    price: 2
+  },
+  {
+    name: 'Frozen Brocolis',
+    brand: 'Bonduelle',
+    category: :frozen_foods,
+    volume: '400 gr',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "Cover the pot and boil the florets in the water for 2 minutes. Then, transfer the florets to a bowl of ice water and let them fully cool. Once they're cooled off, put the florets in a plastic freezer bag and store them in the freezer for up to 9 months.",
+    photo: "https://nit.pt/wp-content/uploads/2018/05/585fc00b9c6b9d67e19ad637391936bd-754x394.jpeg",
+    price: 2
+  },
+  {
+    name: 'Tomatoes',
+    brand: '',
+    category: :fruits_and_vegetables,
+    volume: '250 gr',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "Tomatoes are the major dietary source of the antioxidant lycopene, which has been linked to many health benefits, including reduced risk of heart disease and cancer. They are also a great source of vitamin C, potassium, folate, and vitamin K.",
+    photo: "https://img.etimg.com/thumb/msid-68232146,width-643,imgsize-200388,resizemode-4/tomatoes-gettyimages-847335.jpg",
+    price: 1
+  },
+  {
+    name: 'Avocado',
+    brand: 'Lavocado',
+    category: :fruits_and_vegetables,
+    volume: '150 gr',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "Avocados are a stone fruit with a creamy texture that grow in warm climates. Their potential health benefits include improving digestion, decreasing risk of depression, and protection against cancer.",
+    photo: "https://foodrevolution.org/wp-content/uploads/iStock-854389420-tashka2000-featured-Recovered.jpg",
+    price: 3
+  },
+  {
+    name: 'Lettuce',
+    brand: 'Rell Agriculture',
+    category: :fruits_and_vegetables,
+    volume: '250 gr',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "Lettuce provides calcium, potassium, vitamin C, and folate. The nutrients in iceberg lettuce can help you to meet the standard daily requirements for several vitamins and minerals. They include: Vitamin C, a powerful antioxidant that helps keep your immune system healthy.",
+    photo: "https://cdn-prod.medicalnewstoday.com/content/images/articles/319/319725/romaine-lettuce-on-wooden-chopping-board.jpg",
+    price: 1
+  },
+  {
+    name: 'Plain Iceberg Cabbage',
+    brand: 'Rell Agriculture',
+    category: :grains_pasta_and_sides,
+    volume: '250 gr',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "Lettuce provides calcium, potassium, vitamin C, and folate. The nutrients in iceberg lettuce can help you to meet the standard daily requirements for several vitamins and minerals. They include: Vitamin C, a powerful antioxidant that helps keep your immune system healthy.",
+    photo: "https://www.jesmondfruitbarn.com.au/wp-content/uploads/2016/10/Jesmond-Fruit-Barn-Cabbage.jpg",
+    price: 2
+  },
+  {
+    name: 'Carrots',
+    brand: 'Rell Agriculture',
+    category: :fruits_and_vegetables,
+    volume: '350 gr',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "It is crunchy, tasty, and highly nutritious. Carrots are a particularly good source of beta carotene, fiber, vitamin K1, potassium, and antioxidants ( 1 ). They also have a number of health benefits. They're a weight-loss-friendly food and have been linked to lower cholesterol levels and improved eye health.",
+    photo: "https://nutritionfacts.org/app/uploads/2019/01/carrots-3399806_1920.jpg",
+    price: 2
+  },
+  {
+    name: 'FarfalleGluten Free Pasta',
+    brand: 'Jovial',
+    category: :fruits_and_vegetables,
+    volume: '12 oz',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "Crafted in Italy using time-honored production methods and carefully selected varieties of rice, our brown rice farfalle pasta is as close to traditional as gluten free can be. The future of gluten free is delicious, wholesome, and completely satisfying food.",
+    photo: "https://jovialfoods.com/wp-content/uploads/2016/03/Jovial_GFPastaFarfalleHerbs-0068_1200x1200.jpg",
+    price: 6
   }
 ];
 
@@ -641,12 +927,114 @@ ingredient_attributes = [
   },
   {
     name: 'veggies',
+    is_allergen: false
   },
   {
     name: 'vodka',
     is_allergen: false
+  },
+  {
+    name: 'chicken',
+    is_allergen: false
+  },
+  {
+    name: 'eggs',
+    is_allergen: true,
+    allergen_family_id: lactose.id
+  },
+  {
+    name: 'mango',
+    is_allergen: false
+  },
+  {
+    name: 'fig',
+    is_allergen: false
+  },
+  {
+    name: 'apple',
+    is_allergen: false
+  },
+  {
+    name: 'orange',
+    is_allergen: false
+  },
+  {
+    name: 'lemon',
+    is_allergen: false
+  },
+  {
+    name: 'butter',
+    is_allergen: true,
+    allergen_family_id: lactose.id
+  },
+  {
+    name: 'soya',
+    is_allergen: false,
+  },
+  {
+    name: 'salmon',
+    is_allergen: true,
+    allergen_family_id: fish.id
+  },
+  {
+    name: 'anchovy',
+    is_allergen: true,
+    allergen_family_id: fish.id
+  },
+  {
+    name: 'olive oil',
+    is_allergen: false,
+  },
+  {
+    name: 'sunflower oil',
+    is_allergen: true,
+    allergen_family_id: seeds.id
+  },
+  {
+    name: 'white bread flour',
+    is_allergen: true,
+    allergen_family_id: gluten.id
+  },
+  {
+    name: 'sunflower seeds',
+    is_allergen: true,
+    allergen_family_id: seeds.id
+  },
+  {
+    name: 'white bread flour',
+    is_allergen: true,
+    allergen_family_id: gluten.id
+  },
+  {
+    name: 'sunflower seeds',
+    is_allergen: true,
+    allergen_family_id: seeds.id
+  },
+  {
+    name: 'brocolis',
+    is_allergen: false
+  },
+  {
+    name: 'avocado',
+    is_allergen: false
+  },
+  {
+    name: 'lettuce',
+    is_allergen: false
+  },
+  {
+    name: 'iceberg cabbage',
+    is_allergen: false
+  },
+  {
+    name: 'carrots',
+    is_allergen: false
+  },
+  {
+    name: 'organic brown rice flour',
+    is_allergen: false
   }
-]
+];
 
 Ingredient.create!(ingredient_attributes)
 Product.create!(product_attributes)
@@ -687,7 +1075,7 @@ IngredientsProduct.create(product_id: Product.find_by(name: 'Fresh Cut Blue Lake
 # Danish Butter Cookie
 IngredientsProduct.create(product_id: Product.find_by(name: 'Danish Butter Cookie').id, ingredient_id: Ingredient.find_by(name: 'whole wheat flour').id)
 IngredientsProduct.create(product_id: Product.find_by(name: 'Danish Butter Cookie').id, ingredient_id: Ingredient.find_by(name: 'sugar').id)
-IngredientsProduct.create(product_id: Product.find_by(name: 'Danish Butter Cookie').id, ingredient_id: Ingredient.find_by(name: 'sugar').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Danish Butter Cookie').id, ingredient_id: Ingredient.find_by(name: 'butter').id)
 
 # Large White Eggs
 IngredientsProduct.create(product_id: Product.find_by(name: 'Large White Eggs').id, ingredient_id: Ingredient.find_by(name: 'egg').id)# Large White Eggs
@@ -762,28 +1150,123 @@ IngredientsProduct.create(product_id: Product.find_by(name: 'Bio Beer Gluten Fre
 IngredientsProduct.create(product_id: Product.find_by(name: 'Bio Beer Gluten Free').id, ingredient_id: Ingredient.find_by(name: 'millet').id)
 IngredientsProduct.create(product_id: Product.find_by(name: 'Bio Beer Gluten Free').id, ingredient_id: Ingredient.find_by(name: 'corn').id)
 
-#Freshé Gourmet Canned Tuna
-IngredientsProduct.create(product_id: Product.find_by(name: 'Freshé Gourmet Canned Tuna').id, ingredient_id: Ingredient.find_by(name: 'tuna').id)
-IngredientsProduct.create(product_id: Product.find_by(name: 'Freshé Gourmet Canned Tuna').id, ingredient_id: Ingredient.find_by(name: 'peppers').id)
-IngredientsProduct.create(product_id: Product.find_by(name: 'Freshé Gourmet Canned Tuna').id, ingredient_id: Ingredient.find_by(name: 'corn').id)
-IngredientsProduct.create(product_id: Product.find_by(name: 'Freshé Gourmet Canned Tuna').id, ingredient_id: Ingredient.find_by(name: 'beans').id)
-IngredientsProduct.create(product_id: Product.find_by(name: 'Freshé Gourmet Canned Tuna').id, ingredient_id: Ingredient.find_by(name: 'onion').id)
-
 #Palmini Low Carb Pasta
 IngredientsProduct.create(product_id: Product.find_by(name: 'Palmini Low Carb Pasta').id, ingredient_id: Ingredient.find_by(name: 'palm noodles').id)
-
-#Grecian Style Eggplant with Tomatoes & Onions
-IngredientsProduct.create(product_id: Product.find_by(name: 'Grecian Style Eggplant with Tomatoes & Onions').id, ingredient_id: Ingredient.find_by(name: 'onion').id)
-IngredientsProduct.create(product_id: Product.find_by(name: 'Grecian Style Eggplant with Tomatoes & Onions').id, ingredient_id: Ingredient.find_by(name: 'tomatoes').id)
-IngredientsProduct.create(product_id: Product.find_by(name: 'Grecian Style Eggplant with Tomatoes & Onions').id, ingredient_id: Ingredient.find_by(name: 'eggplant').id)
-
-#Amy Light in Sodium Minestrone
-IngredientsProduct.create(product_id: Product.find_by(name: 'Amy Light in Sodium Minestrone').id, ingredient_id: Ingredient.find_by(name: 'potatoes').id)
-IngredientsProduct.create(product_id: Product.find_by(name: 'Amy Light in Sodium Minestrone').id, ingredient_id: Ingredient.find_by(name: 'veggies').id)
-IngredientsProduct.create(product_id: Product.find_by(name: 'Amy Light in Sodium Minestrone').id, ingredient_id: Ingredient.find_by(name: 'beans').id)
 
 # Absolut Vodka Sweden Original
 IngredientsProduct.create(product_id: Product.find_by(name: 'Absolut Vodka Sweden Original').id, ingredient_id: Ingredient.find_by(name: 'vodka').id)
 
 # Queijo Serra da Estrela DOP
-IngredientsProduct.create(product_id: Product.find_by(name: 'Queijo Serra da Estrela DOP').id, ingredient_id: Ingredient.find_by(name: 'cheese').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Serra da Estrela Cheese').id, ingredient_id: Ingredient.find_by(name: 'cheese').id)
+
+#Condensed Chicken Noodle Soup
+IngredientsProduct.create(product_id: Product.find_by(name: 'Condensed Chicken Noodle Soup').id, ingredient_id: Ingredient.find_by(name: 'eggs').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Condensed Chicken Noodle Soup').id, ingredient_id: Ingredient.find_by(name: 'wheat').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Condensed Chicken Noodle Soup').id, ingredient_id: Ingredient.find_by(name: 'chicken').id)
+
+#Mango
+IngredientsProduct.create(product_id: Product.find_by(name: 'Mango').id, ingredient_id: Ingredient.find_by(name: 'mango').id)
+
+#Fig
+IngredientsProduct.create(product_id: Product.find_by(name: 'Fig').id, ingredient_id: Ingredient.find_by(name: 'fig').id)
+
+#Alcobaca Apple
+IngredientsProduct.create(product_id: Product.find_by(name: 'Alcobaca Apple').id, ingredient_id: Ingredient.find_by(name: 'apple').id)
+
+#Algarve Orange
+IngredientsProduct.create(product_id: Product.find_by(name: 'Algarve Orange').id, ingredient_id: Ingredient.find_by(name: 'orange').id)
+
+#Lemon
+IngredientsProduct.create(product_id: Product.find_by(name: 'Lemon').id, ingredient_id: Ingredient.find_by(name: 'lemon').id)
+
+#Peanut Cookies
+IngredientsProduct.create(product_id: Product.find_by(name: 'Peanut Cookies').id, ingredient_id: Ingredient.find_by(name: 'peanuts').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Peanut Cookies').id, ingredient_id: Ingredient.find_by(name: 'eggs').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Peanut Cookies').id, ingredient_id: Ingredient.find_by(name: 'butter').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Peanut Cookies').id, ingredient_id: Ingredient.find_by(name: 'sugar').id)
+
+#Plain Greek Yogurt
+IngredientsProduct.create(product_id: Product.find_by(name: 'Plain Greek Yogurt').id, ingredient_id: Ingredient.find_by(name: 'milk').id)
+
+#Soya Yogurt
+IngredientsProduct.create(product_id: Product.find_by(name: 'Soya Yogurt').id, ingredient_id: Ingredient.find_by(name: 'soya').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Soya Yogurt').id, ingredient_id: Ingredient.find_by(name: 'sugar').id)
+
+#Peanut Butter
+IngredientsProduct.create(product_id: Product.find_by(name: 'Peanut Butter').id, ingredient_id: Ingredient.find_by(name: 'peanuts').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Peanut Butter').id, ingredient_id: Ingredient.find_by(name: 'sugar').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Peanut Butter').id, ingredient_id: Ingredient.find_by(name: 'honey').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Peanut Butter').id, ingredient_id: Ingredient.find_by(name: 'butter').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Peanut Butter').id, ingredient_id: Ingredient.find_by(name: 'palm oil').id)
+
+#Frozen Mussels
+IngredientsProduct.create(product_id: Product.find_by(name: 'Frozen Mussels').id, ingredient_id: Ingredient.find_by(name: 'mussels').id)
+
+#Frozen Salmon
+IngredientsProduct.create(product_id: Product.find_by(name: 'Frozen Salmon').id, ingredient_id: Ingredient.find_by(name: 'salmon').id)
+
+#Smoked Salmon
+IngredientsProduct.create(product_id: Product.find_by(name: 'Smoked Salmon').id, ingredient_id: Ingredient.find_by(name: 'salmon').id)
+
+#Anchovy in Olive Oil
+IngredientsProduct.create(product_id: Product.find_by(name: 'Anchovy in Olive Oil').id, ingredient_id: Ingredient.find_by(name: 'anchovy').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Anchovy in Olive Oil').id, ingredient_id: Ingredient.find_by(name: 'olive oil').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Anchovy in Olive Oil').id, ingredient_id: Ingredient.find_by(name: 'water').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Anchovy in Olive Oil').id, ingredient_id: Ingredient.find_by(name: 'salt').id)
+
+#Tuna (Natural)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Tuna (Natural)').id, ingredient_id: Ingredient.find_by(name: 'tuna').id)
+
+#Tuna in Olive Oil
+IngredientsProduct.create(product_id: Product.find_by(name: 'Tuna in Olive Oil').id, ingredient_id: Ingredient.find_by(name: 'tuna').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Tuna in Olive Oil').id, ingredient_id: Ingredient.find_by(name: 'olive oil').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Tuna in Olive Oil').id, ingredient_id: Ingredient.find_by(name: 'water').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Tuna in Olive Oil').id, ingredient_id: Ingredient.find_by(name: 'salt').id)
+
+#Pure white bread
+IngredientsProduct.create(product_id: Product.find_by(name: 'Pure white bread').id, ingredient_id: Ingredient.find_by(name: 'white bread flour').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Pure white bread').id, ingredient_id: Ingredient.find_by(name: 'sunflower oil').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Pure white bread').id, ingredient_id: Ingredient.find_by(name: 'water').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Pure white bread').id, ingredient_id: Ingredient.find_by(name: 'salt').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Pure white bread').id, ingredient_id: Ingredient.find_by(name: 'butter').id)
+
+#Dark bread
+IngredientsProduct.create(product_id: Product.find_by(name: 'Pure white bread').id, ingredient_id: Ingredient.find_by(name: 'rye').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Pure white bread').id, ingredient_id: Ingredient.find_by(name: 'water').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Pure white bread').id, ingredient_id: Ingredient.find_by(name: 'salt').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Pure white bread').id, ingredient_id: Ingredient.find_by(name: 'sunflower seeds').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Pure white bread').id, ingredient_id: Ingredient.find_by(name: 'wheat').id)
+
+#S. Jorge Island Cheese
+IngredientsProduct.create(product_id: Product.find_by(name: 'S. Jorge Island Cheese').id, ingredient_id: Ingredient.find_by(name: 'cheese').id)
+
+#Ricotta Cheese
+IngredientsProduct.create(product_id: Product.find_by(name: 'Ricotta Cheese').id, ingredient_id: Ingredient.find_by(name: 'cheese').id)
+
+#Mozzarella Cheese
+IngredientsProduct.create(product_id: Product.find_by(name: 'Mozzarella Cheese').id, ingredient_id: Ingredient.find_by(name: 'cheese').id)
+
+#Brocolis
+IngredientsProduct.create(product_id: Product.find_by(name: 'Brocolis').id, ingredient_id: Ingredient.find_by(name: 'brocolis').id)
+
+#Frozen Brocolis
+IngredientsProduct.create(product_id: Product.find_by(name: 'Frozen Brocolis').id, ingredient_id: Ingredient.find_by(name: 'brocolis').id)
+
+#Tomatoes
+IngredientsProduct.create(product_id: Product.find_by(name: 'Tomatoes').id, ingredient_id: Ingredient.find_by(name: 'tomatoes').id)
+
+#Avocado
+IngredientsProduct.create(product_id: Product.find_by(name: 'Avocado').id, ingredient_id: Ingredient.find_by(name: 'avocado').id)
+
+#Lettuce
+IngredientsProduct.create(product_id: Product.find_by(name: 'Lettuce').id, ingredient_id: Ingredient.find_by(name: 'lettuce').id)
+
+#Plain Iceberg Cabbage
+IngredientsProduct.create(product_id: Product.find_by(name: 'Plain Iceberg Cabbage').id, ingredient_id: Ingredient.find_by(name: 'iceberg cabbage').id)
+
+#Carrots
+IngredientsProduct.create(product_id: Product.find_by(name: 'Carrots').id, ingredient_id: Ingredient.find_by(name: 'carrots').id)
+
+#FarfalleGluten Free Pasta
+IngredientsProduct.create(product_id: Product.find_by(name: 'FarfalleGluten Free Pasta').id, ingredient_id: Ingredient.find_by(name: 'organic brown rice flour').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'FarfalleGluten Free Pasta').id, ingredient_id: Ingredient.find_by(name: 'water').id)
