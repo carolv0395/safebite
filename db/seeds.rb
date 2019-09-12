@@ -280,6 +280,39 @@ We aim to show you accurate product information. Manufacturers, suppliers and ot
 Great Value Detox Rocks Fruit and Vegetable Smoothie is made with a delicious blend of pineapple, banana, cranberry, kale and lemon. It's great for quick and easy smoothies at home, at the office or on the go. Simply add water to make this tasty creation come to life. Make it an extra special treat and substitute water for your favorite juice or milk. Serve with a fresh garden salad to enjoy a well-balanced meal that's great for you. It also offers nutritional benefits as it is a great source of dietary fiber, iron, potassium, vitamin C and calcium. Nourish your body, soul and taste buds with the great taste of Great Value Detox Rocks Smoothie.",
     photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7Wi0xJDtK-UetIwMusQu2aQNsba3YQ-N-MM8o-YXbs99GabFn",
     price: 3
+  },
+  {
+    name: 'LaCroix Sparkling Water - Lemon',
+    brand: 'National Beverage Corporation',
+    category: :beverages,
+    volume: '24 oz',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "LaCroix Sparkling Water is the #1 sparkling water brand. LaCroix is a refreshing and healthy beverage that can be enjoyed in any setting. Each sip of LaCroix Sparking Water is flavored with the natural essence oils extracted from the named fruit. It contains 0-calories, 0-sweetenersand 0-sodium. This means you can enjoy the refreshing taste of a carbonated beverage completely guilt-free. LaCroix sparkling water is vegan, gluten-free, non-GMO and Whole30 approved. Our water is sourced in the U.S.A. and has a lower carbon footprint compared to imported brands. The average person needs to drink eight 8-oz glasses of water a day, and with LaCroix Sparkling Water, each of those eight glasses can have a special, fruity essence that you will love! Enjoy LaCroix!",
+    photo: "https://images.pexels.com/photos/158821/mineral-water-lime-ice-mint-158821.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    price: 11
+  },
+  {
+    name: 'Capri Sun Splash Cooler',
+    brand: 'Capri Sun',
+    category: :beverages,
+    volume: '24 oz',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "You asked. We listened. You wanted us to remove high fructose corn syrup, so we did. And you know what? We've also never had any artificial colors, flavors, or preservatives. See for yourself with our clear-bottom pouch.*This product has 13g sugars; leading regular juice drinks have 22g sugars per 6 fl oz serving.",
+    photo: "https://media-assets-05.thedrum.com/cache/images/thedrum-prod/s3-news-tmp-10557-caprisun--2x1--940.jpg",
+    price: 9
+  },
+  {
+    name: 'Organic Superfood Blend Powder',
+    brand: 'BetterBody Foods',
+    category: :beverages,
+    volume: '12 oz',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "Need a nutrition boost to go? Got picky eaters? LIVfit Superfood Organic Superfood Blend is perfect for you! This flavor-neutral power pack of nutrients is your new best friend. Made from whole fruit and vegetable concentrates, LIVfit Superfood174; Organic Superfood Blend scoops into smoothies, spaghetti sauces, yogurts and pretty much anything you or your family eat. The B Vitamins in it help provide your body with natural energy, and the pea protein and hemp protein give your muscles a little boost of nutrition. Its neutral flavor means they'll never suspect you've boosted the nutrition. Don't worry; we'll keep your secret. Add two scoops of LIVfit Superfood174; Organic Superfood Blend to eight ounces of juice or a smoothie and blend well.",
+    photo: "https://images.pexels.com/photos/1171552/pexels-photo-1171552.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    price: 12
   }
 ];
 
@@ -469,6 +502,14 @@ ingredient_attributes = [
   {
     name: 'corn',
     is_allergen: false
+  },
+  {
+    name: 'lemon',
+    is_allergen: false
+  },
+  {
+    name: 'water',
+    is_allergen: false
   }
 ]
 
@@ -563,3 +604,17 @@ IngredientsProduct.create(product_id: Product.find_by(name: 'Whole Kernel Corn')
 IngredientsProduct.create(product_id: Product.find_by(name: 'Detox Rocks Fruit & Vegetable Smoothie').id, ingredient_id: Ingredient.find_by(name: 'strawberry').id)
 IngredientsProduct.create(product_id: Product.find_by(name: 'Detox Rocks Fruit & Vegetable Smoothie').id, ingredient_id: Ingredient.find_by(name: 'raspberry').id)
 IngredientsProduct.create(product_id: Product.find_by(name: 'Detox Rocks Fruit & Vegetable Smoothie').id, ingredient_id: Ingredient.find_by(name: 'coconut milk').id)
+
+# LaCroix Sparkling Water - Lemon
+IngredientsProduct.create(product_id: Product.find_by(name: 'LaCroix Sparkling Water - Lemon').id, ingredient_id: Ingredient.find_by(name: 'water').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'LaCroix Sparkling Water - Lemon').id, ingredient_id: Ingredient.find_by(name: 'lemon').id)
+
+# Capri Sun Splash Cooler
+IngredientsProduct.create(product_id: Product.find_by(name: 'Capri Sun Splash Cooler').id, ingredient_id: Ingredient.find_by(name: 'water').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Capri Sun Splash Cooler').id, ingredient_id: Ingredient.find_by(name: 'lemon').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Capri Sun Splash Cooler').id, ingredient_id: Ingredient.find_by(name: 'sugar').id)
+
+# Organic Superfood Blend Powder
+IngredientsProduct.create(product_id: Product.find_by(name: 'Organic Superfood Blend Powder').id, ingredient_id: Ingredient.find_by(name: 'strawberry').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Organic Superfood Blend Powder').id, ingredient_id: Ingredient.find_by(name: 'raspberry').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Organic Superfood Blend Powder').id, ingredient_id: Ingredient.find_by(name: 'sugar').id)
