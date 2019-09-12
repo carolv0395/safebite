@@ -2,31 +2,36 @@
   <h1>Shopping Basket</h1>
 </div>
 
-<% @order.orders_products.sort_by(&:created_at).each do |orderproduct| %>
-  <div class="add-product-card d-flex">
+<ul id="shopping-card-list slippylist" class="shopping-card-list" order="<%= @order.id %>">
+  <% @order.orders_products.sort_by(&:created_at).each do |orderproduct| %>
+    <li>
+      <div id="<%= orderproduct.id %>" class="add-product-card d-flex">
 
-    <div class="product-image-price">
-      <img src=<%= orderproduct.product.photo %> />
-      <p><%= orderproduct.product.price %> €</p>
-    </div>
+        <div class="product-image-price">
+          <img src=<%= orderproduct.product.photo %> />
+          <p><%= orderproduct.product.price %> €</p>
+        </div>
 
-    <div class="product-quantity">
-      <h4> <%= orderproduct.product.name.capitalize %> </h4>
-      <p> <%= orderproduct.product.brand.capitalize %> </p>
-    </div>
+        <div class="product-quantity">
+          <h4> <%= orderproduct.product.name.capitalize %> </h4>
+          <p> <%= orderproduct.product.brand.capitalize %> </p>
+        </div>
 
-    <div class="add-quantity d-flex flex-column justify-content-center pl-5">
-      <%= link_to "+", product_orders_path(orderproduct.product), method: :post, remote: true, class: "add" %>
-      <div class ="quantity" id="order_count_<%= orderproduct.product.id %>"><%= orderproduct.quantity %></div>
-      <%= link_to "-", product_order_path(orderproduct.product, 0), method: :delete, remote: true, class: "remove" %>
-    </div>
-  </div>
+        <div class="add-quantity d-flex flex-column justify-content-center pl-5">
+          <%= link_to "+", product_orders_path(orderproduct.product), method: :post, remote: true, class: "add" %>
+          <div class ="quantity" id="order_count_<%= orderproduct.product.id %>"><%= orderproduct.quantity %></div>
+          <%= link_to "-", product_order_path(orderproduct.product, 0), method: :delete, remote: true, class: "remove" %>
+        </div>
+      </div>
+    </li>
 
-<div class="justify-content-center pb-4">
-  <%= link_to "delete product", product_delete_orders_path(id: orderproduct.id), class: "btn-delete" %>
-</div>
+<!--   <div class="justify-content-center pb-4">
+    <%#= link_to "delete product", product_delete_orders_path(id: orderproduct.id), class: "btn-delete" %>
+  </div> -->
 
-<% end %>
+  <% end %>
+
+</ul>
 
 <div class="container d-flex flex-column justify-content-centerd-flex inline-block pt-2">
     <div class="ml-auto">

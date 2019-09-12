@@ -1,11 +1,15 @@
 import "bootstrap";
-
 import { initImagePreview } from '../plugins/image-preview'
 import { sidebarCollapse } from '../plugins/sidebar'
 import { showSearchBar } from '../plugins/show-search-bar';
 import { flashDismiss } from '../plugins/flash-dismiss';
 import { removeFlash } from '../plugins/flash-dismiss';
 
+
+import { swipeToDelete } from '../plugins/swipe-to-delete';
+
+
+swipeToDelete();
 initImagePreview();
 sidebarCollapse();
 flashDismiss();
