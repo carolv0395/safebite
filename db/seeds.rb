@@ -175,7 +175,7 @@ product_attributes = [
     discount: 0,
     stock: Faker::Number.between(from: 0, to: 200),
     description: "Barilla pasta is the perfect foundation for a nutritious & delicious meal especially when paired with other healthy foods like olive oil, vegetables, legumes and lean proteins.",
-    photo: "https://img.taste.com.au/FjWQAr5i/taste/2016/11/gluten-free-elbows-pasta-salad-with-tomatoes-and-eggplant-sauce-95189-1.jpeg",
+    photo: "https://rainydayfoods.com/pub/media/catalog/product/cache/image/1000x1000/e9c3970ab036de70892d86c6d221abfe/n/e/nelbowmacaronimc.jpg",
     price: 4
   },
   {
