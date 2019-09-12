@@ -7,28 +7,29 @@
 }
 
 .modal-total {
-  font-size: 16px;
   font-weight: 500;
 }
 
-button.stripe-button-el {
-  background-color: #ADB13A !important;
+.modal-body p {
+  font-size: 21px;
+}
+
+button.btn.btn-payment {
+  background-color: $orange;
   background-image: none;
   border-radius: 0;
   text-shadow: none;
-  span {
-    background-color: #ADB13A !important;
-    background-image: none;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 500;
-    text-shadow: none;
-  }
+  font-weight: 500;
+  color: white;
+  width: 45%;
+  font-size: 23px;
+  height: 53px;
+  margin-right: 20px;
   &:active {
     span {
       background: #ADB13A !important;
     }
   }
-
 }
 
 button.btn.btn-secondary {
@@ -37,4 +38,36 @@ button.btn.btn-secondary {
   border-color: #B1B1B1;
   font-weight: 500;
   border-radius: 0;
+  width: 45%;
+  font-size: 23px;
+  height: 53px;
+}
+
+.StripeElement {
+  box-sizing: border-box;
+
+  height: 40px;
+  width: 100%;
+
+  padding: 10px 12px;
+
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: white;
+
+  box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+}
+
+.StripeElement--focus {
+  box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--invalid {
+  border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
 }

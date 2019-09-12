@@ -11,7 +11,7 @@ class ProductsController < ApplicationController
   end
 
   def category
-    @products = Product.where(category: params[:category])
+    @products = Product.where(category: params[:category]).search_allergens(current_user)
     authorize @products
   end
 

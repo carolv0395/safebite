@@ -4,12 +4,6 @@ function swipeToDelete() {
   var list = document.querySelector('ul');
   new Slip(list);
 
-  // list.addEventListener('slip:beforeswipe', function(e) {
-  //     if (shouldNotSwipe(e.target)) {
-  //         e.preventDefault(); // won't move sideways if prevented
-  //     }
-  // });
-
   list.addEventListener('slip:swipe', function(e) {
       // e.target list item swiped
       //thatWasSwipeToRemove
@@ -19,11 +13,20 @@ function swipeToDelete() {
           let productOrderId = document.querySelector(".add-product-card").id;
           let orderId = document.querySelector("ul").attributes["order"].value;
           let url = "/orders/${orderId}/product_orders/${productOrderId}"
-          console.log(url);
+          let token = document.querySelector('[name="csrf-token"]').content
+          console.log(token);
+          console.log("Benfica!")
           // delete
           fetch(url, {
               method: 'DELETE',
-              body: { pId: productOrderId, oId: orderId }
+              headers: {
+                'Content-Type': 'application/json',
+                'Accept': ', application/javascript, application/ecmascript, application/x-ecmascript, */*; q=0.01',
+                'X-Requested-With': 'XMLHttpRequest',
+                'X-CSRF-Token': document.querySelector('[name="csrf-token"]').content
+              },
+              body: { pId: productOrderId, oId: orderId },
+              credentials: 'same-origin'
             })
             .then(response => response.json())
             .then((data) => {
@@ -34,30 +37,6 @@ function swipeToDelete() {
           e.preventDefault(); // will animate back to original position
       }
   });
-
-  // list.addEventListener('slip:beforereorder', function(e) {
-  //     if (shouldNotReorder(e.target)) {
-  //         // if prevented element won't move vertically
-  //         e.preventDefault();
-  //     }
-  // });
-
-  // list.addEventListener('slip:beforewait', function(e) {
-  //     if (isScrollingKnob(e.target)) {
-  //         // if prevented element will be dragged (instead of page scrolling)
-  //         e.preventDefault();
-  //     }
-  // });
-
-  // list.addEventListener('slip:reorder', function(e) {
-  //     // e.target list item reordered.
-  //     if (reorderedOK) {
-  //         e.target.parentNode.insertBefore(e.target, e.detail.insertBefore);
-  //     } else {
-  //         // element will fly back to original position
-  //         e.preventDefault();
-  //     }
-  // });
 
 }
 

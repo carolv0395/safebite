@@ -2,7 +2,7 @@
   width: 100vw;
   padding-top: 10px;
   padding-bottom: 0px;
-  background-color: orange;
+  background-color: $orange;
   position: fixed;
   bottom: 0px;
   left: 0px;
@@ -64,22 +64,6 @@
   }
 }
 
-// .btn-text-white {
-//   color: white;
-//   font-size: 28px;
-//   font-family: 'Raleway', sans-serif;
-//   font-weight: 500;
-//   padding-bottom: 20px;
-
-//   &:hover {
-//     color: white;
-//   }
-
-//   &:focus {
-//     box-shadow: 0 0 0 0;
-//   }
-// }
-
 .fa-arrow-right {
   font-size: 28px;
   padding-top: 15px;
@@ -109,4 +93,16 @@
     background-color: white;
     color: purple;
     border-radius: 1px;
+}
+
+.btn-sphagetti {
+  position: absolute;
+  bottom: -66px;
+  font-size: 2rem;
+  background-color: lightgrey;
+  padding: 6px;
+  color: red;
+  border-radius: 6px;
+  left: 54px;
+
 }
