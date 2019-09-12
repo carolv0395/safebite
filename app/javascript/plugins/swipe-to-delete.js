@@ -19,7 +19,7 @@ function swipeToDelete() {
           let productOrderId = document.querySelector(".add-product-card").id;
           let orderId = document.querySelector("ul").attributes["order"].value;
           let url = "/orders/${orderId}/product_orders/${productOrderId}"
-
+          console.log(url);
           // delete
           fetch(url, {
               method: 'DELETE',
