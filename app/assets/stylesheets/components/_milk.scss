@@ -1,6 +1,6 @@
 .container.error-404 {
   min-height: 100vh;
-  background-color: orange;
+  background-color: $orange;
 }
 
 .milk-404 {
@@ -10,7 +10,7 @@
 
 #mouth-frown {
   visibility: hidden;
-}  
+}
 
 .container.error-404 a {
   font-family: 'Raleway', sans-serif;
