@@ -8,15 +8,15 @@ class AllergensController < ApplicationController
 
   def edit_families
     # define the data to check the right allergens in the view
-    @allergens = current_user.allergens_families
+    @allergens = current_user.allergen_families
     authorize @allergens
   end
 
   def update_families
     # destroy the allergens
-    current_user.allergens_families.destroy_all
+    current_user.allergen_families.destroy_all
     if params[:allergen].nil?
-      @allergens = current_user.allergens_families
+      @allergens = current_user.allergen_families
       authorize @allergens
       render :edit_families
       flash[:alert] = "Please select your allergy."
@@ -27,7 +27,7 @@ class AllergensController < ApplicationController
         authorize @allergen
         @allergen.save
       end
-      flash[:notice] = "You've added your allergies."
+      flash[:notice] = "You've saved your allergies!"
       redirect_to root_path
     end
   end

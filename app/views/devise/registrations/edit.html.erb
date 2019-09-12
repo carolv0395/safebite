@@ -7,7 +7,13 @@
     <% end %>
     <div class="d-flex container pages-container pb-4">
       <div style="width: 200px;">
-        <h1> Hello, <%= current_user.first_name %>!<br> </h1>
+      <h1>Hello
+        <% if current_user.first_name.present? %>
+          <span>, <%= current_user.first_name %>!</span>
+        <% else %>
+          <span>!</span>
+        <% end %>
+      </h1>
       </div>
 
         <div class="avatar-large" style="background-image: url('<%= image_path("photo") %>')">
@@ -62,6 +68,7 @@
       </div>
 
       <%= link_to "Update food restrictions", edit_families_allergens_path , class: 'btn btn-bottom btn-food-restrictions' %>
+
       <%= f.button :submit, "Save profile", class: 'btn btn-bottom btn-bottom-green' %>
 
 <% end %>

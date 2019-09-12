@@ -1,14 +1,27 @@
 <div class="container pages-container">
-  <h1>Thank you</h1>
+      <h1>Thank you
+      <% if current_user.first_name.present? %>
+        <span>, <%= current_user.first_name %>!</span>
+      <% else %>
+        <span>!</span>
+      <% end %>
+      </h1>
 </div>
 
-<h2>Order</h2>
-<ul>
-  <li>Status: <%= @order.order_status %></li>
-  <li>Items: <% @order.orders_products.each do |product| %></li>
-    <li><%= product.product.name %></li>
-  <% end %>
-  <li>Amount: <%= humanized_money_with_symbol(@order.total) %></li>
-<ul>
+<div class="container ty-pg-order">
+  <h2>Items you've ordered:</h2>
+  <ul>
+    <% @order.orders_products.each do |product| %>
+      <li><%= product.product.name %>, <%= product.quantity %> unit(s)</li>
+    <% end %>
+  <ul>
+</div>
 
-<h3>Your deliver is on the way. Have a nice and delicious meal!</h3>
+<div class="container">
+  <p><strong>Total price paid: <%= humanized_money_with_symbol(@order.total) %></strong></p>
+  <div class="pt-3">
+    <span><strong>Your deliver is on the way.</strong></span>
+    <br>
+    <span>Have a nice and delicious meal!</span>
+  </div>
+</div>
