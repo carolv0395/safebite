@@ -601,7 +601,7 @@ Great Value Detox Rocks Fruit and Vegetable Smoothie is made with a delicious bl
     price: 3
   },
   {
-    name: 'Brocolis',
+    name: 'Broccoli',
     brand: '',
     category: :fruits_and_vegetables,
     volume: '400 gr',
@@ -612,7 +612,7 @@ Great Value Detox Rocks Fruit and Vegetable Smoothie is made with a delicious bl
     price: 2
   },
   {
-    name: 'Frozen Brocolis',
+    name: 'Frozen Broccoli',
     brand: 'Bonduelle',
     category: :frozen_foods,
     volume: '400 gr',
