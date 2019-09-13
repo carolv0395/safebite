@@ -17,7 +17,7 @@
           <p> <%= orderproduct.product.brand.capitalize %> </p>
         </div>
 
-        <div class="add-quantity d-flex flex-column justify-content-center pl-5">
+        <div class="add-quantity d-flex flex-column justify-content-center">
           <%= link_to "+", product_orders_path(orderproduct.product), method: :post, remote: true, class: "add" %>
           <div class ="quantity" id="order_count_<%= orderproduct.product.id %>"><%= orderproduct.quantity %></div>
           <%= link_to "-", product_order_path(orderproduct.product, 0), method: :delete, remote: true, class: "remove" %>
