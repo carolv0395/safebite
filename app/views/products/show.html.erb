@@ -49,7 +49,7 @@
       <%= link_to "-", product_order_path(@product), method: :delete, remote: true, class: "remove" %>
       <p class="centered"><strong id="order_count_<%= @product.id %>"><%= @quantity_in_pending_order %></strong></p>
       <%= link_to "+", product_orders_path(@product), method: :post, remote: true, class: "add" %>
-      <p class="centered"><strong>Total price: <span id="total_price_<%= @product.id %>"><%= @product.total_price %></span> €</strong></p>
+      <p class="centered"><strong>Total price: <span id="total_price_<%= @product.id %>"><%= @total_price %></span> €</strong></p>
   </div>
 </div>
 

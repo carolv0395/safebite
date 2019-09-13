@@ -29,7 +29,7 @@ class ProductsController < ApplicationController
       @quantity_in_pending_order = 0
     end
 
-    @total_price = current_user.pending_order_in_cart.orders_products.sum("(orders_products.price_cents * orders_products.quantity)/100")
+    @total_price = current_user.pending_order_in_cart.orders_products.where(product: @product).sum("(orders_products.price_cents * orders_products.quantity)/100")
   end
 
   private
