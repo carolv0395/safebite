@@ -12,7 +12,7 @@
       <p><strong>Your order:</strong></p>
       <ul>
         <% @order.orders_products.each do |product| %>
-        <li class="modal-list"><%= product.product.name %>, <%= product.quantity %> unit(s)</li>
+        <li id="modal-<%= product.id %>" class="modal-list"><%= product.product.name %>, <%= product.quantity %> unit(s)</li>
       <% end %>
       </ul>
 

@@ -16,7 +16,10 @@ function swipeToDelete() {
           let currentPrice = parseFloat(document.querySelector(".grand_total").innerText);
           let productPrice = parseFloat(e.target.querySelector(".product-image-price p").innerText);
           let productQuantity = parseFloat(e.target.querySelector(".quantity").innerText);
-          document.querySelector(".grand_total").innerText = currentPrice - productPrice * productQuantity;
+          let newPrice = currentPrice - productPrice * productQuantity;
+          document.querySelector(".grand_total").innerText = newPrice;
+          document.querySelector(".modal-total .grand_total").innerText = newPrice;
+          document.querySelector("#modal-" + productOrderId).classList.add('d-none');
           // delete
           fetch(url, {
               method: 'DELETE',
