@@ -65,6 +65,8 @@ class OrdersController < ApplicationController
   def show
     @order = current_user.orders.where(order_status: 'paid').find(params[:id])
     authorize @order
+    @order.total = calculate_total
+    @order.save
   end
 
   private

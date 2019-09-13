@@ -30,6 +30,7 @@ a.btn-delete {
 .shopping-card-list {
   padding-left: 0px;
   list-style-type: none;
+  overflow: hidden;
 }
 
 .grand-total {
@@ -37,14 +38,14 @@ a.btn-delete {
 }
 
 .delete-red-background {
-    height: 120px;
-    width: 500px;
-    background-color: #F02311;
-    overflow: hidden;
-    margin-right: -270px;
-    display: flex;
-    align-items: center;
-    padding-right: 500px;
+  height: 120px;
+  background-color: #F02311;
+  display: flex;
+  align-items: center;
+}
+
+.red-background-width {
+  padding-right: 500px;
 }
 
 .fa-trash-alt {
