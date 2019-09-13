@@ -15,8 +15,8 @@
         <% end %>
       </h1>
       </div>
-        <% unless current_user.avatar %>
-        <div class="avatar-large" style="background-image: url('<%= image_path("photo.jpg") %>')">
+        <% unless current_user.avatar.present? %>
+          <div class="avatar-large" style="background-image: url('<%= image_path("photo.jpg") %>')">
          <% else %>
           <div class="avatar-large" style="background-image: url('<%= cl_image_path current_user.avatar %>')">
          <% end %>

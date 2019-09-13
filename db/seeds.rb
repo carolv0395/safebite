@@ -17,7 +17,7 @@ User.create!(
 
 nuts = AllergenFamily.create!(name: 'nuts')
 lactose = AllergenFamily.create!(name: 'lactose')
-shellfish = AllergenFamily.create!(name: 'shellfish')
+seafood = AllergenFamily.create!(name: 'seafood')
 gluten = AllergenFamily.create!(name: 'gluten')
 fish = AllergenFamily.create!(name: 'fish')
 soy = AllergenFamily.create!(name: 'soy')
@@ -465,7 +465,7 @@ Great Value Detox Rocks Fruit and Vegetable Smoothie is made with a delicious bl
     discount: 0,
     stock: Faker::Number.between(from: 0, to: 200),
     description: "Alpro Soya simply plain plant-based alternative to yogurt. 100% plant-based, naturally lactose free. Free from dairy and gluten. Vegan.To call it 'plain', is a bit of an injustice. With a soft, mild and balanced taste and plenty of plant protein, really it's a beautiful thing.",
-    photo: "https://www.foodbev.com/wp-content/uploads/2015/04/pbay-500g-coconut-almond-soya-00014-reto-660w.jpg",
+    photo: "https://maisoncupcake.com/mcc/wp-content/uploads/2014/10/Alpro-packshot1.jpg",
     price: 3
   },
   {
@@ -525,7 +525,7 @@ Great Value Detox Rocks Fruit and Vegetable Smoothie is made with a delicious bl
   },
   {
     name: 'Tuna (Natural)',
-    brand: '',
+    brand: 'Tuna Land',
     category: :meat_and_seafood,
     volume: '100 gr',
     discount: 0,
@@ -601,7 +601,7 @@ Great Value Detox Rocks Fruit and Vegetable Smoothie is made with a delicious bl
     price: 3
   },
   {
-    name: 'Brocolis',
+    name: 'Broccoli',
     brand: '',
     category: :fruits_and_vegetables,
     volume: '400 gr',
@@ -612,14 +612,14 @@ Great Value Detox Rocks Fruit and Vegetable Smoothie is made with a delicious bl
     price: 2
   },
   {
-    name: 'Frozen Brocolis',
+    name: 'Frozen Broccoli',
     brand: 'Bonduelle',
     category: :frozen_foods,
     volume: '400 gr',
     discount: 0,
     stock: Faker::Number.between(from: 0, to: 200),
     description: "Cover the pot and boil the florets in the water for 2 minutes. Then, transfer the florets to a bowl of ice water and let them fully cool. Once they're cooled off, put the florets in a plastic freezer bag and store them in the freezer for up to 9 months.",
-    photo: "https://nit.pt/wp-content/uploads/2018/05/585fc00b9c6b9d67e19ad637391936bd-754x394.jpeg",
+    photo: "https://www.thespruceeats.com/thmb/YyyMF4DhOpY8Vx750FPBvxBDLIc=/4288x2848/filters:fill(auto,1)/sauteed-broccoli-482862-Hero-5b96d87146e0fb0050721d12.jpg",
     price: 2
   },
   {
@@ -680,14 +680,36 @@ Great Value Detox Rocks Fruit and Vegetable Smoothie is made with a delicious bl
   {
     name: 'FarfalleGluten Free Pasta',
     brand: 'Jovial',
-    category: :fruits_and_vegetables,
+    category: :grains_pasta_and_sides,
     volume: '12 oz',
     discount: 0,
     stock: Faker::Number.between(from: 0, to: 200),
     description: "Crafted in Italy using time-honored production methods and carefully selected varieties of rice, our brown rice farfalle pasta is as close to traditional as gluten free can be. The future of gluten free is delicious, wholesome, and completely satisfying food.",
     photo: "https://jovialfoods.com/wp-content/uploads/2016/03/Jovial_GFPastaFarfalleHerbs-0068_1200x1200.jpg",
     price: 6
-  }
+  },
+  {
+    name: 'Almond Milk No Sugar',
+    brand: 'Alpro',
+    category: :breakfast_and_cereal,
+    volume: '250 ml',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "Contains almonds and may contain traces of hazelnuts. Naturally lactose free & dairy free. Gluten free. The almond milk conatins vitamin D, calcium and protein, making them more similar to regular milk in nutritional content. However, almond milk is naturally rich in several vitamins and minerals, especially vitamin E.",
+    photo: "https://cdn-prod.medicalnewstoday.com/content/images/articles/318/318612/almond-milk.jpg",
+    price: 3
+  },
+  {
+    name: 'Guinness Beer (pack 6)',
+    brand: 'Guinness',
+    category: :beer_wine_and_spirits,
+    volume: '6 x 33cl',
+    discount: 0,
+    stock: Faker::Number.between(from: 0, to: 200),
+    description: "Guinness stout is made from water, barley, roast malt extract, hops, and brewer's yeast. A portion of the barley is roasted to give Guinness its dark colour and characteristic taste.",
+    photo: "https://www.guinnesswebstore.com/media/catalog/category/glassware_heading_normal_1.jpg",
+    price: 5
+  },
 ];
 
 ingredient_attributes = [
@@ -771,17 +793,17 @@ ingredient_attributes = [
   {
     name: 'clams',
     is_allergen: true,
-    allergen_family_id: shellfish.id
+    allergen_family_id: seafood.id
   },
   {
     name: 'shrimp',
     is_allergen: true,
-    allergen_family_id: shellfish.id
+    allergen_family_id: seafood.id
   },
   {
     name: 'mussels',
     is_allergen: true,
-    allergen_family_id: shellfish.id
+    allergen_family_id: seafood.id
   },
   {
     name: 'chicken broth',
@@ -968,10 +990,6 @@ ingredient_attributes = [
     allergen_family_id: lactose.id
   },
   {
-    name: 'soya',
-    is_allergen: false,
-  },
-  {
     name: 'salmon',
     is_allergen: true,
     allergen_family_id: fish.id
@@ -1011,7 +1029,7 @@ ingredient_attributes = [
     allergen_family_id: seeds.id
   },
   {
-    name: 'brocolis',
+    name: 'broccoli',
     is_allergen: false
   },
   {
@@ -1032,6 +1050,15 @@ ingredient_attributes = [
   },
   {
     name: 'organic brown rice flour',
+    is_allergen: false
+  },
+  {
+    name: 'almonds',
+    is_allergen: true,
+    allergen_family_id: nuts.id
+  },
+  {
+    name: 'agave',
     is_allergen: false
   }
 ];
@@ -1189,8 +1216,9 @@ IngredientsProduct.create(product_id: Product.find_by(name: 'Peanut Cookies').id
 IngredientsProduct.create(product_id: Product.find_by(name: 'Plain Greek Yogurt').id, ingredient_id: Ingredient.find_by(name: 'milk').id)
 
 #Soya Yogurt
-IngredientsProduct.create(product_id: Product.find_by(name: 'Soya Yogurt').id, ingredient_id: Ingredient.find_by(name: 'soya').id)
-IngredientsProduct.create(product_id: Product.find_by(name: 'Soya Yogurt').id, ingredient_id: Ingredient.find_by(name: 'sugar').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Soya Yogurt').id, ingredient_id: Ingredient.find_by(name: 'soybean').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Soya Yogurt').id, ingredient_id: Ingredient.find_by(name: 'salt').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Soya Yogurt').id, ingredient_id: Ingredient.find_by(name: 'water').id)
 
 #Peanut Butter
 IngredientsProduct.create(product_id: Product.find_by(name: 'Peanut Butter').id, ingredient_id: Ingredient.find_by(name: 'peanuts').id)
@@ -1246,11 +1274,11 @@ IngredientsProduct.create(product_id: Product.find_by(name: 'Ricotta Cheese').id
 #Mozzarella Cheese
 IngredientsProduct.create(product_id: Product.find_by(name: 'Mozzarella Cheese').id, ingredient_id: Ingredient.find_by(name: 'cheese').id)
 
-#Brocolis
-IngredientsProduct.create(product_id: Product.find_by(name: 'Brocolis').id, ingredient_id: Ingredient.find_by(name: 'brocolis').id)
+#Broccoli
+IngredientsProduct.create(product_id: Product.find_by(name: 'Broccoli').id, ingredient_id: Ingredient.find_by(name: 'broccoli').id)
 
-#Frozen Brocolis
-IngredientsProduct.create(product_id: Product.find_by(name: 'Frozen Brocolis').id, ingredient_id: Ingredient.find_by(name: 'brocolis').id)
+#Frozen Broccoli
+IngredientsProduct.create(product_id: Product.find_by(name: 'Frozen Broccoli').id, ingredient_id: Ingredient.find_by(name: 'broccoli').id)
 
 #Tomatoes
 IngredientsProduct.create(product_id: Product.find_by(name: 'Tomatoes').id, ingredient_id: Ingredient.find_by(name: 'tomatoes').id)
@@ -1270,3 +1298,10 @@ IngredientsProduct.create(product_id: Product.find_by(name: 'Carrots').id, ingre
 #FarfalleGluten Free Pasta
 IngredientsProduct.create(product_id: Product.find_by(name: 'FarfalleGluten Free Pasta').id, ingredient_id: Ingredient.find_by(name: 'organic brown rice flour').id)
 IngredientsProduct.create(product_id: Product.find_by(name: 'FarfalleGluten Free Pasta').id, ingredient_id: Ingredient.find_by(name: 'water').id)
+
+#Almond Milk No Sugar
+IngredientsProduct.create(product_id: Product.find_by(name: 'Almond Milk No Sugar').id, ingredient_id: Ingredient.find_by(name: 'water').id)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Almond Milk No Sugar').id, ingredient_id: Ingredient.find_by(name: 'almonds').id)
+
+#Guinness Beer (pack 6)
+IngredientsProduct.create(product_id: Product.find_by(name: 'Guinness Beer (pack 6)').id, ingredient_id: Ingredient.find_by(name: 'barley').id)
