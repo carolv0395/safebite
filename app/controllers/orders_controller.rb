@@ -17,6 +17,7 @@ class OrdersController < ApplicationController
         price_cents: @product.price_cents
       )
     end
+    @new_order_product_price = @order_product.quantity * @product.price_cents
 
     @order.update(total: calculate_total)
 
@@ -34,6 +35,7 @@ class OrdersController < ApplicationController
     if @order_product
       @order_product.quantity -= 1
       @order_product.save
+      @new_order_product_price = @order_product.quantity * @product.price_cents
       @order_product.destroy if @order_product.quantity.zero?
     end
 

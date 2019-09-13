@@ -9,10 +9,6 @@ class Product < ApplicationRecord
 
   attr_reader :search
 
-  def total_price
-    orders_products.sum("(orders_products.price_cents * orders_products.quantity)/100")
-  end
-
   def self.search_allergens(current_user)
     allergen_families_ids = current_user.allergen_families.pluck(:id)
     allergen_families_products_ids = Ingredient.joins(:ingredients_products)
